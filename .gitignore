@@ -75,3 +75,6 @@ DerivedDataCache/*
 
 # Contents 는 대용량 파일이므로 SVN에서 따로 관리한다.
 Content/*
+
+# SVN
+.svn/*
