@@ -9,5 +9,10 @@ Source(Git) : https://github.com/wkdtpeo/ProjectGun-wkdtpeo.git
 
 Resouce(SVN) : http://wkdtpeo.iptime.org:1001/svn/Portfolio/ProjectGun/
 
+제작인원 : 3명
+프로그래밍 : 1명
+기획 : 1명
+모델러 : 1명
+
 SVN 서버는 개인 컴퓨터에 구축된 상태이므로 항상 서버가 열려있진 않습니다.
 필요시 연락을 주시면 서버를 열도록 하겠습니다. (wkdtpeo@naver.com)
