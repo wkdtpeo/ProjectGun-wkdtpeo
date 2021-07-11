@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -38,13 +38,13 @@ public :
 	void ShowMessageBox(FString kTitle, FString kDescription, int32 nValue);
 
 protected :
-	// ¹«±â ¾ğ¶ô ¿äÃ»
+	// ë¬´ê¸° ì–¸ë½ ìš”ì²­
 	UFUNCTION(BlueprintCallable)
 	void OnBtnWeapon();
-	// ÆÄ¿ö ·¹º§¾÷ ¿äÃ»
+	// íŒŒì›Œ ë ˆë²¨ì—… ìš”ì²­
 	UFUNCTION(BlueprintCallable)
 	void OnBtnPower();
-	// Åº¾à È®Àå ¿äÃ»
+	// íƒ„ì•½ í™•ì¥ ìš”ì²­
 	UFUNCTION(BlueprintCallable)
 	void OnBtnAmmo();
 
@@ -92,7 +92,7 @@ private :
 	UPROPERTY()
 	TWeakObjectPtr<class APG_GameModeBase>	m_pGameMode;
 
-	// ÀÓ½Ã ÀÛ¾÷
+	// ì„ì‹œ ì‘ì—…
 	UPROPERTY()
 	class UPG_UserWidgetBuyPopup* m_pUserWidgetBuyPopup = nullptr;
 	UPROPERTY()

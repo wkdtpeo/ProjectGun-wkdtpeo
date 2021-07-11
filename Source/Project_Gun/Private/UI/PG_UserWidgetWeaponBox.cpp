@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetWeaponBox.h"
 #include "Game/GameInstance/PG_GameInstance.h"
@@ -61,7 +61,7 @@ void UPG_UserWidgetWeaponBox::SetSlotIndex(int32 nSlotIndex)
 
 void UPG_UserWidgetWeaponBox::SetAmmo(int32 nAmmo)
 {
-	// ¹«ÇÑ´ë
+	// ë¬´í•œëŒ€
 	if (nAmmo == PG_INFINITY_AMMO)
 		m_pkText_Ammo->SetText(FText::FromString(FString::Printf(TEXT(" X ---"))));
 	else

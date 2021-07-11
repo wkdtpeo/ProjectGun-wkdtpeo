@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Game/Console/PG_Console.h"
 #include <Core\Public\HAL\IConsoleManager.h>

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -7,8 +7,8 @@
 UENUM(BlueprintType)
 enum class ECharacterState : uint8
 {
-	PREINIT,	// Ä³¸¯ÅÍ »ý¼± ÀüÀÇ ½ºÅ×ÀÌÆ®
-	LOADING,	// ¼±ÅÃÇÑ Ä³¸¯ÅÍ ¾Ö¼ÂÀ» ·ÎµùÇÏ´Â ½ºÅ×ÀÌÆ®
-	READY,		// Ä³¸¯ÅÍ ¾Ö¼Â ·ÎµùÀÌ ¿Ï·áµÈ ½ºÅ×ÀÌÆ®
-	DEAD		// Ä³¸¯ÅÍ »ç¸Á ½ºÅ×ÀÌÆ®
+	PREINIT,	// ìºë¦­í„° ìƒì„  ì „ì˜ ìŠ¤í…Œì´íŠ¸
+	LOADING,	// ì„ íƒí•œ ìºë¦­í„° ì• ì…‹ì„ ë¡œë”©í•˜ëŠ” ìŠ¤í…Œì´íŠ¸
+	READY,		// ìºë¦­í„° ì• ì…‹ ë¡œë”©ì´ ì™„ë£Œëœ ìŠ¤í…Œì´íŠ¸
+	DEAD		// ìºë¦­í„° ì‚¬ë§ ìŠ¤í…Œì´íŠ¸
 };

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -25,9 +25,9 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	//=================================================================================================
-	// DivisionSpawnActor : Owner ¾×ÅÍ ±âÁØ ÁÖÀ§·Î ¿øÇü ¸ğ¾çÀ¸·Î nDvisionCount¸¸Å­ µ¿ÀÏÇÑ ¾×ÅÍ¸¦ Spawn ½ÃÅ²´Ù.
-	// nDvisionCount : »ı¼ºÇÒ ¾×ÅÍ ¼ö
-	// vRange : SpawnµÉ ¾×ÅÍ´Â OwnerÀÇ ÁßÁ¡À¸·ÎºÎÅÍ vRange ¸¸Å­ ¶³¾îÁ®¼­ ¹èÄ¡µÈ´Ù. (=¹İÁö¸§ °ª)
+	// DivisionSpawnActor : Owner ì•¡í„° ê¸°ì¤€ ì£¼ìœ„ë¡œ ì›í˜• ëª¨ì–‘ìœ¼ë¡œ nDvisionCountë§Œí¼ ë™ì¼í•œ ì•¡í„°ë¥¼ Spawn ì‹œí‚¨ë‹¤.
+	// nDvisionCount : ìƒì„±í•  ì•¡í„° ìˆ˜
+	// vRange : Spawnë  ì•¡í„°ëŠ” Ownerì˜ ì¤‘ì ìœ¼ë¡œë¶€í„° vRange ë§Œí¼ ë–¨ì–´ì ¸ì„œ ë°°ì¹˜ëœë‹¤. (=ë°˜ì§€ë¦„ ê°’)
 	//=================================================================================================
 	template<class T>
 	bool DivisionSpawnActor(int32 nDvisionCount, FVector vRange)
@@ -41,9 +41,9 @@ public:
 		ABCHECK(nullptr != Owner, false);
 
 		float fDivDgree = 360.0f / (float)nDvisionCount;
-		FVector vRadius = Owner->GetActorForwardVector() * vRange;		// ¾×ÅÍ ½ºÆù ¹üÀ§°ª
+		FVector vRadius = Owner->GetActorForwardVector() * vRange;		// ì•¡í„° ìŠ¤í° ë²”ìœ„ê°’
 		FVector vLocation = Owner->GetActorLocation();
-		vLocation.Z += 100.0f;	// »ı¼ºµÈ ¾×ÅÍ°¡ ÇÏ´Ã¿¡¼­ ¶³¾îÁö´Â È¿°ú¸¦ ³»±âÀ§ÇÑ º¸Á¤°ª
+		vLocation.Z += 100.0f;	// ìƒì„±ëœ ì•¡í„°ê°€ í•˜ëŠ˜ì—ì„œ ë–¨ì–´ì§€ëŠ” íš¨ê³¼ë¥¼ ë‚´ê¸°ìœ„í•œ ë³´ì •ê°’
 
 		for (int n = 1; n <= nDvisionCount; n++)
 		{
@@ -51,8 +51,8 @@ public:
 			auto ASpawnActor = World->SpawnActor<T>(Owner->GetClass(), vSpawnPos, Owner->GetActorRotation());
 			if (nullptr == ASpawnActor)
 			{
-				// Äİ¸®ÀüÀ¸·Î ÀÎÇØ »ı¼ºµÇÁö ¸øÇÑ ¾×ÅÍ´Â Owner ¸Ó¸® À§·Î ½ºÆùÇÒ ¼ö ÀÖ°Ô ÇÑ´Ù.
-				// ÃßÈÄ¿¡ ¹°¸®¿£ÁøÀ» ÀÌ¿ëÇØ¼­ ¸Ó¸® À§·Î ½ºÆùµÇ¸é ¹Ì²ô·¯Áö¸é¼­ ÆÛÁö´Â ¹°¸®¸¦ Ã£¾ÆºÁ¾ß ÇÒ °Í °°´Ù.
+				// ì½œë¦¬ì „ìœ¼ë¡œ ì¸í•´ ìƒì„±ë˜ì§€ ëª»í•œ ì•¡í„°ëŠ” Owner ë¨¸ë¦¬ ìœ„ë¡œ ìŠ¤í°í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+				// ì¶”í›„ì— ë¬¼ë¦¬ì—”ì§„ì„ ì´ìš©í•´ì„œ ë¨¸ë¦¬ ìœ„ë¡œ ìŠ¤í°ë˜ë©´ ë¯¸ë„ëŸ¬ì§€ë©´ì„œ í¼ì§€ëŠ” ë¬¼ë¦¬ë¥¼ ì°¾ì•„ë´ì•¼ í•  ê²ƒ ê°™ë‹¤.
 				vLocation.Z += 300.0f;
 				ASpawnActor = World->SpawnActor<T>(Owner->GetClass(), vLocation, Owner->GetActorRotation());
 			}

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ο»Ώ// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -21,7 +21,7 @@ public :
 	void Init();
 
 public :
-	// ΖχΐΞΖ® ΘΉµζ
+	// ν¬μΈνΈ νλ“
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnChangeRewardPoint();
 

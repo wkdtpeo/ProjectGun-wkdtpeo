@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -24,10 +24,10 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	// ¾×ÅÍÀÇ ½ºÄÉÀÏ ¹üÀ§¸¦ Á¦ÇÑÇÑ´Ù.
+	// ì•¡í„°ì˜ ìŠ¤ì¼€ì¼ ë²”ìœ„ë¥¼ ì œí•œí•œë‹¤.
 	void SetActorScaleRange(FVector MinScale, FVector MaxScale);
 
-	// SetActorScaleRange ¿¡¼­ ¼³Á¤ÇÑ ½ºÄÉÀÏ ¹üÀ§°ªÀ» ´ÜÀ§°ª 1·Î Àâ°í, ÀÔ·ÂÇÑ ºñÀ²´ë·Î ¾×ÅÍÀÇ Å©±â¸¦ Á¶Á¤ÇÑ´Ù. (Ratio : 0.0 ~ 1.0)
+	// SetActorScaleRange ì—ì„œ ì„¤ì •í•œ ìŠ¤ì¼€ì¼ ë²”ìœ„ê°’ì„ ë‹¨ìœ„ê°’ 1ë¡œ ì¡ê³ , ì…ë ¥í•œ ë¹„ìœ¨ëŒ€ë¡œ ì•¡í„°ì˜ í¬ê¸°ë¥¼ ì¡°ì •í•œë‹¤. (Ratio : 0.0 ~ 1.0)
 	void SetActorScale(float Ratio);
 
 private:

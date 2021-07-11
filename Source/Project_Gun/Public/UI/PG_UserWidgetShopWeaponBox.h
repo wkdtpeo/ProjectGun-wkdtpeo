@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -52,13 +52,13 @@ public :
 	void OnMessagePopupBoxClose();
 
 protected :
-	// ¹«±â ¾ğ¶ô ¿äÃ»
+	// ë¬´ê¸° ì–¸ë½ ìš”ì²­
 	UFUNCTION()
 	void OnRequestUnlockWeapon();
-	// ÆÄ¿ö ·¹º§¾÷ ¿äÃ»
+	// íŒŒì›Œ ë ˆë²¨ì—… ìš”ì²­
 	UFUNCTION()
 	void OnRequestLevelupPower();
-	// Åº¾à È®Àå ¿äÃ»
+	// íƒ„ì•½ í™•ì¥ ìš”ì²­
 	UFUNCTION()
 	void OnRequestLevelupAmmo();
 

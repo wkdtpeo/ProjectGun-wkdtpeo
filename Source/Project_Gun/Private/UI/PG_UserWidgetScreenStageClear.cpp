@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "UI/PG_UserWidgetScreenStageClear.h"
@@ -103,7 +103,7 @@ bool UPG_UserWidgetScreenStageClear::IsAbleViewStagePlayAD()
 {
 	if (m_bWasViewStageClear3X)
 	{
-		// ½ºÅ×ÀÌÁö Å¬¸®¾î ÈÄ º¸»óÇü ±¤°í¸¦ º¸¾ÒÀ¸¸é ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌ ±¤°í¸¦ º¼ ¼ö ¾ø´Ù.
+		// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ í›„ ë³´ìƒí˜• ê´‘ê³ ë¥¼ ë³´ì•˜ìœ¼ë©´ ìŠ¤í…Œì´ì§€ í”Œë ˆì´ ê´‘ê³ ë¥¼ ë³¼ ìˆ˜ ì—†ë‹¤.
 		return false;
 	}
 
@@ -126,7 +126,7 @@ void UPG_UserWidgetScreenStageClear::UpdateClearStageLayout()
 
 	m_pkTextTitle->SetText(FText::FromString(pTableStageData->StageName));
 
-	// ¸ó½ºÅÍ Å³
+	// ëª¬ìŠ¤í„° í‚¬
 	bool bIsClearAmount = pGameModeStage->IsClearMission(EStageClearType::eSCT_AmountKill);
 	bool bIsWasClearAmount = pGameModeStage->IsWasClearMisiion(EStageClearType::eSCT_AmountKill);
 	if (bIsClearAmount || bIsWasClearAmount)
@@ -139,7 +139,7 @@ void UPG_UserWidgetScreenStageClear::UpdateClearStageLayout()
 		m_pkBtnFlag->SetIsEnabled(true);
 	}
 
-	// ÇÊ»ì±â
+	// í•„ì‚´ê¸°
 	bool bIsClearLethal = pGameModeStage->IsClearMission(EStageClearType::eSCT_Lethal);
 	bool bIsWasClearLethal = pGameModeStage->IsWasClearMisiion(EStageClearType::eSCT_Lethal);
 	if (bIsClearLethal || bIsWasClearLethal)
@@ -152,7 +152,7 @@ void UPG_UserWidgetScreenStageClear::UpdateClearStageLayout()
 		m_pkBtnLethal->SetIsEnabled(true);
 	}
 
-	// ½Ã°£ 
+	// ì‹œê°„ 
 	bool bIsClearTime = pGameModeStage->IsClearMission(EStageClearType::eSCT_ClearTime);
 	bool bIsWasClearTime = pGameModeStage->IsWasClearMisiion(EStageClearType::eSCT_ClearTime);
 	if (bIsClearTime || bIsWasClearTime)
@@ -338,7 +338,7 @@ void UPG_UserWidgetScreenStageClear::OnADRewardVideoSucessed()
 	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	ABCHECK(nullptr != pGameStateStage);
 
-	// º¸»ó Àû¿ë
+	// ë³´ìƒ ì ìš©
 	pGameStateStage->RequestViewAD();
 
 	SetBtnEnableAD(false);

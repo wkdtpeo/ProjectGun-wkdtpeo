@@ -1,10 +1,10 @@
-#pragma once
+ï»¿#pragma once
 
 #include "Project_Gun/Project_Gun.h"
 #include "PG_GamePlayData.generated.h"
 
 //=========================================================================================
-// ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ
+// í”Œë ˆì´ì–´ ë°ì´í„°
 //=========================================================================================
 USTRUCT(BlueprintType)
 struct FPGPlayerData
@@ -18,29 +18,29 @@ public:
 		PlayerWeaponAmmo.Init(0, PG_MAX_WEAPON_SLOT);
 	}
 
-	// ÀåÂøÁßÀÎ ¹«±âÀÇ InventoryÀÇ Index (SlotIndex ÀúÀå)
+	// ì¥ì°©ì¤‘ì¸ ë¬´ê¸°ì˜ Inventoryì˜ Index (SlotIndex ì €ì¥)
 	UPROPERTY()
 	int32 EquipWeaponInventoryIndex;
 
-	// ÀÎº¥Åä¸® (ÇöÀç 3°³±îÁö È®Àå °¡´É)
+	// ì¸ë²¤í† ë¦¬ (í˜„ì¬ 3ê°œê¹Œì§€ í™•ì¥ ê°€ëŠ¥)
 	UPROPERTY()
 	bool bExtendWeaponSlot;
 
-	// ÀÎº¥Åä¸® (ÇöÀç 3°³±îÁö È®Àå °¡´É - WeaponTableIndex ÀúÀå)
+	// ì¸ë²¤í† ë¦¬ (í˜„ì¬ 3ê°œê¹Œì§€ í™•ì¥ ê°€ëŠ¥ - WeaponTableIndex ì €ì¥)
 	UPROPERTY()
 	TArray<int32> PlayerWeaponInventory;
 
-	// Åº¾à Àç°í·® (SlotIndex ÀúÀå)
+	// íƒ„ì•½ ì¬ê³ ëŸ‰ (SlotIndex ì €ì¥)
 	UPROPERTY()
 	TArray<int32> PlayerWeaponAmmo;
 
-	// º¸À¯ÁßÀÎ ÀçÈ­ Æ÷ÀÎÆ®
+	// ë³´ìœ ì¤‘ì¸ ì¬í™” í¬ì¸íŠ¸
 	UPROPERTY()
 	int32 RewardPoint;
 };
 
 //=========================================================================================
-// º¸À¯ÁßÀÎ ¹«±â µ¥ÀÌÅÍ
+// ë³´ìœ ì¤‘ì¸ ë¬´ê¸° ë°ì´í„°
 //=========================================================================================
 USTRUCT(BlueprintType)
 struct FPGWeaponOwnData
@@ -50,21 +50,21 @@ struct FPGWeaponOwnData
 public:
 	FPGWeaponOwnData() : IsUnlock(false), PowerLevel(1), MagLevel(1){ }
 
-	// ¹«±â ±¸¸Å ¿©ºÎ
+	// ë¬´ê¸° êµ¬ë§¤ ì—¬ë¶€
 	UPROPERTY()
 	bool IsUnlock;
 
-	// ¹«±â °ø°İ·Â ·¹º§
+	// ë¬´ê¸° ê³µê²©ë ¥ ë ˆë²¨
 	UPROPERTY()
 	int32 PowerLevel;
 
-	// ÅºÃ¢ Áõ°¡ ·¹º§
+	// íƒ„ì°½ ì¦ê°€ ë ˆë²¨
 	UPROPERTY()
 	int32 MagLevel;
 };
 
 //=========================================================================================
-// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌ µ¥ÀÌÅÍ
+// ìŠ¤í…Œì´ì§€ í”Œë ˆì´ ë°ì´í„°
 //=========================================================================================
 USTRUCT(BlueprintType)
 struct FPGStagePlayData
@@ -75,44 +75,44 @@ public:
 	FPGStagePlayData() : StageID(0), NumberOfMonsters(0), NumberOfMonstersKilled(0), 
 		NumberOfMonstersMuiltiKill(0), NumberOfMonstersMuiltiKilled(0), PlayTime(0), RemainTime(0), KillRewardPoint(0){ }
 
-	// ÇöÀç ÇÃ·¹ÀÌÁßÀÎ ½ºÅ×ÀÌÁö ID
+	// í˜„ì¬ í”Œë ˆì´ì¤‘ì¸ ìŠ¤í…Œì´ì§€ ID
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 StageID;
 
-	// ¼³Ä¡µÈ ¸ó½ºÅÍÀÇ ¼ö (Å¬¸®¾î ¸ñÇ¥)
+	// ì„¤ì¹˜ëœ ëª¬ìŠ¤í„°ì˜ ìˆ˜ (í´ë¦¬ì–´ ëª©í‘œ)
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 NumberOfMonsters;
 
-	// Á×ÀÎ ¸ó½ºÅÍÀÇ ¼ö
+	// ì£½ì¸ ëª¬ìŠ¤í„°ì˜ ìˆ˜
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 NumberOfMonstersKilled;
 
-	// ´ÙÁß Ã³Ä¡ÇØ¾ß ÇÒ ¸ó½ºÅÍÀÇ ¼ö (¸ÖÆ¼Å³ Å¬¸®¾î ¸ñÇ¥)
+	// ë‹¤ì¤‘ ì²˜ì¹˜í•´ì•¼ í•  ëª¬ìŠ¤í„°ì˜ ìˆ˜ (ë©€í‹°í‚¬ í´ë¦¬ì–´ ëª©í‘œ)
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 NumberOfMonstersMuiltiKill;
 
-	// ´ÙÁß Ã³Ä¡ÇÑ ¸ó½ºÅÍÀÇ ¼ö (¸ÖÆ¼Å³)
+	// ë‹¤ì¤‘ ì²˜ì¹˜í•œ ëª¬ìŠ¤í„°ì˜ ìˆ˜ (ë©€í‹°í‚¬)
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 NumberOfMonstersMuiltiKilled;
 
-	// ÇÃ·¹ÀÌ ½Ã°£
+	// í”Œë ˆì´ ì‹œê°„
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 PlayTime;
 
-	// ³²Àº ½Ã°£
+	// ë‚¨ì€ ì‹œê°„
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 RemainTime;
 
-	// ¸ó½ºÅÍ Ã³Ä¡·ÎºÎÅÍ ¾òÀº ÀçÈ­ (½ºÅ×ÀÌÁö Å¬¸®¾î·Î ¾òÀº ÀçÈ­´Â Æ÷ÇÔµÇÁö ¾ÊÀ¸´Ï ÁÖÀÇÇÒ °Í)
+	// ëª¬ìŠ¤í„° ì²˜ì¹˜ë¡œë¶€í„° ì–»ì€ ì¬í™” (ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ë¡œ ì–»ì€ ì¬í™”ëŠ” í¬í•¨ë˜ì§€ ì•Šìœ¼ë‹ˆ ì£¼ì˜í•  ê²ƒ)
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 KillRewardPoint;
 };
 
 enum EStageClearType
 {
-	eSCT_AmountKill = 0,		// ¸ñÇ¥ÇÑ ¸ó½ºÅÍ Ã³Ä¡ ÈÄ ¸ñÇ¥ÁöÁ¡ µµ´Ş
-	eSCT_ClearTime,				// Á¦ÇÑ½Ã°£ ³» ¸ğµç ¸ó½ºÅÍ Ã³Ä¡ ÈÄ ¸ñÇ¥ÁöÁ¡ µµ´Ş
-	eSCT_Lethal,				// ÇÊ»ì±â »ç¿ëÀ¸·Î ¸ñÇ¥ ¸ÖÆ¼Å³ ÀÌ»óÀ» ´Ş¼º ÈÄ ¸ñÇ¥ÁöÁ¡ µµ´Ş
+	eSCT_AmountKill = 0,		// ëª©í‘œí•œ ëª¬ìŠ¤í„° ì²˜ì¹˜ í›„ ëª©í‘œì§€ì  ë„ë‹¬
+	eSCT_ClearTime,				// ì œí•œì‹œê°„ ë‚´ ëª¨ë“  ëª¬ìŠ¤í„° ì²˜ì¹˜ í›„ ëª©í‘œì§€ì  ë„ë‹¬
+	eSCT_Lethal,				// í•„ì‚´ê¸° ì‚¬ìš©ìœ¼ë¡œ ëª©í‘œ ë©€í‹°í‚¬ ì´ìƒì„ ë‹¬ì„± í›„ ëª©í‘œì§€ì  ë„ë‹¬
 
 	eSCT_Max
 };

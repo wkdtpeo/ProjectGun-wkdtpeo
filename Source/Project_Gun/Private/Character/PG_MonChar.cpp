@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Character/PG_MonChar.h"
 #include "Define/PG_TableData.h"
@@ -19,7 +19,7 @@ APG_MonChar::APG_MonChar()
 	PrimaryActorTick.bCanEverTick = true;
 
 #ifdef TEST_CODE
-	// ÀÓ½ÃÄÚµå : °¡µ¥ÀÌÅÍ ¸ó½ºÅÍ ¸®¼Ò½º À§Ä¡ ¼öÁ¤
+	// ìž„ì‹œì½”ë“œ : ê°€ë°ì´í„° ëª¬ìŠ¤í„° ë¦¬ì†ŒìŠ¤ ìœ„ì¹˜ ìˆ˜ì •
 	GetMesh()->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, -88.0f), FRotator(0.0f, -90.0f, 0.0f));
 #endif
 
@@ -27,7 +27,7 @@ APG_MonChar::APG_MonChar()
 
 	CharScaleComponent = CreateDefaultSubobject<UPG_ComponentCharScale>(TEXT("CHARSCALECOMPONENT"));
 
-	// ÇÃ·¹ÀÌ¾î ¿À¹ö·¦ ÀÌº¥Æ® ¼³Á¤
+	// í”Œë ˆì´ì–´ ì˜¤ë²„ëž© ì´ë²¤íŠ¸ ì„¤ì •
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &APG_MonChar::OnCharacterHit);
 	GetCapsuleComponent()->OnComponentHit.AddDynamic(this, &APG_MonChar::OnHitCallback);
 
@@ -96,7 +96,7 @@ void APG_MonChar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 void APG_MonChar::UpdateRotation(float DeltaTime)
 {
-	// ¸ó½ºÅÍ°¡ ¿òÁ÷ÀÌÁö ¾Ê°í Ä³¸¯ÅÍ ¹æÇâÀ¸·Î È¸ÀüÇØ¾ßÇÏ´Â °æ¿ì
+	// ëª¬ìŠ¤í„°ê°€ ì›€ì§ì´ì§€ ì•Šê³  ìºë¦­í„° ë°©í–¥ìœ¼ë¡œ íšŒì „í•´ì•¼í•˜ëŠ” ê²½ìš°
 	if (m_bDoNotMoving && false == m_bDoNotRotation)
 	{
 		APG_MyChar* pPG_MyChar = FindTargetToMyChar();
@@ -248,7 +248,7 @@ bool APG_MonChar::SetDefaultMonsterData()
 	GetCharacterMovement()->MaxAcceleration = MonsterData->MAcceleration;
 
 
-	// ÄÝ¸®Àü ¼³Á¤
+	// ì½œë¦¬ì „ ì„¤ì •
 	if (MonsterData->MCollide)
 		GetCapsuleComponent()->SetCollisionProfileName(TEXT("Monster"));
 	else

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -16,7 +16,7 @@ class PROJECT_GUN_API UPG_UserWidgetPlayStage : public UUserWidget
 	
 	enum
 	{
-		eMaxWeaponSlotIndex = PG_MAX_WEAPON_SLOT,	// ÃÖ´ë ÀåÂø °¡´ÉÇÑ ¹«±âÀÇ ¼ö
+		eMaxWeaponSlotIndex = PG_MAX_WEAPON_SLOT,	// ìµœëŒ€ ì¥ì°© ê°€ëŠ¥í•œ ë¬´ê¸°ì˜ ìˆ˜
 	};
 	
 protected:
@@ -26,36 +26,36 @@ public :
 	void InitWeaponBoxData();
 	bool InitWeaponBoxData(bool bEnable, int32 nSlotIndex, int32 nWeaponTableIndex, int32 nAmmo);
 
-	// È­¸é¿¡ ÇöÀç Âø¿ëÁßÀÎ ¹«±â¸¦ Ç¥½ÃÇÑ´Ù.
+	// í™”ë©´ì— í˜„ì¬ ì°©ìš©ì¤‘ì¸ ë¬´ê¸°ë¥¼ í‘œì‹œí•œë‹¤.
 	void SetSelectWeapon(int32 nSlotIndex);
 
 public :
 	//=====================================================
 	// Reward Point
 	//=====================================================
-	// Æ÷ÀÎÆ® È¹µæ ¾÷µ¥ÀÌÆ®
+	// í¬ì¸íŠ¸ íšë“ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintImplementableEvent, Category = "RewardPoint")
 	void OnChangeRewardPoint();
 
 	//=====================================================
-	// ½ºÅ×ÀÌÁö Å¬¸®¾î ¸ñÇ¥ ÇöÈ²
+	// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ëª©í‘œ í˜„í™©
 	//=====================================================
-	// ÇöÀç ¸ó½ºÅÍ Å³¼ö ¾÷µ¥ÀÌÆ®
+	// í˜„ì¬ ëª¬ìŠ¤í„° í‚¬ìˆ˜ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintCallable)
 	void OnUpdateFlag();
-	// ¸ó½ºÅÍ ÇÊ»ì±â Å³¼ö ¾÷µ¥ÀÌÆ®
+	// ëª¬ìŠ¤í„° í•„ì‚´ê¸° í‚¬ìˆ˜ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintCallable)
 	void OnUpdateLethal();
-	// Å¸ÀÌ¸Ó ¾÷µ¥ÀÌÆ®
+	// íƒ€ì´ë¨¸ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintCallable)
 	void OnUpdateTime();
 
 	//=====================================================
-	// ¹«±â ½½·Ô
+	// ë¬´ê¸° ìŠ¬ë¡¯
 	//=====================================================
 	UFUNCTION(BlueprintCallable)
 	void OnUpdateWeaponAmmo(int32 nSlotIndex, int32 nAmmo);
-	// ÇØ´ç SlotIndexÀÇ ¹«±â¸¦ º¯°æ ¿äÃ»ÇÏ¿´´Ù.
+	// í•´ë‹¹ SlotIndexì˜ ë¬´ê¸°ë¥¼ ë³€ê²½ ìš”ì²­í•˜ì˜€ë‹¤.
 	UFUNCTION(BlueprintCallable)
 	void OnChangeEquipWeaponIndex(int32 nSlotIndex);
 
@@ -64,11 +64,11 @@ private :
 	class UOverlay* GetOverlaySelectWeapon(int32 nSlotIndex);
 
 protected:
-	// ½ºÅ×ÀÌÁö Å¬¸®¾î ¸ñÇ¥ ÇöÈ²
+	// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ëª©í‘œ í˜„í™©
 	UPROPERTY(BlueprintReadWrite)
 	class UPG_UserWidgetStageClearTarget* WB_StageClearTarget;
 
-	// ¹«±â ½½·Ô
+	// ë¬´ê¸° ìŠ¬ë¡¯
 	UPROPERTY(BlueprintReadWrite)
 	class UPG_UserWidgetWeaponBox* WB_WeaponBox_0;
 	UPROPERTY(BlueprintReadWrite)

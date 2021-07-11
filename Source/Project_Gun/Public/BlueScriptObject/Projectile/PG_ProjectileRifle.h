@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -28,15 +28,15 @@ protected:
 	virtual void OnPlayEndParticle(UParticleSystemComponent* ParticleSystemComponent) override;
 	
 private :
-	// ¿ÀºêÁ§Æ® Mesh
+	// ì˜¤ë¸Œì íŠ¸ Mesh
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG ProjectileData", Meta = (AllowPrivateAccess = true))
 	UStaticMeshComponent*	ProjectileMeshComponent;
 
-	// ÇÁ·ÎÁ§Å¸ÀÏ ¹«ºê¸ÕÆ® ÄÄÆ÷³ÍÆ®
+	// í”„ë¡œì íƒ€ì¼ ë¬´ë¸Œë¨¼íŠ¸ ì»´í¬ë„ŒíŠ¸
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG ProjectileData", Meta = (AllowPrivateAccess = true))
 	UProjectileMovementComponent* ProjectileMovementComponent;
 
-	// ÇÇ°İ½Ã ³ªÅ¸³ª´Â ÀÌÆåÆ®
+	// í”¼ê²©ì‹œ ë‚˜íƒ€ë‚˜ëŠ” ì´í™íŠ¸
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG ProjectileData", Meta = (AllowPrivateAccess = true))
 	UParticleSystemComponent*	BurstingEffect;
 };

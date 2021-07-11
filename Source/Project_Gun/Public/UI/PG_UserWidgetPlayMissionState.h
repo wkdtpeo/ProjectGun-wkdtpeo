@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -27,13 +27,13 @@ public :
 	void SetDataTime(bool bClear, int32 nCurrTime);
 
 protected:
-	// ÇöÀç ¸ó½ºÅÍ Å³¼ö ¾÷µ¥ÀÌÆ®
+	// í˜„ì¬ ëª¬ìŠ¤í„° í‚¬ìˆ˜ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintCallable)
 	void OnUpdateFlag();
-	// ¸ó½ºÅÍ ÇÊ»ì±â Å³¼ö ¾÷µ¥ÀÌÆ®
+	// ëª¬ìŠ¤í„° í•„ì‚´ê¸° í‚¬ìˆ˜ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintCallable)
 	void OnUpdateLethal();
-	// Å¸ÀÌ¸Ó ¾÷µ¥ÀÌÆ®
+	// íƒ€ì´ë¨¸ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintCallable)
 	void OnUpdateTime();
 

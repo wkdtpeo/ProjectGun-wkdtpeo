@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -21,7 +21,7 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void PostInitializeComponents() override;
 	virtual void Destroyed() override;
-	// ¾×ÅÍ°¡ ¿ùµå ¹ÛÀ¸·Î ³ª°¬À» ¶§ Call (Kill Z)
+	// ì•¡í„°ê°€ ì›”ë“œ ë°–ìœ¼ë¡œ ë‚˜ê°”ì„ ë•Œ Call (Kill Z)
 	virtual void FellOutOfWorld(const class UDamageType & dmgType) override;
 
 public:	
@@ -33,7 +33,7 @@ public:
 
 	bool AssetLoadCharacter(FString AssetPath);
 
-	// ¹ß»ç Ã³¸®
+	// ë°œì‚¬ ì²˜ë¦¬
 	UFUNCTION()
 	virtual void Fire();
 
@@ -49,7 +49,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "PG UI", Meta = (AllowPrivateAccess = true))
 	class UWidgetComponent* HPBarWidget = nullptr;		// Debug HPBar
 
-	// Ä³¸¯ÅÍ ±×¸²ÀÚ
+	// ìºë¦­í„° ê·¸ë¦¼ì
 	UPROPERTY(VisibleAnywhere, Category = "PG CharacterShadowInfo")
 	class UStaticMeshComponent* CharacterShadowComponent;
 };

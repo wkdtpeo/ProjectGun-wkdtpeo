@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Weapon/PG_WeaponFlameGun.h"
 #include "Character/PG_MonChar.h"
@@ -53,14 +53,14 @@ void APG_WeaponFlameGun::Fire()
 		SpawnParams.Owner = this;
 		SpawnParams.Instigator = GetInstigator();
 
-		// ÃÑ±¸ À§Ä¡¿¡ ¹ß»çÃ¼¸¦ ½ºÆù½ÃÅµ´Ï´Ù.		
+		// ì´êµ¬ ìœ„ì¹˜ì— ë°œì‚¬ì²´ë¥¼ ìŠ¤í°ì‹œí‚µë‹ˆë‹¤.		
 		CurrFireFlame = World->SpawnActor<APG_Projectile>(WeaponData.BProjectile, vLocation, rRotation, SpawnParams);
 		ABCHECK(nullptr != CurrFireFlame);
 
-		// ¹ß»ç ¹æÇâÀ» ¾Ë¾Æ³À´Ï´Ù.
+		// ë°œì‚¬ ë°©í–¥ì„ ì•Œì•„ëƒ…ë‹ˆë‹¤.
 		FVector LaunchDirection = rRotation.Vector();
 
-		// ¸ó½ºÅÍ°¡ »ç¿ëÇÏ´Â ¹«±â ¿©ºÎ
+		// ëª¬ìŠ¤í„°ê°€ ì‚¬ìš©í•˜ëŠ” ë¬´ê¸° ì—¬ë¶€
 		bool bMonsterWeapon = (nullptr != Cast<APG_MonChar>(GetOwner()));
 
 		CurrFireFlame->FireInDirection(GetWeaponData(), LaunchDirection, bMonsterWeapon);

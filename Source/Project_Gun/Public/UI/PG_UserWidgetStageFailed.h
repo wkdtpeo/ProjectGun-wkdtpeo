@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -31,12 +31,12 @@ public:
 	void OnBtnGoToMainLobby();
 
 	//============================================================================================
-	// ±¤°í ½ÃÃ»¿¡ ´ëÇÑ °á°ú
+	// ê´‘ê³  ì‹œì²­ì— ëŒ€í•œ ê²°ê³¼
 	//============================================================================================
 	UFUNCTION(BlueprintCallable)
-	void OnADPlayStageVideoSucessed();	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌÇü ±¤°í¸¦ ¼º°øÀûÀ¸·Î º¸¾ÒÀ½
+	void OnADPlayStageVideoSucessed();	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´í˜• ê´‘ê³ ë¥¼ ì„±ê³µì ìœ¼ë¡œ ë³´ì•˜ìŒ
 	UFUNCTION(BlueprintCallable)
-	void OnADPlayStageVideoClosed();	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌÇü ±¤°í¸¦ ´İ°Å³ª ½ÇÆĞÇÏ¿´À½
+	void OnADPlayStageVideoClosed();	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´í˜• ê´‘ê³ ë¥¼ ë‹«ê±°ë‚˜ ì‹¤íŒ¨í•˜ì˜€ìŒ
 	//============================================================================================
 
 private:

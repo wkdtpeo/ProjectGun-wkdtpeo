@@ -1,17 +1,17 @@
-#pragma once
+ï»¿#pragma once
 
 #include "Project_Gun/Project_Gun.h"
 #include <Engine/DataTable.h>
 #include "PG_TableData.generated.h"
 
 #define PG_INVALID_INDEX		-1
-#define PG_INFINITY_AMMO		-1		// ¹«ÇÑ ÃÑ¾Ë
-#define PG_MAX_WEAPON_SLOT		3		// ¹«±â ÃÖ´ë ÀåÂø ¼ö
-#define PG_ADVIEW_REWARD		3		// ±¤°í º¸»ó ¹è¼ö
-#define PG_ADVIEW_SHOP_REWARD	200		// ¹«±â°í¿¡¼­ ±¤°í º¸¾ÒÀ» ¶§ º¸»ó Æ÷ÀÎÆ®
+#define PG_INFINITY_AMMO		-1		// ë¬´í•œ ì´ì•Œ
+#define PG_MAX_WEAPON_SLOT		3		// ë¬´ê¸° ìµœëŒ€ ì¥ì°© ìˆ˜
+#define PG_ADVIEW_REWARD		3		// ê´‘ê³  ë³´ìƒ ë°°ìˆ˜
+#define PG_ADVIEW_SHOP_REWARD	200		// ë¬´ê¸°ê³ ì—ì„œ ê´‘ê³  ë³´ì•˜ì„ ë•Œ ë³´ìƒ í¬ì¸íŠ¸
 
 //=========================================================================================
-// Ä³¸¯ÅÍ
+// ìºë¦­í„°
 //=========================================================================================
 USTRUCT(BlueprintType)
 struct FPGCharacterMovementData : public FTableRowBase
@@ -24,19 +24,19 @@ public:
 	{ }
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Data")
-	float	MaxSpeed;						// ÃÖ´ë ÀÌµ¿¼Óµµ
+	float	MaxSpeed;						// ìµœëŒ€ ì´ë™ì†ë„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Data")
-	float	AccelerationSpeed;				// ÀÌµ¿ °¡¼Óµµ
+	float	AccelerationSpeed;				// ì´ë™ ê°€ì†ë„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Data")
-	float	BodyRotateSpeed;				// ÀÌµ¿½Ã Ä³¸¯ÅÍ È¸Àü¼Óµµ
+	float	BodyRotateSpeed;				// ì´ë™ì‹œ ìºë¦­í„° íšŒì „ì†ë„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Data")
-	float	AttackBodyRotateSpeed;			// °ø°İ½Ã Ä³¸¯ÅÍ È¸Àü¼Óµµ
+	float	AttackBodyRotateSpeed;			// ê³µê²©ì‹œ ìºë¦­í„° íšŒì „ì†ë„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Data")
-	float	AttackUpperBodyRotateSpeed;		// °ø°İ½Ã »óÃ¼ È¸Àü¼Óµµ
+	float	AttackUpperBodyRotateSpeed;		// ê³µê²©ì‹œ ìƒì²´ íšŒì „ì†ë„
 };
 
 USTRUCT(BlueprintType)
@@ -68,16 +68,16 @@ public:
 };
 
 //=========================================================================================
-// ¸ó½ºÅÍ
+// ëª¬ìŠ¤í„°
 //=========================================================================================
 UENUM(BlueprintType)
 enum class EMonsterType : uint8
 {
-	eMT_Normal = 0,				// ÀÏ¹İ ¸ó½ºÅÍ
-	eMT_SkillType,				// ½ºÅ³ »ç¿ëÇÏ´Â ¸ó½ºÅÍ
-	eMT_Division,				// ºĞ¿­ÇÏ´Â ¸ó½ºÅÍ
-	eMT_DivisionSkillType,		// ½ºÅ³»ç¿ë ¹× ºĞ¿­ÇÏ´Â ¸ó½ºÅÍ
-	eMT_Boss,					// º¸½º
+	eMT_Normal = 0,				// ì¼ë°˜ ëª¬ìŠ¤í„°
+	eMT_SkillType,				// ìŠ¤í‚¬ ì‚¬ìš©í•˜ëŠ” ëª¬ìŠ¤í„°
+	eMT_Division,				// ë¶„ì—´í•˜ëŠ” ëª¬ìŠ¤í„°
+	eMT_DivisionSkillType,		// ìŠ¤í‚¬ì‚¬ìš© ë° ë¶„ì—´í•˜ëŠ” ëª¬ìŠ¤í„°
+	eMT_Boss,					// ë³´ìŠ¤
 
 	eMT_Max
 }; 
@@ -95,34 +95,34 @@ public:
 	int32	ID;
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32	MHP;				// ¸ó½ºÅÍ Ã¼·Â
+	int32	MHP;				// ëª¬ìŠ¤í„° ì²´ë ¥
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float	MSpeed;				// ¸ó½ºÅÍÀÇ ÀÌµ¿ ¼Óµµ
+	float	MSpeed;				// ëª¬ìŠ¤í„°ì˜ ì´ë™ ì†ë„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float	MAcceleration;		// ¸ó½ºÅÍ ÀÌµ¿ °¡¼Óµµ
+	float	MAcceleration;		// ëª¬ìŠ¤í„° ì´ë™ ê°€ì†ë„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float	MRotateSpeed;		// ¸ó½ºÅÍ°¡ Ä³¸¯ÅÍ¸¦ ¹Ù¶óº¸±â À§ÇØ ¸öÀ» µ¹¸®´Â ¼Óµµ
+	float	MRotateSpeed;		// ëª¬ìŠ¤í„°ê°€ ìºë¦­í„°ë¥¼ ë°”ë¼ë³´ê¸° ìœ„í•´ ëª¸ì„ ëŒë¦¬ëŠ” ì†ë„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float	MBodyScale;			// ¸ó½ºÅÍÀÇ Ã¼·Â¿¡ µû¸¥ ¸öÃ¼ÀÇ Å©±â
+	float	MBodyScale;			// ëª¬ìŠ¤í„°ì˜ ì²´ë ¥ì— ë”°ë¥¸ ëª¸ì²´ì˜ í¬ê¸°
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32	MDetectRange;		// ¸ó½ºÅÍ°¡ ÇÃ·¹ÀÌ¾î Ä³¸¯ÅÍ¸¦ ÀÎ½ÄÇÏ´Â °Å¸® (½Ã¾ß)
+	int32	MDetectRange;		// ëª¬ìŠ¤í„°ê°€ í”Œë ˆì´ì–´ ìºë¦­í„°ë¥¼ ì¸ì‹í•˜ëŠ” ê±°ë¦¬ (ì‹œì•¼)
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32	MChaseRange;		// ¸ó½ºÅÍ°¡ ÇÃ·¹ÀÌ¾î Ä³¸¯ÅÍ¸¦ ÂÑ¾Æ¿À´Â ÃÖ´ë °Å¸®
+	int32	MChaseRange;		// ëª¬ìŠ¤í„°ê°€ í”Œë ˆì´ì–´ ìºë¦­í„°ë¥¼ ì«“ì•„ì˜¤ëŠ” ìµœëŒ€ ê±°ë¦¬
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float	MDropRate;			// ¸ó½ºÅÍ°¡ ÀçÈ­¸¦ µå¶øÇÏ´Â È®·ü
+	float	MDropRate;			// ëª¬ìŠ¤í„°ê°€ ì¬í™”ë¥¼ ë“œëí•˜ëŠ” í™•ë¥ 
 
 		//UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Data")
-		//enum	MBeHit;				// ¸ó½ºÅÍ°¡ ÇÇ°İ´çÇÒ ¶§ ¹ß»ıÇÒ È¿°ú (0 : ¾øÀ½, 1: ÇÇ°İ À§Ä¡ ±âÁØ µÚ·Î 30cm)
+		//enum	MBeHit;				// ëª¬ìŠ¤í„°ê°€ í”¼ê²©ë‹¹í•  ë•Œ ë°œìƒí•  íš¨ê³¼ (0 : ì—†ìŒ, 1: í”¼ê²© ìœ„ì¹˜ ê¸°ì¤€ ë’¤ë¡œ 30cm)
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	bool	MCollide;			// ¸ó½ºÅÍ°¡ ¸ó½ºÅÍ³¢¸® Ãæµ¹ÇÒÁö ¸»Áö °áÁ¤
+	bool	MCollide;			// ëª¬ìŠ¤í„°ê°€ ëª¬ìŠ¤í„°ë¼ë¦¬ ì¶©ëŒí• ì§€ ë§ì§€ ê²°ì •
 
 	//UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Data")
 	//USkeletalMesh* MMeshPath;
@@ -151,38 +151,38 @@ public:
 	// Weapon
 	//===========================================
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float MWeaponCoolTime;		// ½ºÅ³ Å¸ÀÔ ¸ó½ºÅÍÀÇ °ø°İ ½ÃÀü ÄğÅ¸ÀÓ(ms)
+	float MWeaponCoolTime;		// ìŠ¤í‚¬ íƒ€ì… ëª¬ìŠ¤í„°ì˜ ê³µê²© ì‹œì „ ì¿¨íƒ€ì„(ms)
 
 	//===========================================
 	// Dash
 	//===========================================
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float MDashReadyTime;		// ´ë½¬ ÁØºñ ½Ã°£
+	float MDashReadyTime;		// ëŒ€ì‰¬ ì¤€ë¹„ ì‹œê°„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float MDashCoolTime;		// ´ë½¬ ÄğÅ¸ÀÓ
+	float MDashCoolTime;		// ëŒ€ì‰¬ ì¿¨íƒ€ì„
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float MDashMoveDistance;	// ´ë½¬ ÀÌµ¿°Å¸®
+	float MDashMoveDistance;	// ëŒ€ì‰¬ ì´ë™ê±°ë¦¬
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float MDashSpeed;			// ´ë½¬ ¼Óµµ
+	float MDashSpeed;			// ëŒ€ì‰¬ ì†ë„
 
 
 	//===========================================
 	// Division
 	//===========================================
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32 MDivisionCount;		// ºĞÈ­ ¸ó½ºÅÍÀÇ ºĞÈ­ È½¼ö. È½¼ö¸¦ ÀÔ·ÂÇÏ¸é, 100¿¡¼­ È½¼ö+1À» ³ª´©¾î ÇØ´ç HP´ë¿ª¿¡ µé¾î°¡¸é ¸ó½ºÅÍ°¡ ºĞÈ­ÇÑ´Ù.
+	int32 MDivisionCount;		// ë¶„í™” ëª¬ìŠ¤í„°ì˜ ë¶„í™” íšŸìˆ˜. íšŸìˆ˜ë¥¼ ì…ë ¥í•˜ë©´, 100ì—ì„œ íšŸìˆ˜+1ì„ ë‚˜ëˆ„ì–´ í•´ë‹¹ HPëŒ€ì—­ì— ë“¤ì–´ê°€ë©´ ëª¬ìŠ¤í„°ê°€ ë¶„í™”í•œë‹¤.
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32 MDivisionAmount;		// »ı¼ºµÉ(ºĞÈ­) ¸ó½ºÅÍ °¹¼ö. ÇØ´ç °³¼ö¸¸Å­ ÇöÀçÀ§Ä¡ ¾ÕÂÊ 50 °Å¸®·Î ½Ã°è¹æÇâ Rotate½ÃÄÑ °³¼ö¿¡ ¸ÂÃç »ı¼º°¢µµ¸¦ 360À» ³ª´² »ı¼ºÇÑ´Ù.
+	int32 MDivisionAmount;		// ìƒì„±ë (ë¶„í™”) ëª¬ìŠ¤í„° ê°¯ìˆ˜. í•´ë‹¹ ê°œìˆ˜ë§Œí¼ í˜„ì¬ìœ„ì¹˜ ì•ìª½ 50 ê±°ë¦¬ë¡œ ì‹œê³„ë°©í–¥ Rotateì‹œì¼œ ê°œìˆ˜ì— ë§ì¶° ìƒì„±ê°ë„ë¥¼ 360ì„ ë‚˜ëˆ  ìƒì„±í•œë‹¤.
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float MDivisionSpawnRange;	// ºĞÈ­½Ã ±âÁØ ¸ó½ºÅÍ¿¡¼­ ÇØ´ç ¹üÀ§¸¸Å­ ¶³¾îÁ®¼­ »ı¼ºµÈ´Ù.
+	float MDivisionSpawnRange;	// ë¶„í™”ì‹œ ê¸°ì¤€ ëª¬ìŠ¤í„°ì—ì„œ í•´ë‹¹ ë²”ìœ„ë§Œí¼ ë–¨ì–´ì ¸ì„œ ìƒì„±ëœë‹¤.
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite)
-	int32 MRemainDivisionCount;	// ºĞÈ­ ¸ó½ºÅÍÀÇ ³²Àº ºĞÈ­ È½¼ö
+	int32 MRemainDivisionCount;	// ë¶„í™” ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ ë¶„í™” íšŸìˆ˜
 };
 
 USTRUCT(BlueprintType)
@@ -194,16 +194,16 @@ public:
 	FPGMonsterData_Division() : MDivisionCount(0), MDivisionAmount(0), MDivisionSpawnRange(0.0f), MRemainDivisionCount(0) { }
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32 MDivisionCount;		// ºĞÈ­ ¸ó½ºÅÍÀÇ ºĞÈ­ È½¼ö. È½¼ö¸¦ ÀÔ·ÂÇÏ¸é, 100¿¡¼­ È½¼ö+1À» ³ª´©¾î ÇØ´ç HP´ë¿ª¿¡ µé¾î°¡¸é ¸ó½ºÅÍ°¡ ºĞÈ­ÇÑ´Ù.
+	int32 MDivisionCount;		// ë¶„í™” ëª¬ìŠ¤í„°ì˜ ë¶„í™” íšŸìˆ˜. íšŸìˆ˜ë¥¼ ì…ë ¥í•˜ë©´, 100ì—ì„œ íšŸìˆ˜+1ì„ ë‚˜ëˆ„ì–´ í•´ë‹¹ HPëŒ€ì—­ì— ë“¤ì–´ê°€ë©´ ëª¬ìŠ¤í„°ê°€ ë¶„í™”í•œë‹¤.
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32 MDivisionAmount;		// »ı¼ºµÉ(ºĞÈ­) ¸ó½ºÅÍ °¹¼ö. ÇØ´ç °³¼ö¸¸Å­ ÇöÀçÀ§Ä¡ ¾ÕÂÊ 50 °Å¸®·Î ½Ã°è¹æÇâ Rotate½ÃÄÑ °³¼ö¿¡ ¸ÂÃç »ı¼º°¢µµ¸¦ 360À» ³ª´² »ı¼ºÇÑ´Ù.
+	int32 MDivisionAmount;		// ìƒì„±ë (ë¶„í™”) ëª¬ìŠ¤í„° ê°¯ìˆ˜. í•´ë‹¹ ê°œìˆ˜ë§Œí¼ í˜„ì¬ìœ„ì¹˜ ì•ìª½ 50 ê±°ë¦¬ë¡œ ì‹œê³„ë°©í–¥ Rotateì‹œì¼œ ê°œìˆ˜ì— ë§ì¶° ìƒì„±ê°ë„ë¥¼ 360ì„ ë‚˜ëˆ  ìƒì„±í•œë‹¤.
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	float MDivisionSpawnRange;	// ºĞÈ­½Ã ±âÁØ ¸ó½ºÅÍ¿¡¼­ ÇØ´ç ¹üÀ§¸¸Å­ ¶³¾îÁ®¼­ »ı¼ºµÈ´Ù.
+	float MDivisionSpawnRange;	// ë¶„í™”ì‹œ ê¸°ì¤€ ëª¬ìŠ¤í„°ì—ì„œ í•´ë‹¹ ë²”ìœ„ë§Œí¼ ë–¨ì–´ì ¸ì„œ ìƒì„±ëœë‹¤.
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite)
-	int32 MRemainDivisionCount;	// ºĞÈ­ ¸ó½ºÅÍÀÇ ³²Àº ºĞÈ­ È½¼ö
+	int32 MRemainDivisionCount;	// ë¶„í™” ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ ë¶„í™” íšŸìˆ˜
 };
 
 
@@ -216,13 +216,13 @@ public:
 	FPGMonsterData_DivisionSkillType() : MWeaponCoolTime(0), MAttackSpeed(0), MAttackMethod(0){ }
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32 MWeaponCoolTime;		// ½ºÅ³ Å¸ÀÔ ¸ó½ºÅÍÀÇ °ø°İ ½ÃÀü ÄğÅ¸ÀÓ(ms)
+	int32 MWeaponCoolTime;		// ìŠ¤í‚¬ íƒ€ì… ëª¬ìŠ¤í„°ì˜ ê³µê²© ì‹œì „ ì¿¨íƒ€ì„(ms)
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32 MAttackSpeed;			// ½ºÅ³ Å¸ÀÔ ¸ó½ºÅÍÀÇ °ø°İ ½ÃÀü ¼Óµµ(ms)
+	int32 MAttackSpeed;			// ìŠ¤í‚¬ íƒ€ì… ëª¬ìŠ¤í„°ì˜ ê³µê²© ì‹œì „ ì†ë„(ms)
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
-	int32 MAttackMethod;		// ½ºÅ³ Å¸ÀÔ ¸ó½ºÅÍÀÇ °ø°İ ¹æ½Ä	(ProjectileÀÇ °æ¿ì ÀÌ°÷¿¡ Projectile ÀÌÆåÆ®BP »ğÀÔ, µ¹ÁøÀÇ °æ¿ì Decal ÀÌÆåÆ® »ğÀÔ)
+	int32 MAttackMethod;		// ìŠ¤í‚¬ íƒ€ì… ëª¬ìŠ¤í„°ì˜ ê³µê²© ë°©ì‹	(Projectileì˜ ê²½ìš° ì´ê³³ì— Projectile ì´í™íŠ¸BP ì‚½ì…, ëŒì§„ì˜ ê²½ìš° Decal ì´í™íŠ¸ ì‚½ì…)
 };
 
 USTRUCT(BlueprintType)
@@ -237,7 +237,7 @@ public:
 
 
 //=========================================================================================
-// ¹«±â µ¥ÀÌÅÍ
+// ë¬´ê¸° ë°ì´í„°
 //=========================================================================================
 UENUM(BlueprintType)
 enum class EWeaponType : uint8
@@ -263,71 +263,71 @@ public:
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	FString Name;
 
-	// ¹ß»çÃ¼ÀÇ ¿Ü°ü(Mesh/ÅØ½ºÃ³)
+	// ë°œì‚¬ì²´ì˜ ì™¸ê´€(Mesh/í…ìŠ¤ì²˜)
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	TSubclassOf<class APG_Projectile> BProjectile;
 	//TSubclassOf<class APG_Projectile> BProjectile;
 
-	// 1È¸ ¹ß»çÇÒ ¶§ ¹ß»çÃ¼ÀÇ »ı¼º °³¼ö. ÇØ´ç Ç×¸ñÀÌ ÀÔ·ÂµÇ¸é ¾Æ·¡ »ı¼ºÀ§Ä¡, 
-	// ¹ß»ç°¢µµ°¡ °¢ ¹ß»çÃ¼¸¶´Ù ÀÔ·ÂµÇ°Ô »ı±ä´Ù. ¿¹¸¦µé¾î Bullet¿¡ 3À» ÀÔ·ÂÇÏ¸é ¾Æ·¡·Î BStartPosition, BAngle, BEffect°¡ 3°³¾¿ »ı±ä´Ù. 
+	// 1íšŒ ë°œì‚¬í•  ë•Œ ë°œì‚¬ì²´ì˜ ìƒì„± ê°œìˆ˜. í•´ë‹¹ í•­ëª©ì´ ì…ë ¥ë˜ë©´ ì•„ë˜ ìƒì„±ìœ„ì¹˜, 
+	// ë°œì‚¬ê°ë„ê°€ ê° ë°œì‚¬ì²´ë§ˆë‹¤ ì…ë ¥ë˜ê²Œ ìƒê¸´ë‹¤. ì˜ˆë¥¼ë“¤ì–´ Bulletì— 3ì„ ì…ë ¥í•˜ë©´ ì•„ë˜ë¡œ BStartPosition, BAngle, BEffectê°€ 3ê°œì”© ìƒê¸´ë‹¤. 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32	Bullet;		
 
-	// ¸ó½ºÅÍ°¡ Á¢±ÙÇØ¿ÔÀ» ¶§ °ø°İÇÏ±â ½ÃÀÛ ÇÏ´Â °ø°İ ¹üÀ§.
+	// ëª¬ìŠ¤í„°ê°€ ì ‘ê·¼í•´ì™”ì„ ë•Œ ê³µê²©í•˜ê¸° ì‹œì‘ í•˜ëŠ” ê³µê²© ë²”ìœ„.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 AttackRange;
 
-	// ¹ß»çÃ¼°¡ µµ´ŞÇÏ´Â ÃÖ´ë ¹üÀ§. ÀÌÈÄ ¹ß»çÃ¼´Â ¹«Á¶°Ç ¼Ò¸êÇÑ´Ù.
+	// ë°œì‚¬ì²´ê°€ ë„ë‹¬í•˜ëŠ” ìµœëŒ€ ë²”ìœ„. ì´í›„ ë°œì‚¬ì²´ëŠ” ë¬´ì¡°ê±´ ì†Œë©¸í•œë‹¤.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 BulletRange;
 
-	// ÃÑ¾Ë ¼Óµµ
+	// ì´ì•Œ ì†ë„
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 BulletSpeed;
 	
-	// ¹ß»çÃ¼ÀÇ °ø°İ·Â.
+	// ë°œì‚¬ì²´ì˜ ê³µê²©ë ¥.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 BPower;
 	
-	// ¹ß»çÃ¼°¡ ¸ó½ºÅÍ¸¦ °üÅëÇÒÁö ¿©ºÎ. (´Ü, ¿ÀºêÁ§Æ®¿Í Ãæµ¹ÇÒ °æ¿ì ÀÌ ¿É¼Ç¿¡ ¿µÇâÀ» ¹ŞÁö ¾Ê°í ¹«Á¶°Ç ¼Ò¸êÇÑ´Ù.)
+	// ë°œì‚¬ì²´ê°€ ëª¬ìŠ¤í„°ë¥¼ ê´€í†µí• ì§€ ì—¬ë¶€. (ë‹¨, ì˜¤ë¸Œì íŠ¸ì™€ ì¶©ëŒí•  ê²½ìš° ì´ ì˜µì…˜ì— ì˜í–¥ì„ ë°›ì§€ ì•Šê³  ë¬´ì¡°ê±´ ì†Œë©¸í•œë‹¤.)
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	bool Collide;
 
-	// ¹«±â °ø°İ·Â ¾÷±×·¹ÀÌµå¸¦ ÇÒ ¶§ ¸¶´Ù ¿Ã¶ó°¡´Â °ø°İ·Â ¼öÄ¡
+	// ë¬´ê¸° ê³µê²©ë ¥ ì—…ê·¸ë ˆì´ë“œë¥¼ í•  ë•Œ ë§ˆë‹¤ ì˜¬ë¼ê°€ëŠ” ê³µê²©ë ¥ ìˆ˜ì¹˜
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 PowerUpPerLevelUp;
 
-	// ÃÖ´ë ¹«±â °ø°İ·Â ¼öÄ¡
+	// ìµœëŒ€ ë¬´ê¸° ê³µê²©ë ¥ ìˆ˜ì¹˜
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 MaxPower;
 
-	// ±âº» ÅºÃ¢ ¼ö. (ÃÊ±â¿¡ ¾òÀ¸¸é ¼³Á¤µÇ¾î ÀÖ´Â ±âº» ÃÖ´ë ÅºÃ¢ ¼ö)
+	// ê¸°ë³¸ íƒ„ì°½ ìˆ˜. (ì´ˆê¸°ì— ì–»ìœ¼ë©´ ì„¤ì •ë˜ì–´ ìˆëŠ” ê¸°ë³¸ ìµœëŒ€ íƒ„ì°½ ìˆ˜)
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 Mag;
 
-	// »óÁ¡¿¡¼­ AMMO·¹º§¾÷ ÇÒ ¶§¸¶´Ù ¿Ã¶ó°¡´Â ¹«±â ÃÖ´ë ÅºÃ¢ ¼ö.
+	// ìƒì ì—ì„œ AMMOë ˆë²¨ì—… í•  ë•Œë§ˆë‹¤ ì˜¬ë¼ê°€ëŠ” ë¬´ê¸° ìµœëŒ€ íƒ„ì°½ ìˆ˜.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 MagUpPerLevelUp;
 	
-	// ÃÖ´ë ÅºÃ¢ ¼ö. (¼ºÀåÀ¸·Î ÃÖ´ë·Î ³ôÈú ¼ö ÀÖ´Â ÃÖ´ë ÅºÃ¢ ¼ö)
+	// ìµœëŒ€ íƒ„ì°½ ìˆ˜. (ì„±ì¥ìœ¼ë¡œ ìµœëŒ€ë¡œ ë†’í ìˆ˜ ìˆëŠ” ìµœëŒ€ íƒ„ì°½ ìˆ˜)
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 MaxMag;
 
-	// ¹ß»çÃ¼°¡ ¸ó½ºÅÍ ÇÇ°İ ½Ã ±â±â¿¡ ÁÖ´Â Áøµ¿ °­µµ.
+	// ë°œì‚¬ì²´ê°€ ëª¬ìŠ¤í„° í”¼ê²© ì‹œ ê¸°ê¸°ì— ì£¼ëŠ” ì§„ë™ ê°•ë„.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 Vibration;
 
-	// Áøµ¿ÀÌ ¿ï¸®´Â ÁÖ±â(1ÃÊ¿¡ Int È¸).
+	// ì§„ë™ì´ ìš¸ë¦¬ëŠ” ì£¼ê¸°(1ì´ˆì— Int íšŒ).
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 VibrationCool;
 
-	// ¸ó½ºÅÍ ÇÇ°İ ½Ã ¸ó½ºÅÍ°¡ ÈÄ¹æÀ¸·Î ¹Ğ¸®´Â ¹üÀ§(Cm)
+	// ëª¬ìŠ¤í„° í”¼ê²© ì‹œ ëª¬ìŠ¤í„°ê°€ í›„ë°©ìœ¼ë¡œ ë°€ë¦¬ëŠ” ë²”ìœ„(Cm)
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 WPushRange;
 };
 
 //=========================================================================================
-// ½ºÅ×ÀÌÁö µ¥ÀÌÅÍ
+// ìŠ¤í…Œì´ì§€ ë°ì´í„°
 //=========================================================================================
 USTRUCT(BlueprintType)
 struct FPGStageData : public FTableRowBase
@@ -357,7 +357,7 @@ public :
 };
 
 //=========================================================================================
-// ½ºÅ³ µ¥ÀÌÅÍ
+// ìŠ¤í‚¬ ë°ì´í„°
 //=========================================================================================
 USTRUCT(BlueprintType)
 struct FPGLethalAttackData : public FTableRowBase
@@ -374,41 +374,41 @@ struct FPGLethalAttackData : public FTableRowBase
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	TSubclassOf<class APG_LethalAttack> BLethalAttack;
 
-	// ÇÊ»ì±â »ç¿ë¿¡ ÇÊ¿äÇÑ ÃÖ¼Ò ¸ó½ºÅÍ Å³ ¼öÄ¡.
+	// í•„ì‚´ê¸° ì‚¬ìš©ì— í•„ìš”í•œ ìµœì†Œ ëª¬ìŠ¤í„° í‚¬ ìˆ˜ì¹˜.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 LMinPoint;
 
-	// ÇÊ»ì±â »ç¿ë¿¡ ¾µ ¼ö ÀÖ´Â ÃÖ´ë ¸ó½ºÅÍ Å³ ¼öÄ¡.
+	// í•„ì‚´ê¸° ì‚¬ìš©ì— ì“¸ ìˆ˜ ìˆëŠ” ìµœëŒ€ ëª¬ìŠ¤í„° í‚¬ ìˆ˜ì¹˜.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 LMaxPoint;
 
-	// ÇÊ»ì±â°¡ ÆîÃÄÁú ¼ö ÀÖ´Â ÃÖ¼Ò Å¸°İ ¹üÀ§.
+	// í•„ì‚´ê¸°ê°€ í¼ì³ì§ˆ ìˆ˜ ìˆëŠ” ìµœì†Œ íƒ€ê²© ë²”ìœ„.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 LMinRange;
 
-	// ÇÊ»ì±â°¡ ÆîÃÄÁú ¼ö ÀÖ´Â ÃÖ´ë Å¸°İ ¹üÀ§.
+	// í•„ì‚´ê¸°ê°€ í¼ì³ì§ˆ ìˆ˜ ìˆëŠ” ìµœëŒ€ íƒ€ê²© ë²”ìœ„.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 LMaxRange;
 
-	// ÇÊ»ì±âÀÇ °ø°İ·Â
+	// í•„ì‚´ê¸°ì˜ ê³µê²©ë ¥
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 LPower;
 
-	// ÇÊ»ì±â È¿°úÀÇ Áö¼Ó ½Ã°£.
+	// í•„ì‚´ê¸° íš¨ê³¼ì˜ ì§€ì† ì‹œê°„.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 LEffectDuration;
 
-	// ¹ß»çÃ¼°¡ ¸ó½ºÅÍ ÇÇ°İ ½Ã ±â±â¿¡ ÁÖ´Â Áøµ¿ °­µµ.
+	// ë°œì‚¬ì²´ê°€ ëª¬ìŠ¤í„° í”¼ê²© ì‹œ ê¸°ê¸°ì— ì£¼ëŠ” ì§„ë™ ê°•ë„.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 Vibration;
 
-	// Áøµ¿ÀÌ ¿ï¸®´Â ÁÖ±â(1ÃÊ¿¡ Int È¸).
+	// ì§„ë™ì´ ìš¸ë¦¬ëŠ” ì£¼ê¸°(1ì´ˆì— Int íšŒ).
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	int32 VibrationCool;
 };
 
 //=========================================================================================
-// Weapon Shop µ¥ÀÌÅÍ
+// Weapon Shop ë°ì´í„°
 //=========================================================================================
 UENUM()
 enum class EBuyType : int32
@@ -435,37 +435,37 @@ public:
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Data")
 	struct FPGWeaponData WeaponData;
 
-	// UI¿¡ Ç¥ÇöÇÒ ¹«±â ÀÌ¹ÌÁö
+	// UIì— í‘œí˜„í•  ë¬´ê¸° ì´ë¯¸ì§€
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Image")
 	struct FSlateBrush WeaponImage;
 
-	// ¹«±â ¹ß»ç½Ã »ç¿ëµÇ´Â ¾Ö´Ï¸ŞÀÌ¼Ç
+	// ë¬´ê¸° ë°œì‚¬ì‹œ ì‚¬ìš©ë˜ëŠ” ì• ë‹ˆë©”ì´ì…˜
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG Animation")
 	class UAnimMontage* MontageFireReaction;
 
-	// ¹«±â Àá±İ ÇØÁ¦ °¡°İ
+	// ë¬´ê¸° ì ê¸ˆ í•´ì œ ê°€ê²©
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG ShopData")
 	int32 CostUnlock;
 
-	// ¹«±â °ø°İ·Â °­È­ °¡°İ
+	// ë¬´ê¸° ê³µê²©ë ¥ ê°•í™” ê°€ê²©
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG ShopData")
 	int32 CostUpgradePower;
 
-	// ¹«±â Åº¾à ¼ö Áõ°¡ °¡°İ
+	// ë¬´ê¸° íƒ„ì•½ ìˆ˜ ì¦ê°€ ê°€ê²©
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "PG ShopData")
 	int32 CostUpgradeAmmo;
 };
 
 
 //=========================================================================================
-// ±¤°í µ¥ÀÌÅÍ
+// ê´‘ê³  ë°ì´í„°
 //=========================================================================================
 UENUM()
 enum class EADType : int32
 {
-	eAT_WeaponShop = 0,		// ¹«±â°í ³» ±¤°í
-	eAT_StageClear3X,		// ½ºÅ×ÀÌÁö Å¬¸®¾î ÈÄ 3¹è º¸»ó ±¤°í
-	eAT_StagePlayAD,		// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌ ±¤°í
+	eAT_WeaponShop = 0,		// ë¬´ê¸°ê³  ë‚´ ê´‘ê³ 
+	eAT_StageClear3X,		// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ í›„ 3ë°° ë³´ìƒ ê´‘ê³ 
+	eAT_StagePlayAD,		// ìŠ¤í…Œì´ì§€ í”Œë ˆì´ ê´‘ê³ 
 	eAT_Max,
 };
 
@@ -476,19 +476,19 @@ struct FPGADTableData : public FTableRowBase
 public:
 	FPGADTableData() : Type(EADType::eAT_Max), ReViewableTime(0), TimeDeduction_MainLobby(false), TimeDeduction_StagePlay(false) { }
 
-	// ±¤°í Å¸ÀÔ
+	// ê´‘ê³  íƒ€ì…
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	EADType Type;	
 
-	// Àç½ÃÃ» Á¦ÇÑ½Ã°£
+	// ì¬ì‹œì²­ ì œí•œì‹œê°„
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	int32 ReViewableTime;
 
-	// ¸ŞÀÎ·Îºñ¿¡¼­ Àç½ÃÃ» ½Ã°£À» Â÷°¨ÇÑ´Ù.
+	// ë©”ì¸ë¡œë¹„ì—ì„œ ì¬ì‹œì²­ ì‹œê°„ì„ ì°¨ê°í•œë‹¤.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	bool TimeDeduction_MainLobby;
 
-	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌ¿¡¼­ Àç½ÃÃ» ½Ã°£À» Â÷°¨ÇÑ´Ù.
+	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´ì—ì„œ ì¬ì‹œì²­ ì‹œê°„ì„ ì°¨ê°í•œë‹¤.
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	bool TimeDeduction_StagePlay;
 };

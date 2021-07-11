@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -43,14 +43,14 @@ public :
 	//==========================================================
 	// Weapon
 	//==========================================================
-	bool EquipWeapon(int32 nWeaponTalbeIndex);		// Àåºñ ÀåÂø
-	void Fire() override;							// ¹«±â ¹ß»ç
-	float GetAttackRange();							// °ø°İ ¹üÀ§
+	bool EquipWeapon(int32 nWeaponTalbeIndex);		// ì¥ë¹„ ì¥ì°©
+	void Fire() override;							// ë¬´ê¸° ë°œì‚¬
+	float GetAttackRange();							// ê³µê²© ë²”ìœ„
 
 	//==========================================================
 	// LethalAttack
 	//==========================================================
-	bool EquipLethalAttack(int32 LethalAttackID);	// ½ºÅ³ ÀåÂø
+	bool EquipLethalAttack(int32 LethalAttackID);	// ìŠ¤í‚¬ ì¥ì°©
 	bool UnEquipLethalAttack();
 
 
@@ -58,9 +58,9 @@ public :
 	UFUNCTION()
 	virtual void OnGenerateOverlabEvent(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromWeep, const FHitResult& SweepResult);
 
-	void OnAttackedByMonster();						// ¸ó½ºÅÍ¿¡°Ô ÇÇ°İ´çÇÔ
-	void OnPlayerWorldOut();						// ¸Ê¿¡¼­ ¶³¾îÁü. (Kill Z)
-	void OnBasicAttackMonsterKill(class APG_MonChar* AMon);	// ¸ó½ºÅÍ »ç¸Á
+	void OnAttackedByMonster();						// ëª¬ìŠ¤í„°ì—ê²Œ í”¼ê²©ë‹¹í•¨
+	void OnPlayerWorldOut();						// ë§µì—ì„œ ë–¨ì–´ì§. (Kill Z)
+	void OnBasicAttackMonsterKill(class APG_MonChar* AMon);	// ëª¬ìŠ¤í„° ì‚¬ë§
 	void OnChangeWeapon(int32 nWeaponTableIndex);
 
 private :
@@ -115,13 +115,13 @@ public :
 
 private :
 	//==========================================================
-	// Animation (¾Ö´Ï¸ŞÀÌ¼Ç)
+	// Animation (ì• ë‹ˆë©”ì´ì…˜)
 	//==========================================================
 	UPROPERTY()
 	class UPG_AnimIns_MyChar* ABAnimInstance;
 
 	//==========================================================
-	// CharacterCameraTable (Ä³¸¯ÅÍ Ä«¸Ş¶ó Á¤º¸)
+	// CharacterCameraTable (ìºë¦­í„° ì¹´ë©”ë¼ ì •ë³´)
 	//==========================================================
 	float		ArmLengthTo = 0.0f;
 	FRotator	ArmRotationTo = FRotator::ZeroRotator;
@@ -145,7 +145,7 @@ private :
 	float		ScreenY;
 
 	//==========================================================
-	// CharacterMovementTable (Ä³¸¯ÅÍ ÀÌµ¿°ü·Ã Á¤º¸)
+	// CharacterMovementTable (ìºë¦­í„° ì´ë™ê´€ë ¨ ì •ë³´)
 	//==========================================================
 	FVector		DirectionToMove = FVector::ZeroVector;
 
@@ -164,13 +164,13 @@ private :
 	FRotator	TargetRotation = FRotator::ZeroRotator;
 
 	//==========================================================
-	// Weapon (¹«±â)
+	// Weapon (ë¬´ê¸°)
 	//==========================================================
 	UPROPERTY(VisibleAnywhere, Category = "PG WeaponInfo")
 	TWeakObjectPtr<class APG_Weapon> CurrentWeapon = nullptr;
 
 	//==========================================================
-	// LethalAttack (ÇÊ»ì±â)
+	// LethalAttack (í•„ì‚´ê¸°)
 	//==========================================================
 	UPROPERTY(VisibleAnywhere, Category = "PG LethalAttackInfo")
 	TWeakObjectPtr<class APG_LethalAttack> CurrentLethalAttack = nullptr;

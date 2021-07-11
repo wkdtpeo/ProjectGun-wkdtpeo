@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -19,7 +19,7 @@ protected:
 	virtual void NativeTick(const FGeometry& MyGeometry, float DeltaTime) override;
 
 public :
-	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌ ±¤°í Àç»ı °¡´ÉÇÑÁö °Ë»ç
+	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´ ê´‘ê³  ì¬ìƒ ê°€ëŠ¥í•œì§€ ê²€ì‚¬
 	UFUNCTION(BlueprintCallable)
 	bool IsAbleViewStagePlayAD();
 
@@ -37,16 +37,16 @@ public :
 	void OnBtnViewAD();
 
 	//============================================================================================
-	// ±¤°í ½ÃÃ»¿¡ ´ëÇÑ °á°ú
+	// ê´‘ê³  ì‹œì²­ì— ëŒ€í•œ ê²°ê³¼
 	//============================================================================================
 	UFUNCTION(BlueprintCallable)
-	void OnADRewardVideoSucessed();		// À¯Àú°¡ º¸»óÇü ±¤°í¸¦ ¼º°øÀûÀ¸·Î º¸¾ÒÀ½ (3¹è º¸»ó)
+	void OnADRewardVideoSucessed();		// ìœ ì €ê°€ ë³´ìƒí˜• ê´‘ê³ ë¥¼ ì„±ê³µì ìœ¼ë¡œ ë³´ì•˜ìŒ (3ë°° ë³´ìƒ)
 	UFUNCTION(BlueprintCallable)	
-	void OnADRewardVideoClosed();		// À¯Àú°¡ º¸»óÇü ±¤°í º¸´ÂÁß ´İ°Å³ª ½ÇÆĞÇÏ¿´À½	(3¹è º¸»ó)
+	void OnADRewardVideoClosed();		// ìœ ì €ê°€ ë³´ìƒí˜• ê´‘ê³  ë³´ëŠ”ì¤‘ ë‹«ê±°ë‚˜ ì‹¤íŒ¨í•˜ì˜€ìŒ	(3ë°° ë³´ìƒ)
 	UFUNCTION(BlueprintCallable)
-	void OnADPlayStageVideoSucessed();	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌÇü ±¤°í¸¦ ¼º°øÀûÀ¸·Î º¸¾ÒÀ½
+	void OnADPlayStageVideoSucessed();	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´í˜• ê´‘ê³ ë¥¼ ì„±ê³µì ìœ¼ë¡œ ë³´ì•˜ìŒ
 	UFUNCTION(BlueprintCallable)
-	void OnADPlayStageVideoClosed();	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌÇü ±¤°í¸¦ ´İ°Å³ª ½ÇÆĞÇÏ¿´À½
+	void OnADPlayStageVideoClosed();	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´í˜• ê´‘ê³ ë¥¼ ë‹«ê±°ë‚˜ ì‹¤íŒ¨í•˜ì˜€ìŒ
 	//============================================================================================
 
 	UFUNCTION()

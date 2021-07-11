@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -16,7 +16,7 @@ class PROJECT_GUN_API APG_WeaponShotgun : public APG_Weapon
 	
 	enum 
 	{
-		eMax_ShotgunProjectile = 5,	// ¼¦°Ç ¹ß»ç½Ã µ¿½Ã¿¡ ¹ß»çµÇ´Â Åº¾à °³¼ö
+		eMax_ShotgunProjectile = 5,	// ìƒ·ê±´ ë°œì‚¬ì‹œ ë™ì‹œì— ë°œì‚¬ë˜ëŠ” íƒ„ì•½ ê°œìˆ˜
 	};
 	
 public:
@@ -31,7 +31,7 @@ public:
 
 private:
 	UPROPERTY()
-	class APG_Projectile* CurrFireShutgun;		// ÇöÀç ½î°íÀÖ´Â Shutgun Projectile
+	class APG_Projectile* CurrFireShutgun;		// í˜„ì¬ ì˜ê³ ìˆëŠ” Shutgun Projectile
 
 	UFUNCTION()
 	virtual void OnFiringEffectEndParticle(UParticleSystemComponent* ParticleSystemComponent);

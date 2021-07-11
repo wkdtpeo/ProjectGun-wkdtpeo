@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Player/PlayerController/PG_PlayerController.h"
 #include "Player/PlayerState/PG_MyPlayerState.h"
@@ -140,7 +140,7 @@ void APG_PlayerController::OnStateClear()
 	auto pPlayerState = GetPlayerState<APG_MyPlayerState>();
 	ABCHECK(nullptr != pPlayerState);
 
-	// ½ºÅ×ÀÌÁö Å¬¸®¾î º¸»ó È¹µæ
+	// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ë³´ìƒ íšë“
 	int32 nRewardPoint = pPlayerState->GetOriginalPlayerData()->RewardPoint;
 	pPlayerState->SetRewardPoint(nRewardPoint + pGameModeStage->GetClearTotalPoint());
 
@@ -173,7 +173,7 @@ void APG_PlayerController::OnFire()
 
 	if (false == pPlayerState->UseAmmo())
 	{
-		// ±âº» ¹«±â·Î ¹Ù²Û´Ù.
+		// ê¸°ë³¸ ë¬´ê¸°ë¡œ ë°”ê¾¼ë‹¤.
 		pPlayerState->ChangeDefaultWeapon();
 		UserWidgetScreenPlayStage->OnChangeWeapon();
 	}

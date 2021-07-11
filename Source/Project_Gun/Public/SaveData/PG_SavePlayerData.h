@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -19,23 +19,23 @@ class PROJECT_GUN_API UPG_SavePlayerData : public USaveGame
 public :
 	UPG_SavePlayerData();
 
-	// ¸¶Áö¸·À¸·Î ÇÃ·¹ÀÌÇÑ ½ºÅ×ÀÌÁö ID
+	// ë§ˆì§€ë§‰ìœ¼ë¡œ í”Œë ˆì´í•œ ìŠ¤í…Œì´ì§€ ID
 	UPROPERTY(VisibleAnywhere, Category = "PG StageData")
 	int32 m_nLastPlayStageID;
 
-	// º¸À¯ÁßÀÎ Æ÷ÀÎÆ®
+	// ë³´ìœ ì¤‘ì¸ í¬ì¸íŠ¸
 	UPROPERTY(VisibleAnywhere, Category = "PG StageData")
 	int32 m_nRewardPoint;
 
-	// 3¹øÂ° ¹«±â ½½·Ô È®Àå ¿©ºÎ (À¯·á·Î È®Àå °¡´É)
+	// 3ë²ˆì§¸ ë¬´ê¸° ìŠ¬ë¡¯ í™•ì¥ ì—¬ë¶€ (ìœ ë£Œë¡œ í™•ì¥ ê°€ëŠ¥)
 	UPROPERTY(VisibleAnywhere, Category = "PG PlayerData")
 	bool m_bExtendWeaponSlot;
 
-	// ÇöÀç ÀåÂøÁßÀÎ ¹«±â Á¤º¸ (ÃÖ´ë 3°³), TArray<PG_MAX_WEAPON_SLOT>
+	// í˜„ì¬ ì¥ì°©ì¤‘ì¸ ë¬´ê¸° ì •ë³´ (ìµœëŒ€ 3ê°œ), TArray<PG_MAX_WEAPON_SLOT>
 	UPROPERTY(VisibleAnywhere, Category = "PG PlayerData")
 	TArray<int32> m_kEquipWeaponTableIndex;
 
-	// ±¸¸ÅÇÏ¿© ¼ÒÀ¯ÁßÀÎ ¹«±â Á¤º¸, TMap<WeaponTableIndex, FPGWeaponOwnData>
+	// êµ¬ë§¤í•˜ì—¬ ì†Œìœ ì¤‘ì¸ ë¬´ê¸° ì •ë³´, TMap<WeaponTableIndex, FPGWeaponOwnData>
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG WeaponInfo")
 	TMap<int32, struct FPGWeaponOwnData> WeaponOwnData;
 	

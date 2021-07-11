@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -33,12 +33,12 @@ public :
 	virtual int32				GetAttackRange();
 	class UAnimMontage*			GetMontageFireReaction();
 	const struct FPGWeaponData* GetWeaponData();
-	int32						GetWeaponAttackDamage();	// ÇöÀç Ä³¸¯ÅÍ ¹«±â ·¹º§ »óÅÂ¿¡ µû¸¥ ¹«±â µ¥¹ÌÁö¸¦ ¹İÈ¯ÇÑ´Ù.
+	int32						GetWeaponAttackDamage();	// í˜„ì¬ ìºë¦­í„° ë¬´ê¸° ë ˆë²¨ ìƒíƒœì— ë”°ë¥¸ ë¬´ê¸° ë°ë¯¸ì§€ë¥¼ ë°˜í™˜í•œë‹¤.
 
-	bool IsOwnerMonster();	// ¸ó½ºÅÍ ¼ÒÀ¯¿©ºÎ
-	bool IsOwnerMyPlayer();	// ÇÃ·¹ÀÌ¾î ¼ÒÀ¯¿©ºÎ
+	bool IsOwnerMonster();	// ëª¬ìŠ¤í„° ì†Œìœ ì—¬ë¶€
+	bool IsOwnerMyPlayer();	// í”Œë ˆì´ì–´ ì†Œìœ ì—¬ë¶€
 
-	// ¹ß»ç Ã³¸®
+	// ë°œì‚¬ ì²˜ë¦¬
 	UFUNCTION()
 	virtual void Fire();
 
@@ -55,14 +55,14 @@ protected :
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG WeaponInfo", Meta = (AllowPrivateAccess = true))
 	class UStaticMeshComponent* Weapon;
 
-	// ¹ß»çÃ¼°¡ »ı¼ºµÉ ¶§ ÇØ´ç À§Ä¡¿¡ »ı¼ºµÇ´Â ÀÌÆåÆ®(¹ß»ç ÃÑ±¸ ÀÌÆåÆ®).
+	// ë°œì‚¬ì²´ê°€ ìƒì„±ë  ë•Œ í•´ë‹¹ ìœ„ì¹˜ì— ìƒì„±ë˜ëŠ” ì´í™íŠ¸(ë°œì‚¬ ì´êµ¬ ì´í™íŠ¸).
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG WeaponInfo", Meta = (AllowPrivateAccess = true))
 	class UParticleSystemComponent*	FiringEffect;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG WeaponInfo", Meta = (AllowPrivateAccess = true))
 	class UAudioComponent* FireSound;
 
-	// ¹«±â ¹ß»ç½Ã »ç¿ëµÇ´Â ¾Ö´Ï¸ŞÀÌ¼Ç
+	// ë¬´ê¸° ë°œì‚¬ì‹œ ì‚¬ìš©ë˜ëŠ” ì• ë‹ˆë©”ì´ì…˜
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG WeaponInfo", Meta = (AllowPrivateAccess = true))
 	class UAnimMontage* MontageFireReaction;
 };

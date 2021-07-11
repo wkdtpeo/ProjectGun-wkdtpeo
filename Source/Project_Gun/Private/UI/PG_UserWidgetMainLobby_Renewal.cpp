@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "UI/PG_UserWidgetMainLobby_Renewal.h"
@@ -55,7 +55,7 @@ void UPG_UserWidgetMainLobby_Renewal::NativeConstruct()
 	PG_CONNECT_WIDGET(UCanvasPanel, CanvasGameStart);
 
 	//===========================================
-	// Canvas WeaponBox (¹«±â ½½·Ô)
+	// Canvas WeaponBox (ë¬´ê¸° ìŠ¬ë¡¯)
 	//===========================================
 	PG_CONNECT_WIDGET_TArray(UPG_UserWidgetWeaponBox, WB_WeaponBox, eMaxWeaponSlot);
 
@@ -75,7 +75,7 @@ void UPG_UserWidgetMainLobby_Renewal::NativeConstruct()
 	//===========================================
 
 	//===========================================
-	// Canvas WeaponInventory (¹«±â ÀÎº¥Åä¸®)
+	// Canvas WeaponInventory (ë¬´ê¸° ì¸ë²¤í† ë¦¬)
 	//===========================================
 	PG_CONNECT_WIDGET(UScaleBox, ScaleWeaponInventory);
 	PG_CONNECT_WIDGET(UPG_UserWidgetWeaponInventory, WB_WeaponInventory);
@@ -104,7 +104,7 @@ void UPG_UserWidgetMainLobby_Renewal::UpdateLayoutStage()
 	bool bIsFirstPlayNextStage = pGameModeMainLobby->IsFirstPlayStage(nSelectedStageID + 1);
 	bool bIsFirstPlayPrevStage = pGameModeMainLobby->IsFirstPlayStage(nSelectedStageID - 1);
 
-	// Ã³À½ ÇÃ·¹ÀÌ ÇÏ´Â °æ¿ì
+	// ì²˜ìŒ í”Œë ˆì´ í•˜ëŠ” ê²½ìš°
 	if (bIsFirstPlayCurrStage)
 	{
 		if (1 == nSelectedStageID || false == bIsFirstPlayPrevStage)
@@ -112,7 +112,7 @@ void UPG_UserWidgetMainLobby_Renewal::UpdateLayoutStage()
 			m_pkCanvasSelectStageLock->SetVisibility(ESlateVisibility::Hidden);
 			m_pkCanvasGameStart->SetIsEnabled(true);
 		}
-		// ´ÙÀ½ ½ºÅ×ÀÌÁö ÁøÇà ¾ÈÇßÀ½
+		// ë‹¤ìŒ ìŠ¤í…Œì´ì§€ ì§„í–‰ ì•ˆí–ˆìŒ
 		else if (bIsFirstPlayNextStage)
 		{
 			m_pkCanvasSelectStageLock->SetVisibility(ESlateVisibility::HitTestInvisible);
@@ -237,11 +237,11 @@ void UPG_UserWidgetMainLobby_Renewal::OnOpenWeaponInventory(int32 nSlotIndex)
 {
 	ABCHECK(nullptr != m_pkWB_WeaponInventory);
 
-	// Ã¹¹øÂ° ÀÎº¥Åä¸®´Â ±âº» ¶óÀÌÇÃ ¹«±â¸¦ »ç¿ëÇØ¾ß ÇÏ¹Ç·Î ¼öÁ¤ ¸øÇÏµµ·Ï ÇÑ´Ù. 
+	// ì²«ë²ˆì§¸ ì¸ë²¤í† ë¦¬ëŠ” ê¸°ë³¸ ë¼ì´í”Œ ë¬´ê¸°ë¥¼ ì‚¬ìš©í•´ì•¼ í•˜ë¯€ë¡œ ìˆ˜ì • ëª»í•˜ë„ë¡ í•œë‹¤. 
 	if (0 == nSlotIndex)
 		return;
 
-	// ÀÎº¥Åä¸® Ã¢À» ¿¬´Ù.
+	// ì¸ë²¤í† ë¦¬ ì°½ì„ ì—°ë‹¤.
 	m_pkScaleWeaponInventory->SetVisibility(ESlateVisibility::Visible);
 	m_pkWB_WeaponInventory->SetOpenSlotIndex(nSlotIndex);
 	m_pkWB_WeaponInventory->SetVisibility(ESlateVisibility::Visible);
@@ -254,7 +254,7 @@ void UPG_UserWidgetMainLobby_Renewal::OnCloseWeaponInventory(int32 nSlotIndex, i
 {
 	ABCHECK(nullptr != m_pkWB_WeaponInventory);
 
-	// ÀÎº¥Åä¸® Ã¢ÀÌ ´ÝÈû
+	// ì¸ë²¤í† ë¦¬ ì°½ì´ ë‹«íž˜
 	m_pkScaleWeaponInventory->SetVisibility(ESlateVisibility::Hidden);
 	m_pkWB_WeaponBox[nSlotIndex]->SetEnableLightBox(false);
 	if (PG_INVALID_INDEX != nWeaponIndex)
@@ -271,7 +271,7 @@ void UPG_UserWidgetMainLobby_Renewal::OnDoNotChangeCloseWeaponInventory()
 {
 	ABCHECK(nullptr != m_pkWB_WeaponInventory);
 
-	// ÀÎº¥Åä¸® Ã¢ÀÌ ´ÝÈû
+	// ì¸ë²¤í† ë¦¬ ì°½ì´ ë‹«íž˜
 	m_pkScaleWeaponInventory->SetVisibility(ESlateVisibility::Hidden);
 	m_pkWB_WeaponInventory->SetVisibility(ESlateVisibility::Hidden);
 

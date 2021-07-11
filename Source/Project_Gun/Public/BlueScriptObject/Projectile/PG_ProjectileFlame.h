@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -37,7 +37,7 @@ protected:
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG ProjectileData", Meta = (AllowPrivateAccess = true))
-	UStaticMeshComponent*	CollisionMeshComponent;	// È­¿° ¹æ»ç½Ã Ãæµ¹ Ã¼Å©¸¦ À§ÇÑ Static Mesh
+	UStaticMeshComponent*	CollisionMeshComponent;	// í™”ì—¼ ë°©ì‚¬ì‹œ ì¶©ëŒ ì²´í¬ë¥¼ ìœ„í•œ Static Mesh
 
 	float m_fScaleTime = 0.0f;
 };

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Weapon/PG_WeaponRifle.h"
 #include "BlueScriptObject/Projectile/PG_Projectile.h"
@@ -24,7 +24,7 @@ void APG_WeaponRifle::PostInitializeComponents()
 void APG_WeaponRifle::Fire()
 {
 	FName SocketFire(TEXT("Socket_Fire_0"));
-	// ÇÁ·ÎÁ§Å¸ÀÏ ¹ß»ç¸¦ ½ÃµµÇÕ´Ï´Ù.
+	// í”„ë¡œì íƒ€ì¼ ë°œì‚¬ë¥¼ ì‹œë„í•©ë‹ˆë‹¤.
 	FVector		vLocation = Weapon->GetSocketLocation(SocketFire);
 	FRotator	rRotation = Weapon->GetSocketRotation(SocketFire);
 	UWorld*		World = GetWorld();
@@ -34,14 +34,14 @@ void APG_WeaponRifle::Fire()
 		SpawnParams.Owner = this;
 		SpawnParams.Instigator = GetInstigator();
 
-		// ÃÑ±¸ À§Ä¡¿¡ ¹ß»çÃ¼¸¦ ½ºÆù½ÃÅµ´Ï´Ù.		
+		// ì´êµ¬ ìœ„ì¹˜ì— ë°œì‚¬ì²´ë¥¼ ìŠ¤í°ì‹œí‚µë‹ˆë‹¤.		
 		auto Projectile = World->SpawnActor<APG_Projectile>(WeaponData.BProjectile, vLocation, rRotation, SpawnParams);
 		if (Projectile)
 		{
-			// ¹ß»ç ¹æÇâÀ» ¾Ë¾Æ³À´Ï´Ù.
+			// ë°œì‚¬ ë°©í–¥ì„ ì•Œì•„ëƒ…ë‹ˆë‹¤.
 			FVector LaunchDirection = rRotation.Vector();
 
-			// ¸ó½ºÅÍ°¡ »ç¿ëÇÏ´Â ¹«±â ¿©ºÎ
+			// ëª¬ìŠ¤í„°ê°€ ì‚¬ìš©í•˜ëŠ” ë¬´ê¸° ì—¬ë¶€
 			bool bMonsterWeapon = (nullptr != Cast<APG_MonChar>(GetOwner()));
 
 			Projectile->FireInDirection(GetWeaponData(), LaunchDirection, bMonsterWeapon);

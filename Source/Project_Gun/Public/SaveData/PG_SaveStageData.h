@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -21,7 +21,7 @@ public :
 	UPROPERTY(VisibleAnyWhere, Category = "PG StageSaveData")
 	int32 m_nStageID = 0;
 
-	// ¸ñÇ¥·Î ¼³Á¤µÈ ¸ó½ºÅÍ Á¦°Å
+	// ëª©í‘œë¡œ ì„¤ì •ëœ ëª¬ìŠ¤í„° ì œê±°
 	UPROPERTY(VisibleAnyWhere, Category = "PG StageSaveData")
 	struct FPGStagePlayData m_kStagePlayData;
 

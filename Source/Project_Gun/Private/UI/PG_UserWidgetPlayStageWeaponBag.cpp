@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "UI/PG_UserWidgetPlayStageWeaponBag.h"
@@ -77,7 +77,7 @@ void UPG_UserWidgetPlayStageWeaponBag::OnBtnWeaponSlotClicked(int32 nSlotIndex)
 	auto pMyPlayerState = Cast<APG_MyPlayerState>(GetWorld()->GetFirstPlayerController()->PlayerState);
 	ABCHECK(nullptr != pMyPlayerState);
 
-	// ¹«±â º¯°æ
+	// ë¬´ê¸° ë³€ê²½
 	ABCHECK(pMyPlayerState->ChangeWeapon(nSlotIndex, m_pkWB_WeaponSlot[nSlotIndex]->GetWeaponIndex()));
 
 	SetEnableLightBox(nSlotIndex);

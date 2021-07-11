@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Game/GameMode/PG_GameModeBase.h"
 #include "Game/GameInstance/PG_GameInstance.h"
@@ -102,7 +102,7 @@ bool APG_GameModeBase::IsMaxLevelPower(int32 a_nWeaponIndex)
 	auto pWeaponTableData = pGameInstance->GetWeaponTableData(a_nWeaponIndex);
 	ABCHECK(nullptr != pWeaponTableData, false);
 
-	// Max Level üũ
+	// Max Level 체크
 	int32 nPower = m_pSavePlayerData->WeaponOwnData[a_nWeaponIndex].PowerLevel * pWeaponTableData->WeaponData.PowerUpPerLevelUp;
 	return (nPower >= pWeaponTableData->WeaponData.MaxPower);
 }
@@ -120,7 +120,7 @@ bool APG_GameModeBase::IsMaxLevelAmmo(int32 a_nWeaponIndex)
 	auto pWeaponTableData = pGameInstance->GetWeaponTableData(a_nWeaponIndex);
 	ABCHECK(nullptr != pWeaponTableData, false);
 
-	// Max Level üũ
+	// Max Level 체크
 	int32 nMag = m_pSavePlayerData->WeaponOwnData[a_nWeaponIndex].MagLevel * pWeaponTableData->WeaponData.MagUpPerLevelUp;
 	return (nMag >= pWeaponTableData->WeaponData.MaxMag);
 }
@@ -245,7 +245,7 @@ bool APG_GameModeBase::BuyPowerUp(int32 a_nWeaponIndex)
 		return false;
 	}
 
-	// Max Level üũ
+	// Max Level 체크
 	if (IsMaxLevelPower(a_nWeaponIndex))
 	{
 		m_kLastBuyErrorMsg = TEXT("Max Level");
@@ -300,7 +300,7 @@ bool APG_GameModeBase::BuyAmmoUp(int32 a_nWeaponIndex)
 		return false;
 	}
 
-	// Max Level üũ
+	// Max Level 체크
 	if (IsMaxLevelAmmo(a_nWeaponIndex))
 	{
 		m_kLastBuyErrorMsg = TEXT("Max Level");

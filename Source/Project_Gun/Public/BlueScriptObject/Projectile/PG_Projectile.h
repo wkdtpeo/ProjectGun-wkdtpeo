@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -22,14 +22,14 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;	// Called every frame
 
-	// ¹ß»çÃ¼ÀÇ ¼Óµµ¸¦ ¹ß»ç ¹æÇâÀ¸·Î ÃÊ±âÈ­½ÃÅµ´Ï´Ù.
+	// ë°œì‚¬ì²´ì˜ ì†ë„ë¥¼ ë°œì‚¬ ë°©í–¥ìœ¼ë¡œ ì´ˆê¸°í™”ì‹œí‚µë‹ˆë‹¤.
 	virtual void FireInDirection(const struct FPGWeaponData* pWeaponData, const FVector& ShootDirection, bool bMonsterWeapon = false);
 
 protected:
-	bool IsEndBulletRange();	// ¹ß»çÃ¼°¡ µµ´ŞÇÏ´Â ÃÖ´ë ¹üÀ§ °Ë»ç
+	bool IsEndBulletRange();	// ë°œì‚¬ì²´ê°€ ë„ë‹¬í•˜ëŠ” ìµœëŒ€ ë²”ìœ„ ê²€ì‚¬
 	bool IsOwnerMonster();
 	bool IsOwnerMyPlayer();
-	bool IsAttackNullity(FVector vTargetPos);		// °ø°İ ¹«È¿¿©ºÎ °Ë»ç
+	bool IsAttackNullity(FVector vTargetPos);		// ê³µê²© ë¬´íš¨ì—¬ë¶€ ê²€ì‚¬
 
 protected :
 	UFUNCTION()
@@ -42,7 +42,7 @@ protected :
 	virtual void OnPlayEndParticle(UParticleSystemComponent* ParticleSystemComponent);
 
 protected :
-	// ±¸Ã¼ Äİ¸®Àü ÄÄÆ÷³ÍÆ®
+	// êµ¬ì²´ ì½œë¦¬ì „ ì»´í¬ë„ŒíŠ¸
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG ProjectileData", Meta = (AllowPrivateAccess = true))
 	USphereComponent* CollisionComponent;
 

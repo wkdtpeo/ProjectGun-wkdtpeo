@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -25,36 +25,36 @@ protected:
 public :
 	UFUNCTION(BlueprintCallable)
 	void UpdateLayoutStage();
-	// ¼±ÅÃµÈ ½ºÅ×ÀÌÁö ¹Ì¼Ç ¾÷µ¥ÀÌÆ®
+	// ì„ íƒëœ ìŠ¤í…Œì´ì§€ ë¯¸ì…˜ ì—…ë°ì´íŠ¸
 	UFUNCTION(BlueprintCallable)
 	void UpdateLayoutMission();
-	// ¹«±â ½½·Ô °»½Å
+	// ë¬´ê¸° ìŠ¬ë¡¯ ê°±ì‹ 
 	UFUNCTION(BlueprintCallable)
 	void UpdateLayoutWeaponSlot();
-	// Æ÷ÀÎÆ® °»½Å
+	// í¬ì¸íŠ¸ ê°±ì‹ 
 	UFUNCTION(BlueprintImplementableEvent)
 	void UpdateRewardPoint();
 
 public :
-	// ¿É¼Ç
+	// ì˜µì…˜
 	UFUNCTION(BlueprintCallable)
 	void OnBtnOption();
 
-	// ½ºÅ×ÀÌÁö ¼±ÅÃ
+	// ìŠ¤í…Œì´ì§€ ì„ íƒ
 	UFUNCTION(BlueprintCallable)
 	void OnBtnSelectStageNext();
 	UFUNCTION(BlueprintCallable)
 	void OnBtnSelectStagePrev();
 	
-	// °ÔÀÓ½ÃÀÛ
+	// ê²Œì„ì‹œì‘
 	UFUNCTION(BlueprintCallable)
 	void OnBtnGameStart();
 
-	// ¹«±â°í
+	// ë¬´ê¸°ê³ 
 	UFUNCTION(BlueprintCallable)
 	void OnBtnShop();
 
-	// ¹«±â ¼±ÅÃ
+	// ë¬´ê¸° ì„ íƒ
 	UFUNCTION()
 	void OnOpenWeaponInventory(int32 nSlotIndex);
 	UFUNCTION()
@@ -112,7 +112,7 @@ public:
 	PG_DECLAR_WIDGET(UPG_UserWidgetWeaponInventory, WB_WeaponInventory);
 
 public :
-	// ¹«±â°í
+	// ë¬´ê¸°ê³ 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "PG Setting WidgetClass")
 	TSubclassOf <class UPG_UserWidgetScreenShop> WB_ShopClass;
 	UPROPERTY()

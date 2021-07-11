@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -8,7 +8,7 @@
 #include "PG_GameModeStage.generated.h"
 
 /**
- * GameMode : ·¹º§´ç ÇÑ °³ÀÇ °ÔÀÓ ¸ğµå¸¦ °¡Áö¸ç °ÔÀÓÀÇ ·êÀ» Á¤ÀÇÇÑ´Ù.
+ * GameMode : ë ˆë²¨ë‹¹ í•œ ê°œì˜ ê²Œì„ ëª¨ë“œë¥¼ ê°€ì§€ë©° ê²Œì„ì˜ ë£°ì„ ì •ì˜í•œë‹¤.
  */
 UCLASS()
 class PROJECT_GUN_API APG_GameModeStage : public APG_GameModeBase
@@ -22,22 +22,22 @@ public:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 	virtual void BeginPlay() override;
 
-	// ÇöÀç °¢ Å¸ÀÔÀÇ ¹Ì¼Ç Å¬¸®¾î ¿©ºÎ
+	// í˜„ì¬ ê° íƒ€ì…ì˜ ë¯¸ì…˜ í´ë¦¬ì–´ ì—¬ë¶€
 	virtual bool IsClearMission(EStageClearType a_ekStageClearType) override;	
-	// ÀÌÀü¿¡ °¢ Å¸ÀÔÀÇ ¹Ì¼Ç Å¬¸®¾î ¿©ºÎ
+	// ì´ì „ì— ê° íƒ€ì…ì˜ ë¯¸ì…˜ í´ë¦¬ì–´ ì—¬ë¶€
 	bool IsWasClearMisiion(EStageClearType a_ekStageClearType);
-	// ½ºÅ×ÀÌÁö Å¬¸®¾î ¿©ºÎ
+	// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ì—¬ë¶€
 	bool IsStageClear();
 
-	// ÇÃ·¹ÀÌÁßÀÎ ½ºÅ×ÀÌÁö ID
+	// í”Œë ˆì´ì¤‘ì¸ ìŠ¤í…Œì´ì§€ ID
 	int32 GetPlayStageID();
-	// È¹µæÇÑ Æ÷ÀÎÆ® (ÃÑÇÕ : ½ºÅ×ÀÌÁö Å¬¸®¾î + ¹Ì¼Ç Å¬¸®¾î + ¸ó½ºÅÍ Ã³Ä¡ + ±¤°í)
+	// íšë“í•œ í¬ì¸íŠ¸ (ì´í•© : ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ + ë¯¸ì…˜ í´ë¦¬ì–´ + ëª¬ìŠ¤í„° ì²˜ì¹˜ + ê´‘ê³ )
 	int32 GetClearTotalPoint();
-	// ½ºÅ×ÀÌÁö Å¬¸®¾î Æ÷ÀÎÆ®
+	// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ í¬ì¸íŠ¸
 	int32 GetClearStagePoint();
-	// ¹Ì¼Ç Å¬¸®¾î Æ÷ÀÎÆ®
+	// ë¯¸ì…˜ í´ë¦¬ì–´ í¬ì¸íŠ¸
 	int32 GetClearMissionPoint();
-	// ¸ó½ºÅÍ Ã³Ä¡ Æ÷ÀÎÆ®
+	// ëª¬ìŠ¤í„° ì²˜ì¹˜ í¬ì¸íŠ¸
 	int32 GetClearMonsterKillPoint();
 
 	//===================================================
@@ -48,12 +48,12 @@ public:
 
 public:
 	//============================================
-	// ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ (Player)
+	// í”Œë ˆì´ì–´ ë°ì´í„° (Player)
 	//============================================
 	bool SetSavePlayerData(const struct FPGPlayerData& a_rkPlayerData);
 
 	//============================================
-	// ½ºÅ×ÀÌÁö µ¥ÀÌÅÍ (Stage)
+	// ìŠ¤í…Œì´ì§€ ë°ì´í„° (Stage)
 	//============================================
 	bool SetSaveStageData(const struct FPGStagePlayData& a_rkStagePlayData);
 

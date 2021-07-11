@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Character/PG_MonCharSkillType.h"
 #include "Character/PG_MonChar.h"
@@ -46,8 +46,8 @@ void APG_MonCharSkillType::BeginPlay()
 		m_bEquipWeapon = WeaponComponent->IsEquipWeapon();
 		if (m_bEquipWeapon)
 		{
-			// ½ºÅ×ÀÌÁö ½ÃÀÛ½Ã ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍ »çÁ¤±Ç¿¡ ÀÖÀ¸¸é ¹Ù·Î ÃÑ¾ËÀÌ ³¯¾Æ°¡¹ö¸®¹Ç·Î,
-			// ³­ÀÌµµ ¹ë·±½º¸¦ À§ÇØ ½ÃÀÛ½Ã ½ºÅ³ ÄðÅ¸ÀÓÀ» ¹Ù·Î Àû¿ëÇÑ´Ù.
+			// ìŠ¤í…Œì´ì§€ ì‹œìž‘ì‹œ í”Œë ˆì´ì–´ê°€ ëª¬ìŠ¤í„° ì‚¬ì •ê¶Œì— ìžˆìœ¼ë©´ ë°”ë¡œ ì´ì•Œì´ ë‚ ì•„ê°€ë²„ë¦¬ë¯€ë¡œ,
+			// ë‚œì´ë„ ë°¸ëŸ°ìŠ¤ë¥¼ ìœ„í•´ ì‹œìž‘ì‹œ ìŠ¤í‚¬ ì¿¨íƒ€ìž„ì„ ë°”ë¡œ ì ìš©í•œë‹¤.
 			m_bCanWeaponFire = false;
 			GetWorldTimerManager().SetTimer(HandleWeaponCoolTime, this, &APG_MonCharSkillType::OnEndWeaponFireCoolTime, MonsterSkillTypeData.MWeaponCoolTime, false, MonsterSkillTypeData.MWeaponCoolTime);
 		}
@@ -59,8 +59,8 @@ void APG_MonCharSkillType::BeginPlay()
 		if (m_bEquipDash)
 		{
 			DashComponent->OnDashEnd.AddUObject(this, &APG_MonCharSkillType::OnEndDash);
-			// ½ºÅ×ÀÌÁö ½ÃÀÛ½Ã ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍ »çÁ¤±Ç¿¡ ÀÖÀ¸¸é ¹Ù·Î ¸ó½ºÅÍ°¡ ´ë½ÃÇÏ¹Ç·Î,
-			// ³­ÀÌµµ ¹ë·±½º¸¦ À§ÇØ ½ÃÀÛ½Ã ½ºÅ³ ÄðÅ¸ÀÓÀ» ¹Ù·Î Àû¿ëÇÑ´Ù.
+			// ìŠ¤í…Œì´ì§€ ì‹œìž‘ì‹œ í”Œë ˆì´ì–´ê°€ ëª¬ìŠ¤í„° ì‚¬ì •ê¶Œì— ìžˆìœ¼ë©´ ë°”ë¡œ ëª¬ìŠ¤í„°ê°€ ëŒ€ì‹œí•˜ë¯€ë¡œ,
+			// ë‚œì´ë„ ë°¸ëŸ°ìŠ¤ë¥¼ ìœ„í•´ ì‹œìž‘ì‹œ ìŠ¤í‚¬ ì¿¨íƒ€ìž„ì„ ë°”ë¡œ ì ìš©í•œë‹¤.
 			m_bCanDash = false;
 			GetWorldTimerManager().SetTimer(HandleDashCoolTime, this, &APG_MonCharSkillType::OnEndDashCoolTime, MonsterSkillTypeData.MDashCoolTime, false, MonsterSkillTypeData.MDashCoolTime);
 		}
@@ -139,7 +139,7 @@ void APG_MonCharSkillType::UpdateDashSystem()
 		}
 	}
 
-	// Àå¾Ö¹°¿¡ ºÎµúÈ÷¸é ´ë½¬¸¦ ¸ØÃß°Ô ÇÑ´Ù.
+	// ìž¥ì• ë¬¼ì— ë¶€ë”ªížˆë©´ ëŒ€ì‰¬ë¥¼ ë©ˆì¶”ê²Œ í•œë‹¤.
 	if (DashComponent->IsDash() && m_bOnHitBlocking)
 	{
 		DashComponent->StopDash();
@@ -160,8 +160,8 @@ void APG_MonCharSkillType::Dash(FVector vTarget)
 
 	if (false == DashComponent->IsDash())
 	{
-		// ¸ó½ºÅÍ AI ÀÌµ¿À» Á¤Áö½ÃÅ°°í ´ë½¬ ÀÌµ¿ ¹æÇâÀ» vTargetÀ¸·Î ¼³Á¤ÇÑ ÈÄ
-		// MonsterSkillTypeData.MDashReadyTime ¸¸Å­ ´ë±âÇÏ¿´´Ù°¡ ´ë½¬ÇÑ´Ù.
+		// ëª¬ìŠ¤í„° AI ì´ë™ì„ ì •ì§€ì‹œí‚¤ê³  ëŒ€ì‰¬ ì´ë™ ë°©í–¥ì„ vTargetìœ¼ë¡œ ì„¤ì •í•œ í›„
+		// MonsterSkillTypeData.MDashReadyTime ë§Œí¼ ëŒ€ê¸°í•˜ì˜€ë‹¤ê°€ ëŒ€ì‰¬í•œë‹¤.
 		if (DashComponent->SetupDashData(vTarget, MonsterSkillTypeData.MDashMoveDistance, MonsterSkillTypeData.MDashSpeed))
 		{
 			m_bDoNotRotation = true;
@@ -196,7 +196,7 @@ bool APG_MonCharSkillType::IsPossibleToDivision()
 	if (0 >= MonsterSkillTypeData.MRemainDivisionCount || 0 >= MonsterSkillTypeData.MDivisionCount)
 		return false;
 
-	// ºÐ¿­ ´ë¿ª
+	// ë¶„ì—´ ëŒ€ì—­
 	float fPossibleToDivions_HPRatio = (1.0f / (MonsterSkillTypeData.MDivisionCount + 1)) * MonsterSkillTypeData.MRemainDivisionCount;
 	return (GetHPRatio() < fPossibleToDivions_HPRatio);
 }
@@ -271,7 +271,7 @@ void APG_MonCharSkillType::OnStartDash()
 	DashComponent->StartDash();
 	PreviewMeshComponent->SetVisibility(false);
 
-	// ÀÓ½ÃÄÚµå
+	// ìž„ì‹œì½”ë“œ
 	//GetWorldTimerManager().SetTimer(HandleDashTime, this, &APG_MonCharSkillType::OnEndDash, 1.0f, false, 1.0f);
 }
 

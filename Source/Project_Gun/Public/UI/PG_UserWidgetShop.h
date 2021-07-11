@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -16,9 +16,9 @@ class PROJECT_GUN_API UPG_UserWidgetShop : public UUserWidget
 	
 	enum
 	{	
-		// »ç¿ëÇÏÁö ¾Êµµ·Ï °³¼± ¿¹Á¤
-		eMaxLethalShopItemSlot = 3,		// ÇÊ»ì±â 
-		eMaxWeaponShopItemSlot = 5,		// ¹«±â
+		// ì‚¬ìš©í•˜ì§€ ì•Šë„ë¡ ê°œì„  ì˜ˆì •
+		eMaxLethalShopItemSlot = 3,		// í•„ì‚´ê¸° 
+		eMaxWeaponShopItemSlot = 5,		// ë¬´ê¸°
 	};
 	
 protected:
@@ -38,12 +38,12 @@ public :
 
 public :
 	//============================================================================================
-	// ±¤°í ½ÃÃ»¿¡ ´ëÇÑ °á°ú
+	// ê´‘ê³  ì‹œì²­ì— ëŒ€í•œ ê²°ê³¼
 	//============================================================================================
 	UFUNCTION(BlueprintCallable)
-	void OnADRewardVideoSucessed();		// À¯Àú°¡ º¸»óÇü ±¤°í¸¦ ¼º°øÀûÀ¸·Î º¸¾ÒÀ½
+	void OnADRewardVideoSucessed();		// ìœ ì €ê°€ ë³´ìƒí˜• ê´‘ê³ ë¥¼ ì„±ê³µì ìœ¼ë¡œ ë³´ì•˜ìŒ
 	UFUNCTION(BlueprintCallable)
-	void OnADRewardVideoClosed();		// À¯Àú°¡ º¸»óÇü ±¤°í º¸´ÂÁß ´İ°Å³ª ½ÇÆĞÇÏ¿´À½
+	void OnADRewardVideoClosed();		// ìœ ì €ê°€ ë³´ìƒí˜• ê´‘ê³  ë³´ëŠ”ì¤‘ ë‹«ê±°ë‚˜ ì‹¤íŒ¨í•˜ì˜€ìŒ
 	//============================================================================================
 
 	UPROPERTY()

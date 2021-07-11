@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/LethalAttack/PG_LethalAttack.h"
 #include "Player/PlayerState/PG_MyPlayerState.h"
@@ -115,10 +115,10 @@ bool APG_LethalAttack::IsReadyLethal()
 
 float APG_LethalAttack::GetAttackRange()
 {
-	// ÇÊ»ì±âÀÇ Å¸°İ ¹üÀ§´Â ÇÊ»ì±â°¡ °¡Áö°í ÀÖ´Â "ÇÊ»ì±â ÃÖ´ë ¹üÀ§(LMaxRange)"¸¦ ÇÊ»ì±âÀÇ "ÇÊ»ì±â ÃÖ´ë Å³(LMaxPoint)"·Î ³ª´« µÚ 
-	// ÇÃ·¹ÀÌ¾îÀÇ "ÇÊ»ì±â ÇöÀç ¼öÄ¡(LethalPoint)"¸¦ °öÇØÁØ´Ù.
-	// Ex) StrongWindAttack ÇÊ»ì±â(LmaxRange: 300, LMaxPoint: 100)¸¦ »ç¿ëÇÒ ¶§, 
-	// ÇÃ·¹ÀÌ¾îÀÇ "ÇÊ»ì±â ÇöÀç ¼öÄ¡(LethalPoint)"°¡ 60ÀÌ¸é ÇØ´ç ÇÊ»ì±â°¡ °¡µ¿µÉ¶§ ¹üÀ§´Â 180ÀÌ´Ù. 
+	// í•„ì‚´ê¸°ì˜ íƒ€ê²© ë²”ìœ„ëŠ” í•„ì‚´ê¸°ê°€ ê°€ì§€ê³  ìˆëŠ” "í•„ì‚´ê¸° ìµœëŒ€ ë²”ìœ„(LMaxRange)"ë¥¼ í•„ì‚´ê¸°ì˜ "í•„ì‚´ê¸° ìµœëŒ€ í‚¬(LMaxPoint)"ë¡œ ë‚˜ëˆˆ ë’¤ 
+	// í”Œë ˆì´ì–´ì˜ "í•„ì‚´ê¸° í˜„ì¬ ìˆ˜ì¹˜(LethalPoint)"ë¥¼ ê³±í•´ì¤€ë‹¤.
+	// Ex) StrongWindAttack í•„ì‚´ê¸°(LmaxRange: 300, LMaxPoint: 100)ë¥¼ ì‚¬ìš©í•  ë•Œ, 
+	// í”Œë ˆì´ì–´ì˜ "í•„ì‚´ê¸° í˜„ì¬ ìˆ˜ì¹˜(LethalPoint)"ê°€ 60ì´ë©´ í•´ë‹¹ í•„ì‚´ê¸°ê°€ ê°€ë™ë ë•Œ ë²”ìœ„ëŠ” 180ì´ë‹¤. 
 	return (float)(LethalAttackData.LMaxRange / LethalAttackData.LMaxPoint) * (float)LethalPoint;
 }
 

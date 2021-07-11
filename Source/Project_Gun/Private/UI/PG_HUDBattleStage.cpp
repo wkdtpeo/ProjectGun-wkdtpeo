@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_HUDBattleStage.h"
 #include "Game/GameState/PG_GameStateStage.h"

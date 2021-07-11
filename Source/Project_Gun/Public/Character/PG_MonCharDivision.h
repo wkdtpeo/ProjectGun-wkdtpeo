@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -21,10 +21,10 @@ public:
 	virtual void PostInitializeComponents() override;
 
 public:
-	bool	IsPossibleToDivision();				// ºĞÇÒ °¡´ÉÇÑÁö °Ë»ç
-	bool	IsDivisionChild();					// ÀÚ½Ä ¿©ºÎ È®ÀÎ
+	bool	IsPossibleToDivision();				// ë¶„í•  ê°€ëŠ¥í•œì§€ ê²€ì‚¬
+	bool	IsDivisionChild();					// ìì‹ ì—¬ë¶€ í™•ì¸
 
-	int32	GetDivisionCountToHPRatio();		// ÇöÀç ¸ó½ºÅÍÀÇ ³²Àº Ã¼·Â ±âÁØ, ºĞÇÒ ÇÒ ¼ö ÀÖ´Â È½¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	int32	GetDivisionCountToHPRatio();		// í˜„ì¬ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ ì²´ë ¥ ê¸°ì¤€, ë¶„í•  í•  ìˆ˜ ìˆëŠ” íšŸìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	const FPGMonsterData_Division* GetMonsterDataDivision() { return &MonsterDivisionData; }
 
 	void	SetMonsterDataDivision(FPGMonsterData_Division& MonsterData_Division);
@@ -32,7 +32,7 @@ public:
 public:
 	virtual bool OnDamage(int32 nDamage, bool IsUseLetharAttack = false) override;
 
-	// ½ºÆùµÇ¸é »ı¼ºµÈ ¸ó½ºÅÍ ¾×ÅÍ°¡ È£ÃâµÈ´Ù.
+	// ìŠ¤í°ë˜ë©´ ìƒì„±ëœ ëª¬ìŠ¤í„° ì•¡í„°ê°€ í˜¸ì¶œëœë‹¤.
 	void OnSpawnActor(APG_MonCharDivision* ASpawnActor);
 
 protected :
@@ -43,5 +43,5 @@ protected :
 	struct FPGMonsterData_Division MonsterDivisionData;
 	
 	UPROPERTY()
-	bool bIsDivisionChild;	// ºĞÈ­Çü ¸ó½ºÅÍÀÇ ÀÚ½Ä ¿©ºÎ
+	bool bIsDivisionChild;	// ë¶„í™”í˜• ëª¬ìŠ¤í„°ì˜ ìì‹ ì—¬ë¶€
 };

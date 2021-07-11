@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "UI/PG_UserWidgetScreenShop.h"
@@ -100,7 +100,7 @@ void UPG_UserWidgetScreenShop::UpdateLethalShopLayout()
 	{
 		if (ShopSkillSlot)
 		{
-			// ÇöÀç ½ºÅ³Àº ÇÑ°³¸¸ ±¸ÇöµÇ¾î ÀÖÀ¸¹Ç·Î ÀÓ½Ã·Î Ã¹¹øÂ° ½ºÅ³ ½½·Ô¸¸ º¸¿©ÁÖ°Ô ÇÑ´Ù.
+			// í˜„ìž¬ ìŠ¤í‚¬ì€ í•œê°œë§Œ êµ¬í˜„ë˜ì–´ ìžˆìœ¼ë¯€ë¡œ ìž„ì‹œë¡œ ì²«ë²ˆì§¸ ìŠ¤í‚¬ ìŠ¬ë¡¯ë§Œ ë³´ì—¬ì£¼ê²Œ í•œë‹¤.
 			ShopSkillSlot->SetEnable((0 == nLethalIndex));
 		}
 

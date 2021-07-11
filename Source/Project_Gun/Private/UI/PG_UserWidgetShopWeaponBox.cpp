@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetShopWeaponBox.h"
 #include "Game/GameInstance/PG_GameInstance.h"
@@ -71,14 +71,14 @@ void UPG_UserWidgetShopWeaponBox::SetWeaponIndex(class APG_GameModeBase* pGameMo
 		return;
 	}
 
-	// ¹«±â ÆÇ¸Å °¡´ÉÇÑÁö °Ë»ç
+	// ë¬´ê¸° íŒë§¤ ê°€ëŠ¥í•œì§€ ê²€ì‚¬
 	if (false == pWeaponShopData->ServiceOpen)
 	{
 		SetEnable(false);
 		return;
 	}
 
-	// ¹«±â ÀÌ¹ÌÁö ¼³Á¤
+	// ë¬´ê¸° ì´ë¯¸ì§€ ì„¤ì •
 	Btn_Weapon->WidgetStyle.SetNormal(pWeaponShopData->WeaponImage);
 	Btn_Weapon->WidgetStyle.SetHovered(pWeaponShopData->WeaponImage);
 	Btn_Weapon->WidgetStyle.SetPressed(pWeaponShopData->WeaponImage);
@@ -90,7 +90,7 @@ void UPG_UserWidgetShopWeaponBox::SetWeaponIndex(class APG_GameModeBase* pGameMo
 	IsAbleBuyPower = pGameMode->IsAbleBuyRewardPointPower(nWeaponIndex);
 	IsAbleBuyAmmo = pGameMode->IsAbleBuyRewardPointAmmo(nWeaponIndex);
 
-	// ¹«±â µ¥ÀÌÅÍ ¼³Á¤
+	// ë¬´ê¸° ë°ì´í„° ì„¤ì •
 	auto pWeaponOwnData = pPlayerSaveData->WeaponOwnData.Find(nWeaponIndex);
 	if (pWeaponOwnData)
 	{
@@ -220,7 +220,7 @@ void UPG_UserWidgetShopWeaponBox::OnBuyOK(int32 nValue)
 	auto pMyPlayerState =Cast<APG_MyPlayerState>(GetOwningPlayerState());
 	ABCHECK(nullptr != pMyPlayerState);
 
-	// ±¸¸Å ÁøÇà
+	// êµ¬ë§¤ ì§„í–‰
 	bool bBuySuccesed = false;
 	switch ((EBuyType)nValue)
 	{
@@ -230,7 +230,7 @@ void UPG_UserWidgetShopWeaponBox::OnBuyOK(int32 nValue)
 	default:		break;
 	}
 
-	// ±¸¸Å ½ÇÆÐ
+	// êµ¬ë§¤ ì‹¤íŒ¨
 	if (false == bBuySuccesed)
 	{
 		auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());

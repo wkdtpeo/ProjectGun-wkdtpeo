@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -20,9 +20,9 @@ public:
 	//virtual void UnPossess() override;
 
 	static const FName HomePosKey;
-	static const FName TargetKey;		// Ä³¸¯ÅÍ Å¸°Ù
-	static const FName DetectRangeKey;	// ¸ó½ºÅÍ°¡ Ä³¸¯ÅÍ ÀÎ½ÄÇÏ´Â °Å¸®
-	static const FName ChaseRangeKey;	// ¸ó½ºÅÍ°¡ Ä³¸¯ÅÍ ÂÑ¾Æ¿À´Â ÃÖ´ë °Å¸®
+	static const FName TargetKey;		// ìºë¦­í„° íƒ€ê²Ÿ
+	static const FName DetectRangeKey;	// ëª¬ìŠ¤í„°ê°€ ìºë¦­í„° ì¸ì‹í•˜ëŠ” ê±°ë¦¬
+	static const FName ChaseRangeKey;	// ëª¬ìŠ¤í„°ê°€ ìºë¦­í„° ì«“ì•„ì˜¤ëŠ” ìµœëŒ€ ê±°ë¦¬
 
 	virtual bool RunAI();
 	virtual void StopAI();

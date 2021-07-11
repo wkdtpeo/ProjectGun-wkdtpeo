@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -21,8 +21,8 @@ public :
 	UPG_AnimIns_MyChar();
 	virtual void NativeUpdateAnimation(float DeletaSeconds) override;
 
-	bool IsVaildTargetMonster();	// ¸ó½ºÅÍ Å¸°ÙÆÃ µÇ¾îÀÖ´ÂÁö ¿©ºÎ
-	bool IsAimingComplete();		// Á¶ÁØ¿Ï·á ¿©ºÎ
+	bool IsVaildTargetMonster();	// ëª¬ìŠ¤í„° íƒ€ê²ŸíŒ… ë˜ì–´ìˆëŠ”ì§€ ì—¬ë¶€
+	bool IsAimingComplete();		// ì¡°ì¤€ì™„ë£Œ ì—¬ë¶€
 
 	void SetRotation(float fYaw);
 	void SetMontageFireReaction(UAnimMontage* AnimMontage);
@@ -55,7 +55,7 @@ private :
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "PG Pawn", Meta = (AllowPrivateAccess = true))
 	class APG_MonChar* TargetMonster;
 
-	// ¹«±â ¹ß»ç ¸ùÅ¸ÁÖ
+	// ë¬´ê¸° ë°œì‚¬ ëª½íƒ€ì£¼
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "PG Animation", Meta = (AllowPrivateAccess = true))
 	UAnimMontage* MontageFireReaction;
 

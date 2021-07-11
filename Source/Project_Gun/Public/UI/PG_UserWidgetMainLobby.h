@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -22,15 +22,15 @@ public :
 	UFUNCTION(BlueprintCallable)
 	FString GetSelectedStageName();
 
-	// ½ºÅ×ÀÌÁö º° È¹µæ UI °»½Å
+	// ìŠ¤í…Œì´ì§€ ë³„ íšë“ UI ê°±ì‹ 
 	UFUNCTION(BlueprintCallable)
 	void UpdateClearStageLayout();
 
-	// ¹«±â ½½·Ô °»½Å
+	// ë¬´ê¸° ìŠ¬ë¡¯ ê°±ì‹ 
 	UFUNCTION(BlueprintCallable)
 	void UpdateWeaponSlotLayout();
 
-	// ÀÎº¥Åä¸® ½½·Ô ¼±ÅÃ ¾ÆÀÌÄÜ ÀÌ¹ÌÁö
+	// ì¸ë²¤í† ë¦¬ ìŠ¬ë¡¯ ì„ íƒ ì•„ì´ì½˜ ì´ë¯¸ì§€
 	UFUNCTION(BlueprintCallable)
 	void AllHideIconOpenSlot();
 	UFUNCTION(BlueprintCallable)

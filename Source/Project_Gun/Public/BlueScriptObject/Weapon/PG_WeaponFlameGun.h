@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -31,7 +31,7 @@ private :
 
 private :
 	UPROPERTY()
-	class APG_Projectile* CurrFireFlame;		// ÇöÀç È­¿° ¹æ»çÁßÀÎ Flame Projectile
+	class APG_Projectile* CurrFireFlame;		// í˜„ì¬ í™”ì—¼ ë°©ì‚¬ì¤‘ì¸ Flame Projectile
 
 	float FlameLength = 0.0f;
 };

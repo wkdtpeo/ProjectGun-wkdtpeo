@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Game/GameMode/PG_GameModeStage.h"
 #include "Player/PlayerController/PG_PlayerController.h"
@@ -78,8 +78,8 @@ bool APG_GameModeStage::IsWasClearMisiion(enum EStageClearType a_ekStageClearTyp
 
 bool APG_GameModeStage::IsStageClear()
 {
-	// ¸ğµç ¸ó½ºÅÍ¸¦ Á×¿©¾ß ½ºÅ×ÀÌÁö Å¬¸®¾î °¡´ÉÇÏ´Ù.
-	// ÇÊ»ì±â Å³¼ö³ª Á¦ÇÑ½Ã°£Àº ºÎ¼öÀûÀÎ ½ºÅ×ÀÌÁö Å¬¸®¾î Á¶°ÇÀÌ±â ¶§¹®¿¡ °Ë»çÇÏÁö ¾Ê´Â´Ù.
+	// ëª¨ë“  ëª¬ìŠ¤í„°ë¥¼ ì£½ì—¬ì•¼ ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ê°€ëŠ¥í•˜ë‹¤.
+	// í•„ì‚´ê¸° í‚¬ìˆ˜ë‚˜ ì œí•œì‹œê°„ì€ ë¶€ìˆ˜ì ì¸ ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ì¡°ê±´ì´ê¸° ë•Œë¬¸ì— ê²€ì‚¬í•˜ì§€ ì•ŠëŠ”ë‹¤.
 	return IsClearMission(EStageClearType::eSCT_AmountKill);
 }
 
@@ -95,16 +95,16 @@ int32 APG_GameModeStage::GetClearTotalPoint()
 	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	ABCHECK(nullptr != pGameStateStage, 0);
 
-	// ½ºÅ×ÀÌÁö Å¬¸®¾î Æ÷ÀÎÆ®
+	// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ í¬ì¸íŠ¸
 	nTotalReward += GetClearStagePoint();
 	
-	// ½ºÅ×ÀÌÁö ¹Ì¼Ç Æ÷ÀÎÆ®
+	// ìŠ¤í…Œì´ì§€ ë¯¸ì…˜ í¬ì¸íŠ¸
 	nTotalReward += GetClearMissionPoint();
 
-	// ¸ó½ºÅÍ Ã³Ä¡ Æ÷ÀÎÆ®
+	// ëª¬ìŠ¤í„° ì²˜ì¹˜ í¬ì¸íŠ¸
 	nTotalReward += GetClearMonsterKillPoint();
 
-	// ±¤°í º¸»ó Æ÷ÀÎÆ®
+	// ê´‘ê³  ë³´ìƒ í¬ì¸íŠ¸
 	if (pGameStateStage->IsViewAD())
 		nTotalReward = nTotalReward * PG_ADVIEW_REWARD;
 

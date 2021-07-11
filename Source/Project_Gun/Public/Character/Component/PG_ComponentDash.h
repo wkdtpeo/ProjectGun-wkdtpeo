@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -25,13 +25,13 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	//====================================================================
-	// vDashTargetPos : ´ë½¬ ÇÒ Å¸°ÙÀÇ À§Ä¡
-	// fRunTime : ´ë½¬ ÃÖÁ¾ ¸ñÇ¥ÁöÁ¡±îÁö ÀÌµ¿½Ã°£
+	// vDashTargetPos : ëŒ€ì‰¬ í•  íƒ€ê²Ÿì˜ ìœ„ì¹˜
+	// fRunTime : ëŒ€ì‰¬ ìµœì¢… ëª©í‘œì§€ì ê¹Œì§€ ì´ë™ì‹œê°„
 	//====================================================================
 	bool SetupDashData(FVector vDashTargetPos, float fMoveDistance, float fDashSpeed);
 
 	//====================================================================
-	// StartDash() ÇÔ¼ö ÀÌ¿ëÀü ¹İµå½Ã SetupDashData() ÇÔ¼ö·Î µ¥ÀÌÅÍ ¼³Á¤ ÈÄ »ç¿ëÇÒ °Í
+	// StartDash() í•¨ìˆ˜ ì´ìš©ì „ ë°˜ë“œì‹œ SetupDashData() í•¨ìˆ˜ë¡œ ë°ì´í„° ì„¤ì • í›„ ì‚¬ìš©í•  ê²ƒ
 	//====================================================================
 	void StartDash();
 	void StopDash();
@@ -44,8 +44,8 @@ private :
 	void UpdateDashLocation(float fDeltaTime);
 
 private :
-	bool	m_bActiveDash = false;				// ´ë½¬Áß ¿©ºÎ
+	bool	m_bActiveDash = false;				// ëŒ€ì‰¬ì¤‘ ì—¬ë¶€
 	float	m_fDashSpeed = 0.0f;
-	FVector m_vDashDir = FVector::ZeroVector;	// ´ë½¬¹æÇâ (Nomalize)
-	FVector m_vGoalPos = FVector::ZeroVector;	// ÃÖÁ¾ ÀÌµ¿ ¸ñÇ¥ÁöÁ¡
+	FVector m_vDashDir = FVector::ZeroVector;	// ëŒ€ì‰¬ë°©í–¥ (Nomalize)
+	FVector m_vGoalPos = FVector::ZeroVector;	// ìµœì¢… ì´ë™ ëª©í‘œì§€ì 
 };

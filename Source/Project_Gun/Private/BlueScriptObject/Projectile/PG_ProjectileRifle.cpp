@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Projectile/PG_ProjectileRifle.h"
 #include "Character/PG_MonChar.h"
@@ -15,11 +15,11 @@ APG_ProjectileRifle::APG_ProjectileRifle()
 	ProjectileMeshComponent->SetupAttachment(CollisionComponent);
 	ProjectileMeshComponent->SetCollisionProfileName(TEXT("NoCollision"));
 
-	// ÀÌ ÄÄÆ÷³ÍÆ®¸¦ »ç¿ëÇÏ¿© ÀÌ ÇÁ·ÎÁ§Å¸ÀÏÀÇ ¹«ºê¸ÕÆ®¸¦ ±¸µ¿½ÃÅµ´Ï´Ù.
+	// ì´ ì»´í¬ë„ŒíŠ¸ë¥¼ ì‚¬ìš©í•˜ì—¬ ì´ í”„ë¡œì íƒ€ì¼ì˜ ë¬´ë¸Œë¨¼íŠ¸ë¥¼ êµ¬ë™ì‹œí‚µë‹ˆë‹¤.
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 	ProjectileMovementComponent->SetUpdatedComponent(CollisionComponent);
 
-	// °´Ã¼¿¡ Ãæµ¹½Ã ¹ß»ıµÇ´Â ÇÇ°İ ÀÌÆåÆ®
+	// ê°ì²´ì— ì¶©ëŒì‹œ ë°œìƒë˜ëŠ” í”¼ê²© ì´í™íŠ¸
 	BurstingEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("BurstingEffect"));
 	BurstingEffect->SetupAttachment(CollisionComponent);
 	BurstingEffect->SetCollisionProfileName(TEXT("NoCollision"));
@@ -37,13 +37,13 @@ void APG_ProjectileRifle::PostInitializeComponents()
 	ProjectileMovementComponent->bShouldBounce = false;
 	ProjectileMovementComponent->Bounciness = 0.3f;
 
-	// ÇÃ·¹ÀÌ¾î ¿À¹ö·¦ ÀÌº¥Æ® ¼³Á¤
+	// í”Œë ˆì´ì–´ ì˜¤ë²„ë© ì´ë²¤íŠ¸ ì„¤ì •
 	ABCHECK(nullptr != CollisionComponent);
 	CollisionComponent->SetGenerateOverlapEvents(true);
 	CollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &APG_ProjectileRifle::OnTargetBeginOverlap);
 	CollisionComponent->OnComponentHit.AddDynamic(this, &APG_ProjectileRifle::OnTargetHit);
 
-	// ÃÑ¾Ë Ãæµ¹ ÀÌÆåÆ® ¼³Á¤
+	// ì´ì•Œ ì¶©ëŒ ì´í™íŠ¸ ì„¤ì •
 	ABCHECK(nullptr != BurstingEffect);
 	BurstingEffect->SetActive(false, true);
 	BurstingEffect->OnSystemFinished.AddDynamic(this, &APG_ProjectileRifle::OnPlayEndParticle);
@@ -55,7 +55,7 @@ void APG_ProjectileRifle::BeginPlay()
 	Super::BeginPlay();
 }
 
-// ÇÁ·ÎÁ§Å¸ÀÏÀÇ ¼Óµµ¸¦ ¹ß»ç ¹æÇâÀ¸·Î ÃÊ±âÈ­½ÃÅ°´Â ÇÔ¼öÀÔ´Ï´Ù.
+// í”„ë¡œì íƒ€ì¼ì˜ ì†ë„ë¥¼ ë°œì‚¬ ë°©í–¥ìœ¼ë¡œ ì´ˆê¸°í™”ì‹œí‚¤ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 void APG_ProjectileRifle::FireInDirection(const FPGWeaponData* pWeaponData, const FVector& ShootDirection, bool bMonsterWeapon)
 {
 	ABCHECK(nullptr != ProjectileMovementComponent);
@@ -85,12 +85,12 @@ void APG_ProjectileRifle::OnTargetBeginOverlap(UPrimitiveComponent* OverlappedCo
 	auto OwnerWeapon = Cast<APG_Weapon>(GetOwner());
 	ABCHECK(nullptr != OwnerWeapon);
 
-	// ¸ó½ºÅÍ Ãæµ¹½Ã
+	// ëª¬ìŠ¤í„° ì¶©ëŒì‹œ
 	auto AMonCharacter = Cast<APG_MonChar>(OtherActor);
 	if (AMonCharacter && IsOwnerMyPlayer())
 		AMonCharacter->OnDamage(OwnerWeapon->GetWeaponAttackDamage());
 
-	// ÇÃ·¹ÀÌ¾î Ãæµ¹½Ã
+	// í”Œë ˆì´ì–´ ì¶©ëŒì‹œ
 	auto AMyCharacter = Cast<APG_MyChar>(OtherActor);
 	if (AMyCharacter&& IsOwnerMonster())
 		AMyCharacter->OnAttackedByMonster();

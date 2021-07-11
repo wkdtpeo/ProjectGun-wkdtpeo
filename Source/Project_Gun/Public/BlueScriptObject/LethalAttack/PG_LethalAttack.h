@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -31,7 +31,7 @@ public:
 
 	void SetLethaAttackData(const FPGLethalAttackData* pLethalAttackData);
 
-	bool IsReadyLethal();		// ÇÊ»ì±â¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Â »óÅÂÀÎ°¡?
+	bool IsReadyLethal();		// í•„ì‚´ê¸°ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ìƒíƒœì¸ê°€?
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnInitLethal();
@@ -39,37 +39,37 @@ public:
 	void OnReadyLethal();
 	
 protected :
-	// ±¸Ã¼ Äİ¸®Àü ÄÄÆ÷³ÍÆ®
+	// êµ¬ì²´ ì½œë¦¬ì „ ì»´í¬ë„ŒíŠ¸
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PG LethalAttackInfo")
 	class USphereComponent* CollisionComponent;
 
-	// ÇÊ»ì±â¸¦ »ç¿ëÇÒ ¶§ º¸¿©Áö´Â ÀÌÆåÆ®.
+	// í•„ì‚´ê¸°ë¥¼ ì‚¬ìš©í•  ë•Œ ë³´ì—¬ì§€ëŠ” ì´í™íŠ¸.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PG LethalAttackInfo")
 	class UParticleSystemComponent* LShowingEffect;
 
-	// ÇÊ»ì±â°¡ ½ÇÇàµÉ¶§ Àç»ıµÇ´Â ÀÌÆåÆ®. ½ÃÀü ÁöÁ¡Àº ÇÃ·¹ÀÌ¾î Áß½É.
+	// í•„ì‚´ê¸°ê°€ ì‹¤í–‰ë ë•Œ ì¬ìƒë˜ëŠ” ì´í™íŠ¸. ì‹œì „ ì§€ì ì€ í”Œë ˆì´ì–´ ì¤‘ì‹¬.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PG LethalAttackInfo")
 	class UParticleSystemComponent*	LEffectVisual;
 
-	// ÇÊ»ì±â »ç¿îµå
+	// í•„ì‚´ê¸° ì‚¬ìš´ë“œ
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PG LethalAttackInfo")
 	class UAudioComponent* LethalSoundComponent;
 
 private :
-	// ÇÊ»ì±â »ç¿ë¹üÀ§³» µ¥¹ÌÁö¸¦ ¹Ş´Â ¸ó½ºÅÍ¸¦ Ã£´Â´Ù.
+	// í•„ì‚´ê¸° ì‚¬ìš©ë²”ìœ„ë‚´ ë°ë¯¸ì§€ë¥¼ ë°›ëŠ” ëª¬ìŠ¤í„°ë¥¼ ì°¾ëŠ”ë‹¤.
 	bool FindingDamagedMonsters(OUT TArray<class APG_MonChar*>& GetMonsters);
 	float GetAttackRange();
 	float GetRatioAttackRange();
 
 private :
 	//UFUNCTION(BlueprintImplementableEvent)
-	void OnReadyToUseTheLethalAttack();		// ÇÊ»ì±â »ç¿ë ÁØºñ
-	void OnUseTheLethalAttackFail();		// ÇÊ»ì±â »ç¿ë ½ÇÆĞ
-	void OnTryUseTheLethalAttack();			// ÇÊ»ì±â »ç¿ë ½Ãµµ
-	void OnAddLethalPoint(class APG_MonChar* AMonster);		// ÇÊ»ì±â Æ÷ÀÎÆ® È¹µæ
+	void OnReadyToUseTheLethalAttack();		// í•„ì‚´ê¸° ì‚¬ìš© ì¤€ë¹„
+	void OnUseTheLethalAttackFail();		// í•„ì‚´ê¸° ì‚¬ìš© ì‹¤íŒ¨
+	void OnTryUseTheLethalAttack();			// í•„ì‚´ê¸° ì‚¬ìš© ì‹œë„
+	void OnAddLethalPoint(class APG_MonChar* AMonster);		// í•„ì‚´ê¸° í¬ì¸íŠ¸ íšë“
 
 	UFUNCTION()
-	void OnEndEffectVisual(UParticleSystemComponent* ParticleSystemComponent);		// ÇÊ»ì±â ½ÇÇà½Ã Àç»ıµÇ´Â ÀÌÆåÆ® Á¾·á½Ã È£Ãâ
+	void OnEndEffectVisual(UParticleSystemComponent* ParticleSystemComponent);		// í•„ì‚´ê¸° ì‹¤í–‰ì‹œ ì¬ìƒë˜ëŠ” ì´í™íŠ¸ ì¢…ë£Œì‹œ í˜¸ì¶œ
 
 	UFUNCTION()
 	void OnBegineOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);	
@@ -81,22 +81,22 @@ private :
 	void OnComponentHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 private :
-	// µ¨¸®°ÔÀÌÆ® Á¦°Å¿ë Handle º¸°ü
+	// ë¸ë¦¬ê²Œì´íŠ¸ ì œê±°ìš© Handle ë³´ê´€
 	FDelegateHandle HandleOnBasicAttackMonsterKill;
 	FDelegateHandle HandleOnReadyToUseTheLethalAttack;
 	FDelegateHandle HandleOnUseTheLethalAttackSuccess;
 	FDelegateHandle HandleOnUseTheLethalAttackFail;
 
 private :
-	// ÇÊ»ì±â ¼³Á¤°ª
+	// í•„ì‚´ê¸° ì„¤ì •ê°’
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG LethalAttackInfo", Meta = (AllowPrivateAccess = true))
 	struct FPGLethalAttackData LethalAttackData;
 
-	// ÇÊ»ì±â ´©Àû¼öÄ¡
+	// í•„ì‚´ê¸° ëˆ„ì ìˆ˜ì¹˜
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG LethalAttackInfo", Meta = (AllowPrivateAccess = true))
 	int32 LethalPoint;
 
-	// ÇÊ»ì±â·Î Á×ÀÎ ¸ó½ºÅÍÀÇ ¼ö
+	// í•„ì‚´ê¸°ë¡œ ì£½ì¸ ëª¬ìŠ¤í„°ì˜ ìˆ˜
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PG LethalAttackInfo", Meta = (AllowPrivateAccess = true))
 	int32 MaxLethalKill;
 

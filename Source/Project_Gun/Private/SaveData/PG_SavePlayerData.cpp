@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "SaveData/PG_SavePlayerData.h"
 
@@ -14,7 +14,7 @@ UPG_SavePlayerData::UPG_SavePlayerData()
 
 	m_kEquipWeaponTableIndex.Init(0, PG_MAX_WEAPON_SLOT);
 
-	// ±âº» ¹«±â Unlock
+	// ê¸°ë³¸ ë¬´ê¸° Unlock
 	FPGWeaponOwnData kDefalutWeaponOwnData;
 	kDefalutWeaponOwnData.IsUnlock = true;
 	WeaponOwnData.Add(0, kDefalutWeaponOwnData);

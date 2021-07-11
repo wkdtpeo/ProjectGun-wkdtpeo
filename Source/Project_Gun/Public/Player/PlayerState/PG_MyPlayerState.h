@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -16,7 +16,7 @@ DECLARE_MULTICAST_DELEGATE(FOnUseTheLethalAttackFail);
 DECLARE_MULTICAST_DELEGATE_OneParam(FOnChangeWeapon, int32);
 
 /**
- * PlayerState : ÇÃ·¹ÀÌ¾îÀÇ »óÅÂ¸¦ Á¤ÀÇÇÑ´Ù. ÇÃ·¹ÀÌ¾îÀÇ Ä³¸¯ÅÍ°¡ ¹«½¼ Á÷¾÷ÀÎÁö, ÀÌ¸§Àº ¹«¾ùÀÎÁö µîÀ» Æ÷ÇÔÇÑ´Ù.
+ * PlayerState : í”Œë ˆì´ì–´ì˜ ìƒíƒœë¥¼ ì •ì˜í•œë‹¤. í”Œë ˆì´ì–´ì˜ ìºë¦­í„°ê°€ ë¬´ìŠ¨ ì§ì—…ì¸ì§€, ì´ë¦„ì€ ë¬´ì—‡ì¸ì§€ ë“±ì„ í¬í•¨í•œë‹¤.
  */
 UCLASS()
 class PROJECT_GUN_API APG_MyPlayerState : public APlayerState
@@ -39,7 +39,7 @@ public :
 	void MonsterLethalAttackKill(class APG_MonChar* KillMon);
 
 	bool UseAmmo();
-	void ChangeDefaultWeapon();	// ±âº» ¹«±â·Î º¯°æ
+	void ChangeDefaultWeapon();	// ê¸°ë³¸ ë¬´ê¸°ë¡œ ë³€ê²½
 	bool ChangeWeapon(int32 nSlotIndex, int32 nWeaponTableIndex);
 	
 	const FPGPlayerData* GetPlayingPlayerData()		{ return &PlayingPlayerData;	}
@@ -51,38 +51,38 @@ public :
 	//==========================================================
 	// Lethal Attack
 	//==========================================================
-	void ReadyToUseTheSkill();		// ÇÊ»ì±â »ç¿ë ÁØºñ
-	void TryUseTheSkill();			// ÇÊ»ì±â »ç¿ë ½Ãµµ
+	void ReadyToUseTheSkill();		// í•„ì‚´ê¸° ì‚¬ìš© ì¤€ë¹„
+	void TryUseTheSkill();			// í•„ì‚´ê¸° ì‚¬ìš© ì‹œë„
 
 public :
 	//==========================================================
 	// Point
 	//==========================================================
-	FOnUpdateRewardPoint	OnUpdateRewardPoint;		// Æ÷ÀÎÆ® È¹µæ (¸ó½ºÅÍ Å³ + ½ºÅ×ÀÌÁö Å¬¸®¾î È¹µæ ÀçÈ­ Æ÷ÇÔ)
-	FOnAddRewardPoint		OnKillAddRewardPoint;		// ¸ó½ºÅÍ Ã³Ä¡·Î ÀÎÇÑ Æ÷ÀÎÆ® È¹µæ (½ºÅ×ÀÌÁö Å¬¸®¾î È¹µæ ÀçÈ­ ¹ÌÆ÷ÇÔ)
+	FOnUpdateRewardPoint	OnUpdateRewardPoint;		// í¬ì¸íŠ¸ íšë“ (ëª¬ìŠ¤í„° í‚¬ + ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ íšë“ ì¬í™” í¬í•¨)
+	FOnAddRewardPoint		OnKillAddRewardPoint;		// ëª¬ìŠ¤í„° ì²˜ì¹˜ë¡œ ì¸í•œ í¬ì¸íŠ¸ íšë“ (ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ íšë“ ì¬í™” ë¯¸í¬í•¨)
 
 	//==========================================================
 	// Monster
 	//==========================================================
-	FOnMonsterKill	OnBasicAttackMonsterKill;		// ÀÏ¹İ°ø°İÀ¸·Î ÀÎÇÑ ¸ó½ºÅÍ Ã³Ä¡
-	//FOnMonsterKill	OnLethalAttackMonsterKill;	// ÇÊ»ì±â °ø°İÀ¸·Î ÀÎÇÑ ¸ó½ºÅÍ Ã³Ä¡
+	FOnMonsterKill	OnBasicAttackMonsterKill;		// ì¼ë°˜ê³µê²©ìœ¼ë¡œ ì¸í•œ ëª¬ìŠ¤í„° ì²˜ì¹˜
+	//FOnMonsterKill	OnLethalAttackMonsterKill;	// í•„ì‚´ê¸° ê³µê²©ìœ¼ë¡œ ì¸í•œ ëª¬ìŠ¤í„° ì²˜ì¹˜
 
 	//==========================================================
 	// LethalAttack
 	//==========================================================
-	FOnReadyToUseTheLethalAttack		OnReadyToUseTheLethalAttack;	// ½ºÅ³ »ç¿ë ÁØºñ
-	FOnTryUseTheLethalAttack			OnTryUseTheLethalAttack;		// ½ºÅ³ »ç¿ë ½Ãµµ
-	FOnUseTheLethalAttackFail			OnUseTheLethalAttackFail;		// ½ºÅ³ »ç¿ë ½ÇÆĞ
+	FOnReadyToUseTheLethalAttack		OnReadyToUseTheLethalAttack;	// ìŠ¤í‚¬ ì‚¬ìš© ì¤€ë¹„
+	FOnTryUseTheLethalAttack			OnTryUseTheLethalAttack;		// ìŠ¤í‚¬ ì‚¬ìš© ì‹œë„
+	FOnUseTheLethalAttackFail			OnUseTheLethalAttackFail;		// ìŠ¤í‚¬ ì‚¬ìš© ì‹¤íŒ¨
 
-	// ¹«±â ±³Ã¼ ¾Ë¸²
+	// ë¬´ê¸° êµì²´ ì•Œë¦¼
 	FOnChangeWeapon OnChangeWeapon;
 
 protected :
-	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌÁß º¯°æµÇ´Â ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ
+	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´ì¤‘ ë³€ê²½ë˜ëŠ” í”Œë ˆì´ì–´ ë°ì´í„°
 	UPROPERTY(Transient, VisibleAnywhere)
 	struct FPGPlayerData PlayingPlayerData;
 
-	// ½ºÅ×ÀÌÁö ½ÃÀÛ½Ã º¯ÇÏÁö ¾Ê´Â ¿øº» ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ
+	// ìŠ¤í…Œì´ì§€ ì‹œì‘ì‹œ ë³€í•˜ì§€ ì•ŠëŠ” ì›ë³¸ í”Œë ˆì´ì–´ ë°ì´í„°
 	UPROPERTY(Transient, VisibleAnywhere)
 	struct FPGPlayerData OrignalPlayerData;
 };

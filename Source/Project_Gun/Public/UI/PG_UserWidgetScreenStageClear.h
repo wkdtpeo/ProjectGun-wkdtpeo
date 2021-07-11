@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -22,7 +22,7 @@ public:
 	virtual void SetVisibility(ESlateVisibility InVisibility) override;
 
 public :
-	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌ ±¤°í Àç»ı °¡´ÉÇÑÁö °Ë»ç
+	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´ ê´‘ê³  ì¬ìƒ ê°€ëŠ¥í•œì§€ ê²€ì‚¬
 	UFUNCTION(BlueprintCallable)
 	bool IsAbleViewStagePlayAD();
 
@@ -53,21 +53,21 @@ protected:
 	void OnBtnNext();
 
 	//============================================================================================
-	// ±¤°í ½ÃÃ»¿¡ ´ëÇÑ °á°ú
+	// ê´‘ê³  ì‹œì²­ì— ëŒ€í•œ ê²°ê³¼
 	//============================================================================================
 	UFUNCTION(BlueprintCallable)
-	void OnADRewardVideoSucessed();		// À¯Àú°¡ º¸»óÇü ±¤°í¸¦ ¼º°øÀûÀ¸·Î º¸¾ÒÀ½ (3¹è º¸»ó)
+	void OnADRewardVideoSucessed();		// ìœ ì €ê°€ ë³´ìƒí˜• ê´‘ê³ ë¥¼ ì„±ê³µì ìœ¼ë¡œ ë³´ì•˜ìŒ (3ë°° ë³´ìƒ)
 	UFUNCTION(BlueprintCallable)
-	void OnADRewardVideoError();		// À¯Àú°¡ º¸»óÇü ±¤°í º¸´ÂÁß ´İ°Å³ª ½ÇÆĞÇÏ¿´À½	(3¹è º¸»ó)
+	void OnADRewardVideoError();		// ìœ ì €ê°€ ë³´ìƒí˜• ê´‘ê³  ë³´ëŠ”ì¤‘ ë‹«ê±°ë‚˜ ì‹¤íŒ¨í•˜ì˜€ìŒ	(3ë°° ë³´ìƒ)
 	UFUNCTION(BlueprintCallable)
-	void OnADPlayStageVideoSucessed();	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌÇü ±¤°í¸¦ ¼º°øÀûÀ¸·Î º¸¾ÒÀ½
+	void OnADPlayStageVideoSucessed();	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´í˜• ê´‘ê³ ë¥¼ ì„±ê³µì ìœ¼ë¡œ ë³´ì•˜ìŒ
 	UFUNCTION(BlueprintCallable)
-	void OnADPlayStageVideoClosed();	// ½ºÅ×ÀÌÁö ÇÃ·¹ÀÌÇü ±¤°í¸¦ ´İ°Å³ª ½ÇÆĞÇÏ¿´À½
+	void OnADPlayStageVideoClosed();	// ìŠ¤í…Œì´ì§€ í”Œë ˆì´í˜• ê´‘ê³ ë¥¼ ë‹«ê±°ë‚˜ ì‹¤íŒ¨í•˜ì˜€ìŒ
 	//============================================================================================
 	UFUNCTION()
 	void OnViewResultAD(bool bEnable);
 
-	// ¸Ş½ÃÁö ÆË¾÷¹Ú½º
+	// ë©”ì‹œì§€ íŒì—…ë°•ìŠ¤
 	UFUNCTION()
 	void OnMessagePopupBoxClose();
 
@@ -93,9 +93,9 @@ protected:
 	//===================================================
 	// CanvasClearPointList
 	//===================================================
-	PG_DECLAR_WIDGET(UTextBlock, TextStageClearPoint);		// ±âº» ½ºÅ×ÀÌÁö Å¬¸®¾î Æ÷ÀÎÆ® º¸»ó
-	PG_DECLAR_WIDGET(UTextBlock, TextMonsterKillPoint);		// ¸ó½ºÅÍ Å³ È¹µæ Æ÷ÀÎÆ®
-	PG_DECLAR_WIDGET(UTextBlock, TextMissionPoint);			// ¹Ì¼Ç ¼º°ø Æ÷ÀÎÆ®
+	PG_DECLAR_WIDGET(UTextBlock, TextStageClearPoint);		// ê¸°ë³¸ ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ í¬ì¸íŠ¸ ë³´ìƒ
+	PG_DECLAR_WIDGET(UTextBlock, TextMonsterKillPoint);		// ëª¬ìŠ¤í„° í‚¬ íšë“ í¬ì¸íŠ¸
+	PG_DECLAR_WIDGET(UTextBlock, TextMissionPoint);			// ë¯¸ì…˜ ì„±ê³µ í¬ì¸íŠ¸
 
 	//===================================================
 	// CanvasViewAD
@@ -121,7 +121,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "PG Sound")
 	class USoundBase* PopupPlaySound = nullptr;
 
-	// ¸Ş½ÃÁö ÆË¾÷
+	// ë©”ì‹œì§€ íŒì—…
 	UPROPERTY()
 	class UPG_UserWidgetMessagePopup* m_pUserWidgetMessagePopup = nullptr;
 };

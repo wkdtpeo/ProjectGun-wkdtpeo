@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "UI/PG_UserWidgetScreenPlayStage.h"
@@ -56,7 +56,7 @@ void UPG_UserWidgetScreenPlayStage::InitPlayStageWeaponBag()
 		m_pkWB_PlayStageWeaponBag->SetSlotWaponIndex(nSlotIndex, WeaponIndex);
 		m_pkWB_PlayStageWeaponBag->SetSlotWeaponAmmo(nSlotIndex, nAmmo);
 
-		// À¯·á ½½·Ô
+		// ìœ ë£Œ ìŠ¬ë¡¯
 		if (nSlotIndex == PG_MAX_WEAPON_SLOT - 1)
 			m_pkWB_PlayStageWeaponBag->SetEnableSlot(nSlotIndex, pMyPlayerData->bExtendWeaponSlot);
 		else

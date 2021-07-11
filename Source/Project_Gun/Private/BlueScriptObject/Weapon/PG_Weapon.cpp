@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+Ôªø// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Weapon/PG_Weapon.h"
 #include "Character/PG_MonChar.h"
@@ -13,7 +13,7 @@ APG_Weapon::APG_Weapon()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	// ƒ≥∏Ø≈Õø° π´±‚ ∫Œ¬¯
+	// Ï∫êÎ¶≠ÌÑ∞Ïóê Î¨¥Í∏∞ Î∂ÄÏ∞©
 	Weapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WEAPON"));
 	FiringEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("FIRINGEFFECT"));
 	FiringEffect->bAutoActivate = false;

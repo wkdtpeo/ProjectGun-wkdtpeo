@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -46,28 +46,28 @@ public :
 
 
 public :
-	// Ä³¸¯ÅÍ
+	// ìºë¦­í„°
 	FPGCharacterMovementData*	GetTableCharacterMovementData();
 	FPGCharacterCameraData*		GetTableCharacterCameraData();
 
-	// ¹«±â ¼¥
+	// ë¬´ê¸° ìƒµ
 	const FPGWeaponTableData*	GetWeaponTableData(int32 nIndex);
 	const bool					GetAllWeaponTableData(OUT TArray<const FPGWeaponTableData*>& a_rkWeaponTableDatas);
 
-	// ½ºÅ×ÀÌÁö
+	// ìŠ¤í…Œì´ì§€
 	const FPGStageData*			GetTableStageData(int32 nID);
 	const bool					GetAllTableStageData(OUT TArray<const FPGStageData*>& a_rkStageDatas);
 
-	// ÇÊ»ì±â
+	// í•„ì‚´ê¸°
 	const FPGLethalAttackData*	GetTableLethalAttackData(int32 nID);
 
-	// ±¤°í
+	// ê´‘ê³ 
 	const FPGADTableData*		GetADTableData(EADType eADType);
 	int32						GetADRemainTime(EADType eADType);
 	bool						IsAbleADView(EADType eADType);
 	void						ResetADRemainTime(EADType eADType);
 
-	// ÄÜ¼Ö
+	// ì½˜ì†”
 	class PG_Console*			GetConsole()	{ return &m_kConsole; }
 
 private :
@@ -77,12 +77,12 @@ private :
 public :
 	FStreamableManager StreamableManager;
 
-	int32 PalyStageID; // Ã¹¹øÂ° ½ºÅ×ÀÌÁöÀÇ ID °ªÀº 1ºÎÅÍ ½ÃÀÛÇÑ´Ù.
+	int32 PalyStageID; // ì²«ë²ˆì§¸ ìŠ¤í…Œì´ì§€ì˜ ID ê°’ì€ 1ë¶€í„° ì‹œì‘í•œë‹¤.
 	FString GetStageName(int32 StageID);
 
 private :
 
-	// Å×ÀÌºí Å¬·¡½º Á¤¸® ÇÊ¿ä..
+	// í…Œì´ë¸” í´ë˜ìŠ¤ ì •ë¦¬ í•„ìš”..
 	UPROPERTY()
 	class UDataTable* m_pCharacterMovementTable = nullptr;
 
@@ -101,9 +101,9 @@ private :
 	UPROPERTY()
 	class UDataTable* m_pADTable = nullptr;
 
-	// ÄÜ¼Ö ¸í·É¾î
+	// ì½˜ì†” ëª…ë ¹ì–´
 	class PG_Console m_kConsole;
 
-	// ±¤°í
+	// ê´‘ê³ 
 	class PG_ADData m_kADData;
 };

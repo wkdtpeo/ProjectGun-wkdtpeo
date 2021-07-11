@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -15,7 +15,7 @@ DECLARE_MULTICAST_DELEGATE(FOnGateOpen);
 DECLARE_MULTICAST_DELEGATE_OneParam(FOnViewAD, bool);
 
 /**
- * GameState : °ÔÀÓÀÇ »óÅÂ¸¦ Á¤ÀÇÇÑ´Ù. °ÔÀÓÀÌ ½ÃÀÛµÇ¾ú´ÂÁö, Áß´ÜµÇ¾ú´ÂÁö, AÆÀÀÇ ½ºÅä¾î°¡ ¸îÁ¡ÀÎÁö µîÀ» Æ÷ÇÔÇÑ´Ù.
+ * GameState : ê²Œì„ì˜ ìƒíƒœë¥¼ ì •ì˜í•œë‹¤. ê²Œì„ì´ ì‹œì‘ë˜ì—ˆëŠ”ì§€, ì¤‘ë‹¨ë˜ì—ˆëŠ”ì§€, AíŒ€ì˜ ìŠ¤í† ì–´ê°€ ëª‡ì ì¸ì§€ ë“±ì„ í¬í•¨í•œë‹¤.
  */
 UCLASS()
 class PROJECT_GUN_API APG_GameStateStage : public AGameStateBase
@@ -40,38 +40,38 @@ public:
 	int32	GetRemainStageTimer();
 	int32	GetMaxLethalKill();
 
-	void	UpdateMaxLethalKill(int32 a_nMaxLethalKill);		// ÇÊ»ì±â·Î Á×ÀÎ ¸ó½ºÅÍ ¼ö °»½Å
+	void	UpdateMaxLethalKill(int32 a_nMaxLethalKill);		// í•„ì‚´ê¸°ë¡œ ì£½ì¸ ëª¬ìŠ¤í„° ìˆ˜ ê°±ì‹ 
 
 	const struct FPGStagePlayData* GetStagePlayData() { return &StagePlayData; }
 
 	//===================================================
-	// AD (±¤°í)
+	// AD (ê´‘ê³ )
 	//===================================================
-	bool IsViewAD();		// ±¤°í¸¦ º¸¾Ò´ÂÁö È®ÀÎ
+	bool IsViewAD();		// ê´‘ê³ ë¥¼ ë³´ì•˜ëŠ”ì§€ í™•ì¸
 	void SetViewAD(bool bEnable);
-	bool RequestViewAD();	// ±¤°í ¿äÃ»
+	bool RequestViewAD();	// ê´‘ê³  ìš”ì²­
 
 public:
 	//==========================================================
 	// Stage
 	//==========================================================
-	FOnStageTimer	StageTimerDelegate;		// ½ºÅ×ÀÌÁö Å¸ÀÌ¸Ó
-	FOnStageClear	StageClearDelegate;		// ½ºÅ×ÀÌÁö Å¬¸®¾î
-	FOnStageFailed	StageFailedDelegate;	// ½ºÅ×ÀÌÁö ½ÇÆĞ
-	FOnGateOpen		GateOpenDelegate;		// ½ºÅ×ÀÌÁö Å¬¸®¾î °ÔÀÌÆ® ¿ÀÇÂ
-	FOnUdpateWidgetPlayStage UdpateWidgetPlayStage;		// ½ºÅ×ÀÌÁö Å¬¸®¾î ¸ñÇ¥ ÇöÈ² ¾÷µ¥ÀÌÆ® ¿äÃ»
+	FOnStageTimer	StageTimerDelegate;		// ìŠ¤í…Œì´ì§€ íƒ€ì´ë¨¸
+	FOnStageClear	StageClearDelegate;		// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´
+	FOnStageFailed	StageFailedDelegate;	// ìŠ¤í…Œì´ì§€ ì‹¤íŒ¨
+	FOnGateOpen		GateOpenDelegate;		// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ê²Œì´íŠ¸ ì˜¤í”ˆ
+	FOnUdpateWidgetPlayStage UdpateWidgetPlayStage;		// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ëª©í‘œ í˜„í™© ì—…ë°ì´íŠ¸ ìš”ì²­
 
 	//==========================================================
 	// AD
 	//==========================================================
-	FOnViewAD		OnViewAD;				// ±¤°í¸¦ º¸¾ÒÀ½
+	FOnViewAD		OnViewAD;				// ê´‘ê³ ë¥¼ ë³´ì•˜ìŒ
 
 public:
 	void	OnCheckStageClear();
 	void	OnCheckStageFailed();
 
 	UFUNCTION()
-	void	OnKillAddRewardPoint(int32 a_nAddRewardPoint);	// ¸ó½ºÅÍ Ã³Ä¡·Î ÀÎÇÑ Æ÷ÀÎÆ® È¹µæ
+	void	OnKillAddRewardPoint(int32 a_nAddRewardPoint);	// ëª¬ìŠ¤í„° ì²˜ì¹˜ë¡œ ì¸í•œ í¬ì¸íŠ¸ íšë“
 
 protected :
 	void	OnStageTimerTick();
@@ -89,7 +89,7 @@ private :
 	const struct FPGStageData* StageData;
 
 	//===================================================
-	// AD (±¤°í)
+	// AD (ê´‘ê³ )
 	//===================================================
 	bool m_bViewAD = false;
 };

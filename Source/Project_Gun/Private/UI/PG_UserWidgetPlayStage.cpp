@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetPlayStage.h"
 #include "Game/GameState/PG_GameStateStage.h"
@@ -61,7 +61,7 @@ void UPG_UserWidgetPlayStage::InitWeaponBoxData()
 		int32 nAmmo = pGameMode->GetMaxAmmo(pMyPlayerData->PlayerWeaponInventory[nSlotIndex]);
 		if (nSlotIndex == PG_MAX_WEAPON_SLOT - 1)
 		{
-			// À¯·á ½½·Ô
+			// ìœ ë£Œ ìŠ¬ë¡¯
 			InitWeaponBoxData(pMyPlayerData->bExtendWeaponSlot, nSlotIndex, pMyPlayerData->PlayerWeaponInventory[nSlotIndex], nAmmo);
 		}
 		else

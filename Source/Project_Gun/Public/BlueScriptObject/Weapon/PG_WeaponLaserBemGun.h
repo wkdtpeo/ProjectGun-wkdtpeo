@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -26,6 +26,6 @@ public:
 
 private:
 	UPROPERTY()
-	class APG_Projectile* CurrFireLaserBeam;		// ÇöÀç ½î°íÀÖ´Â Shutgun Projectile
+	class APG_Projectile* CurrFireLaserBeam;		// í˜„ì¬ ì˜ê³ ìˆëŠ” Shutgun Projectile
 	
 };

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Target/PG_TargetSpot.h"
 #include "Character/PG_MyChar.h"
@@ -17,13 +17,13 @@ APG_TargetSpot::APG_TargetSpot()
 	RootComponent = Trigger;
 	Box->SetupAttachment(RootComponent);
 
-	// Äİ¸®Àü ¼³Á¤
+	// ì½œë¦¬ì „ ì„¤ì •
 	Trigger->SetCollisionProfileName(TEXT("TargetSpot"));
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &APG_TargetSpot::OnPlayerOverlap);
 
 	Box->SetCollisionProfileName(TEXT("NoCollision"));
 
-	// ÆÄÆ¼Å¬ ¼³Á¤
+	// íŒŒí‹°í´ ì„¤ì •
 	PortalEffect->SetupAttachment(RootComponent);
 	PortalEffect->bAutoActivate = true;
 }
@@ -52,7 +52,7 @@ void APG_TargetSpot::OnPlayerOverlap(UPrimitiveComponent* OverlappedComp, AActor
 {
 	ABLOG_S(Warning);
 
-	// ½ºÅ×ÀÌÁö Å¬¸®¾î °Ë»ç
+	// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ê²€ì‚¬
 	auto AMyCharacter = Cast<APG_MyChar>(OtherActor);
 	if (AMyCharacter && GetWorld())
 	{

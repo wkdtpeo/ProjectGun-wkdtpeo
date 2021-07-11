@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -43,8 +43,8 @@ public :
 	// Division
 	//=============================================
 	void	SetMonsterDataDivision(FPGMonsterData_SkillType& MonsterData_SkillType);
-	bool	IsPossibleToDivision();				// ºĞÇÒ °¡´ÉÇÑÁö °Ë»ç
-	int32	GetDivisionCountToHPRatio();		// ÇöÀç ¸ó½ºÅÍÀÇ ³²Àº Ã¼·Â ±âÁØ, ºĞÇÒ ÇÒ ¼ö ÀÖ´Â È½¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	bool	IsPossibleToDivision();				// ë¶„í•  ê°€ëŠ¥í•œì§€ ê²€ì‚¬
+	int32	GetDivisionCountToHPRatio();		// í˜„ì¬ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ ì²´ë ¥ ê¸°ì¤€, ë¶„í•  í•  ìˆ˜ ìˆëŠ” íšŸìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 
 protected :
 	void UpdateWeaponSystem();
@@ -54,14 +54,14 @@ protected :
 	bool FindTargetToMyCharForDash(OUT FVector& vGetTargetPos);
 
 	virtual bool OnDamage(int32 nDamage, bool IsUseLetharAttack = false) override;
-	void OnEndWeaponFireCoolTime();	// ¹«±â ¹ß»ç ÄğÅ¸ÀÓ Á¾·á
-	void OnStartDash();				// ´ë½¬ ½ÃÀÛ
+	void OnEndWeaponFireCoolTime();	// ë¬´ê¸° ë°œì‚¬ ì¿¨íƒ€ì„ ì¢…ë£Œ
+	void OnStartDash();				// ëŒ€ì‰¬ ì‹œì‘
 	UFUNCTION()
-	void OnEndDash();				// ´ë½¬ Á¾·á
-	void OnEndDashCoolTime();		// ´ë½¬ ÄğÅ¸ÀÓ Á¾·á
+	void OnEndDash();				// ëŒ€ì‰¬ ì¢…ë£Œ
+	void OnEndDashCoolTime();		// ëŒ€ì‰¬ ì¿¨íƒ€ì„ ì¢…ë£Œ
 
 public :
-	// ½ºÆùµÇ¸é »ı¼ºµÈ ¸ó½ºÅÍ ¾×ÅÍ°¡ È£ÃâµÈ´Ù.
+	// ìŠ¤í°ë˜ë©´ ìƒì„±ëœ ëª¬ìŠ¤í„° ì•¡í„°ê°€ í˜¸ì¶œëœë‹¤.
 	void OnSpawnActor(APG_MonCharSkillType* ASpawnActor);
 
 private:
@@ -73,9 +73,9 @@ private:
 	//=============================================
 	UPROPERTY(VisibleAnywhere, Category = "PG Weapon MonsterComponent", Meta = (AllowPrivateAccess = true))
 	class UPG_ComponentWeapon* WeaponComponent;
-	bool			m_bEquipWeapon = false;			// ¹«±â »ç¿ë °¡´É¿©ºÎ
-	bool			m_bCanWeaponFire = false;		// ¹«±â ¹ß»ç »ç¿ë¿©ºÎ
-	FTimerHandle	HandleWeaponCoolTime;			// ¹«±â ¹ß»ç ÄğÅ¸ÀÓ
+	bool			m_bEquipWeapon = false;			// ë¬´ê¸° ì‚¬ìš© ê°€ëŠ¥ì—¬ë¶€
+	bool			m_bCanWeaponFire = false;		// ë¬´ê¸° ë°œì‚¬ ì‚¬ìš©ì—¬ë¶€
+	FTimerHandle	HandleWeaponCoolTime;			// ë¬´ê¸° ë°œì‚¬ ì¿¨íƒ€ì„
 
 	//=============================================
 	// Dash
@@ -84,12 +84,12 @@ private:
 	class UPG_ComponentDash* DashComponent;
 	UPROPERTY(EditAnywhere, Category = "PG Dash MonsterComponent", Meta = (AllowPrivateAccess = true))
 	class UStaticMeshComponent* PreviewMeshComponent;
-	bool			m_bOnHitBlocking = false;		// ´ë½¬ Áß Àå¾Ö¹°¿¡ ºÎµúÈû
-	bool			m_bEquipDash = false;			// ´ë½¬ »ç¿ë °¡´É¿©ºÎ
-	bool			m_bCanDash = false;				// ´ë½¬ È°¼ºÈ­ ¿©ºÎ
-	FTimerHandle	HandleDashDelayTime;			// ´ë½¬ µô·¹ÀÌ Å¸ÀÓ
-	FTimerHandle	HandleDashTime;					// ´ë½¬ ½Ã°£
-	FTimerHandle	HandleDashCoolTime;				// ´ë½¬ ÄğÅ¸ÀÓ
+	bool			m_bOnHitBlocking = false;		// ëŒ€ì‰¬ ì¤‘ ì¥ì• ë¬¼ì— ë¶€ë”ªí˜
+	bool			m_bEquipDash = false;			// ëŒ€ì‰¬ ì‚¬ìš© ê°€ëŠ¥ì—¬ë¶€
+	bool			m_bCanDash = false;				// ëŒ€ì‰¬ í™œì„±í™” ì—¬ë¶€
+	FTimerHandle	HandleDashDelayTime;			// ëŒ€ì‰¬ ë”œë ˆì´ íƒ€ì„
+	FTimerHandle	HandleDashTime;					// ëŒ€ì‰¬ ì‹œê°„
+	FTimerHandle	HandleDashCoolTime;				// ëŒ€ì‰¬ ì¿¨íƒ€ì„
 
 
 	//=============================================

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Character/PG_MonCharDivision.h"
 #include "Character/PG_MonChar.h"
@@ -41,7 +41,7 @@ bool APG_MonCharDivision::IsPossibleToDivision()
 	if (0 >= MonsterDivisionData.MRemainDivisionCount || 0 >= MonsterDivisionData.MDivisionCount)
 		return false;
 
-	// �п� �뿪
+	// 분열 대역
 	float fPossibleToDivions_HPRatio = (1.0f / (MonsterDivisionData.MDivisionCount + 1)) * MonsterDivisionData.MRemainDivisionCount;
 	return (GetHPRatio() < fPossibleToDivions_HPRatio);
 }

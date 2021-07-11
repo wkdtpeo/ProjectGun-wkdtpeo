@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -36,10 +36,10 @@ public :
 	int32 GetWeaponIndex()		{ return WeaponIndex;	}
 
 public :
-	// Weapon ¹öÆ°À» ´©¸£¸é ¼³Á¤µÈ WeaponIndex¸¦ Àü´ŞÇÑ´Ù.
+	// Weapon ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì„¤ì •ëœ WeaponIndexë¥¼ ì „ë‹¬í•œë‹¤.
 	FOnBtnWeaponClicked_WeaponIndex OnBtnWeaponClicked_WeaponIndex;
 
-	// Weapon ¹öÆ°À» ´©¸£¸é ÀåÂøµÈ SlotIndex¸¦ Àü´ŞÇÑ´Ù.
+	// Weapon ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì¥ì°©ëœ SlotIndexë¥¼ ì „ë‹¬í•œë‹¤.
 	FOnBtnWeaponClicked_SlotIndex OnBtnWeaponClicked_SlotIndex;
 
 private :

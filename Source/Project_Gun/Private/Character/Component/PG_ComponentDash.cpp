@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Character/Component/PG_ComponentDash.h"
 #include "Character/PG_Char.h"
@@ -37,13 +37,13 @@ bool UPG_ComponentDash::SetupDashData(FVector vDashTargetPos, float fMoveDistanc
 	ABCHECK(false == vDashTargetPos.IsZero(), false);
 
 	m_fDashSpeed = fDashSpeed;
-	// ´ë½¬ ¹æÇâ °è»ê
+	// ëŒ€ì‰¬ ë°©í–¥ ê³„ì‚°
 	m_vDashDir = vDashTargetPos - AOwner->GetActorLocation();
 	m_vDashDir.Normalize();
 
 	m_vGoalPos = AOwner->GetActorLocation() + (m_vDashDir * fMoveDistance);
 
-	// Å¸°Ù ¹æÇâÀ¸·Î ¸ó½ºÅÍ È¸Àü
+	// íƒ€ê²Ÿ ë°©í–¥ìœ¼ë¡œ ëª¬ìŠ¤í„° íšŒì „
 	AOwner->SetActorRotation(m_vDashDir.Rotation());
 
 	return true;
@@ -59,7 +59,7 @@ void UPG_ComponentDash::StopDash()
 	m_bActiveDash = false;
 	m_fDashSpeed = 0.0f;
 	m_vDashDir = FVector::ZeroVector;
-	m_vGoalPos = FVector::ZeroVector;	// ÃÖÁ¾ ÀÌµ¿ ¸ñÇ¥ÁöÁ¡
+	m_vGoalPos = FVector::ZeroVector;	// ìµœì¢… ì´ë™ ëª©í‘œì§€ì 
 	OnDashEnd.Broadcast();
 }
 
@@ -82,7 +82,7 @@ void UPG_ComponentDash::UpdateDashLocation(float fDeltaTime)
 
 	FVector vLocation = AOwner->GetActorLocation();
 	FVector vPos = FMath::VInterpTo(vLocation, m_vGoalPos, fDeltaTime, m_fDashSpeed);
-	// ¾î´ÀÁ¤µµ ¸ñÇ¥ÁöÁ¡¿¡ µé¾î¿À¸é ´ë½¬°¡ ³¡³µ´Ù´Â°É ¾Ë¸°´Ù.
+	// ì–´ëŠì •ë„ ëª©í‘œì§€ì ì— ë“¤ì–´ì˜¤ë©´ ëŒ€ì‰¬ê°€ ëë‚¬ë‹¤ëŠ”ê±¸ ì•Œë¦°ë‹¤.
 	if (10 >= FMath::Abs<float>(FVector::Distance(vLocation, m_vGoalPos)))
 	{
 		OnDashEnd.Broadcast();

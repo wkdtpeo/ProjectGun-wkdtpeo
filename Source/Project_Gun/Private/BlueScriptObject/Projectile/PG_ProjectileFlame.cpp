@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Projectile/PG_ProjectileFlame.h"
 #include "Character/PG_MonChar.h"
@@ -45,7 +45,7 @@ void APG_ProjectileFlame::UpdateCollisionScale(float DeltaTime)
 	{
 		m_fScaleTime += DeltaTime;
 
-		// È­¿°¹æ»ç±â ¹üÀ§°¡ ¿ÏÀüÈ÷ ÆìÁú¶§±îÁöÀÇ ¸ñÇ¥½Ã°£
+		// í™”ì—¼ë°©ì‚¬ê¸° ë²”ìœ„ê°€ ì™„ì „íˆ í´ì§ˆë•Œê¹Œì§€ì˜ ëª©í‘œì‹œê°„
 		float GoalSec = 1.0f;
 		if (m_fScaleTime > GoalSec)
 			m_fScaleTime = GoalSec;
@@ -81,7 +81,7 @@ void APG_ProjectileFlame::OnTargetBeginOverlap(UPrimitiveComponent* OverlappedCo
 	auto OwnerWeapon = Cast<APG_Weapon>(GetOwner());
 	ABCHECK(nullptr != OwnerWeapon);
 
-	// ¸ó½ºÅÍ Ãæµ¹½Ã
+	// ëª¬ìŠ¤í„° ì¶©ëŒì‹œ
 	auto AMonCharacter = Cast<APG_MonChar>(OtherActor);
 	if (AMonCharacter && IsOwnerMyPlayer())
 	{
@@ -95,7 +95,7 @@ void APG_ProjectileFlame::OnTargetBeginOverlap(UPrimitiveComponent* OverlappedCo
 				Params)
 				)
 			{
-				// È­¿°¹æ»ç±â¿¡ ¸Â¾ÒÁö¸¸ ±× ¾Õ¿¡ ¸ó½ºÅÍ°¡ ¼­ÀÖÀ¸¸é °ø°İ ¹«È¿È­ Ã³¸® ÇÏµµ·Ï ÇÑ´Ù.
+				// í™”ì—¼ë°©ì‚¬ê¸°ì— ë§ì•˜ì§€ë§Œ ê·¸ ì•ì— ëª¬ìŠ¤í„°ê°€ ì„œìˆìœ¼ë©´ ê³µê²© ë¬´íš¨í™” ì²˜ë¦¬ í•˜ë„ë¡ í•œë‹¤.
 				return;
 			}
 
@@ -105,7 +105,7 @@ void APG_ProjectileFlame::OnTargetBeginOverlap(UPrimitiveComponent* OverlappedCo
 		return;
 	}
 	
-	// ÇÃ·¹ÀÌ¾î Ãæµ¹½Ã
+	// í”Œë ˆì´ì–´ ì¶©ëŒì‹œ
 	auto AMyCharacter = Cast<APG_MyChar>(OtherActor);
 	if (AMyCharacter && IsOwnerMonster())
 	{

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetMainLobby.h"
 #include "Game/GameMode/PG_GameModeMainLobby.h"
@@ -161,7 +161,7 @@ void UPG_UserWidgetMainLobby::OnBtnClickedWeaponSlot(int32 nSlotIndex)
 	AllHideIconOpenSlot();
 	SetEnableIconOpenSlot(nSlotIndex, true);
 
-	// ÀÎº¥Åä¸® Ã¢À» ¿¬´Ù.
+	// ì¸ë²¤í† ë¦¬ ì°½ì„ ì—°ë‹¤.
 	WB_WeaponInventory->SetOpenSlotIndex(nSlotIndex);
 	WB_WeaponInventory->SetVisibility(ESlateVisibility::Visible);
 	WB_WeaponInventory->UpdateWeaponInventory();
@@ -169,7 +169,7 @@ void UPG_UserWidgetMainLobby::OnBtnClickedWeaponSlot(int32 nSlotIndex)
 
 void UPG_UserWidgetMainLobby::OnCloseWeaponInventory(int32 nSlotIndex, int32 nWeaponIndex)
 {
-	// ÀÎº¥Åä¸® Ã¢ÀÌ ´ÝÈû
+	// ì¸ë²¤í† ë¦¬ ì°½ì´ ë‹«íž˜
 	ABCHECK(nullptr != WB_WeaponInventory);
 	WB_WeaponInventory->SetVisibility(ESlateVisibility::Hidden);
 	AllHideIconOpenSlot();

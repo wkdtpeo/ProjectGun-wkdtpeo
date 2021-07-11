@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Projectile/PG_ProjectileShutgun.h"
 #include "Character/PG_MonChar.h"
@@ -45,7 +45,7 @@ void APG_ProjectileShutgun::UpdateCollisionScale(float DeltaTime)
 	{
 		m_fScaleTime += DeltaTime;
 
-		// ¼¦°Ç ¹üÀ§°¡ ¿ÏÀüÈ÷ ÆìÁú¶§±îÁöÀÇ ¸ñÇ¥½Ã°£
+		// ìƒ·ê±´ ë²”ìœ„ê°€ ì™„ì „íˆ í´ì§ˆë•Œê¹Œì§€ì˜ ëª©í‘œì‹œê°„
 		float GoalSec = 0.2f;
 		if (m_fScaleTime > GoalSec)
 			m_fScaleTime = GoalSec;
@@ -86,12 +86,12 @@ void APG_ProjectileShutgun::OnTargetBeginOverlap(UPrimitiveComponent* Overlapped
 	auto OwnerWeapon = Cast<APG_Weapon>(GetOwner());
 	ABCHECK(nullptr != OwnerWeapon);
 
-	// ¸ó½ºÅÍ Ãæµ¹½Ã
+	// ëª¬ìŠ¤í„° ì¶©ëŒì‹œ
 	auto AMonCharacter = Cast<APG_MonChar>(OtherActor);
 	if (AMonCharacter && IsOwnerMyPlayer())
 		AMonCharacter->OnDamage(OwnerWeapon->GetWeaponAttackDamage());
 
-	// ÇÃ·¹ÀÌ¾î Ãæµ¹½Ã
+	// í”Œë ˆì´ì–´ ì¶©ëŒì‹œ
 	auto AMyCharacter = Cast<APG_MyChar>(OtherActor);
 	if (AMyCharacter&& IsOwnerMonster())
 		AMyCharacter->OnAttackedByMonster();

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -41,11 +41,11 @@ public :
 
 	EMonsterType GetMonsterType();
 	const FPGMonsterData* GetMonsterData();
-	int32 GetDetectRange() const;		// ¸ó½ºÅÍ ½Ã¾ß
-	int32 GetChaseRange() const;		// ¸ó½ºÅÍ°¡ ÂÑ¾Æ¿À´Â ÃÖ´ë °Å¸®
-	float GetHPRatio() const;			// ÇöÀç Ã¼·Â ºñÀ²
-	float GetMaxHP() const;				// ÃÖ´ë Ã¼·Â
-	float GetDropRate() const;			// ÀçÈ­ µå¶øÈ®À²
+	int32 GetDetectRange() const;		// ëª¬ìŠ¤í„° ì‹œì•¼
+	int32 GetChaseRange() const;		// ëª¬ìŠ¤í„°ê°€ ì«“ì•„ì˜¤ëŠ” ìµœëŒ€ ê±°ë¦¬
+	float GetHPRatio() const;			// í˜„ì¬ ì²´ë ¥ ë¹„ìœ¨
+	float GetMaxHP() const;				// ìµœëŒ€ ì²´ë ¥
+	float GetDropRate() const;			// ì¬í™” ë“œëí™•ìœ¨
 
 	class APG_MyChar* FindTargetToMyChar();
 
@@ -75,8 +75,8 @@ protected:
 	struct FPGMonsterData* MonsterData = nullptr;
 
 protected:
-	bool		m_bDoNotRotation = false;		// ¸ó½ºÅÍ°¡ È¸ÀüÇÏÁö ¾ÊÀ½
-	bool		m_bDoNotMoving = false;			// ¸ó½ºÅÍ°¡ ÀÌµ¿ÇÏÁö ¾ÊÀ½
+	bool		m_bDoNotRotation = false;		// ëª¬ìŠ¤í„°ê°€ íšŒì „í•˜ì§€ ì•ŠìŒ
+	bool		m_bDoNotMoving = false;			// ëª¬ìŠ¤í„°ê°€ ì´ë™í•˜ì§€ ì•ŠìŒ
 	float		m_fCharTargetAngle = 0.0f;
 	float		m_fMaxHP;
 	FRotator	m_vTargetRotation = FRotator::ZeroRotator;

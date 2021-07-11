@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "AI/BTService_MonDetect.h"
 #include <BehaviorTree/BlackboardComponent.h>
@@ -29,8 +29,8 @@ void UBTService_MonDetect::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* No
 
 	float fRange = (float)(OwnerComp.GetBlackboardComponent()->GetValueAsObject(APG_AICon_Mon::TargetKey) ? nMChaseRange : nMDetectRange);
 
-	// AI ÃÖÀûÈ­ Àû¿ë
-	// ¸ó½ºÅÍ ½Ã¾ß°Å¸® ¿Ü ºÒÇÊ¿äÇÑ ÄÝ¸®Àü Ã¼Å©¸¦ ¸·´Â´Ù.
+	// AI ìµœì í™” ì ìš©
+	// ëª¬ìŠ¤í„° ì‹œì•¼ê±°ë¦¬ ì™¸ ë¶ˆí•„ìš”í•œ ì½œë¦¬ì „ ì²´í¬ë¥¼ ë§‰ëŠ”ë‹¤.
 	auto DefaultObject = World->GetFirstPlayerController()->GetCharacter();
 	if (DefaultObject)
 	{
