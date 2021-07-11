@@ -39,12 +39,15 @@ void APG_GameStateStage::BeginPlay()
 
 bool APG_GameStateStage::InitStageData()
 {
-	auto GameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != GameInstance, false);
+	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
+	ABCHECK(nullptr != pGameInstance, false);
+
+	auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeBase, false);
 
 	// Get Stage Data
-	int32 PlayStageID = GameInstance->GetPlayStageID();
-	StageData = GameInstance->GetTableStageData(PlayStageID);
+	int32 PlayStageID = pGameModeBase->GetPlayStageID();
+	StageData = pGameInstance->GetTableStageData(PlayStageID);
 	ABCHECK(nullptr != StageData, false);
 
 	// Set Kill Z

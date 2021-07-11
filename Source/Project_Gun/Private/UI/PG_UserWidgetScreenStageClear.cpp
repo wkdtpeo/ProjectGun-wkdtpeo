@@ -310,11 +310,7 @@ void UPG_UserWidgetScreenStageClear::OnBtnRetry()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-
-	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
-
-	pGameInstance->ResetStage();
+	pGameModeStage->ResetStage();
 }
 
 void UPG_UserWidgetScreenStageClear::OnBtnNext()
@@ -324,11 +320,7 @@ void UPG_UserWidgetScreenStageClear::OnBtnNext()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-
-	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
-
-	pGameInstance->NextStage();
+	pGameModeStage->NextStage();
 }
 
 void UPG_UserWidgetScreenStageClear::OnADRewardVideoSucessed()

@@ -1,7 +1,7 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 #include "Game/Console/Commands/PG_CommandPrevStage.h"
 #include "Game/GameInstance/PG_GameInstance.h"
-#include "Game/GameMode/PG_GameModeBase.h"
+#include "Game/GameMode/PG_GameModeStage.h"
 
 PG_CommandPrevStage::PG_CommandPrevStage()
 {
@@ -38,10 +38,7 @@ void PG_CommandPrevStage::Excute()
 		return;
 	}
 
-	auto pGameInstance = Cast<UPG_GameInstance>(G_PGWorld->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
-
-	pGameInstance->NextStage();
+	pGameMdoe->NextStage();
 }
 
 void PG_CommandPrevStage::OnChangeCommand()

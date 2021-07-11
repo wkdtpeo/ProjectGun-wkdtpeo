@@ -90,7 +90,7 @@ void UPG_UserWidgetMainLobby_Renewal::UpdateLayoutStage()
 	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
 	ABCHECK(nullptr != pGameModeMainLobby);
 
-	int32 nSelectedStageID = pGameInstance->GetPlayStageID();
+	int32 nSelectedStageID = pGameModeMainLobby->GetPlayStageID();
 	const FPGStageData* cpStageData = pGameInstance->GetTableStageData(nSelectedStageID);
 	ABCHECK(nullptr != cpStageData);
 
@@ -139,7 +139,7 @@ void UPG_UserWidgetMainLobby_Renewal::UpdateLayoutMission()
 	auto pSavePlayerData = pGameModeMainLobby->GetSavePlayerData();
 	ABCHECK(nullptr != pSavePlayerData);
 
-	int32 nSelectedStageID = pGameInstance->GetPlayStageID();
+	int32 nSelectedStageID = pGameModeMainLobby->GetPlayStageID();
 	const FPGStageData* cpStageData = pGameInstance->GetTableStageData(nSelectedStageID);
 	ABCHECK(nullptr != cpStageData);
 
@@ -188,30 +188,29 @@ void UPG_UserWidgetMainLobby_Renewal::OnBtnOption()
 
 void UPG_UserWidgetMainLobby_Renewal::OnBtnSelectStageNext()
 {
-	auto GameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != GameInstance);
+	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeMainLobby);
 
-	ABCHECK(GameInstance->OnNextSelectStage());
+	ABCHECK(pGameModeMainLobby->OnNextSelectStage());
 	UpdateLayoutStage();
 	UpdateLayoutMission();
 }
 
 void UPG_UserWidgetMainLobby_Renewal::OnBtnSelectStagePrev()
 {
-	auto GameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != GameInstance);
-
-	ABCHECK(GameInstance->OnPrevSelectStage());
+	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeMainLobby);
+	ABCHECK(pGameModeMainLobby->OnPrevSelectStage());
 	UpdateLayoutStage();
 	UpdateLayoutMission();
 }
 
 void UPG_UserWidgetMainLobby_Renewal::OnBtnGameStart()
 {
-	auto GameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != GameInstance);
+	auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeBase);
 
-	if (GameInstance->StartGame())
+	if (pGameModeBase->StartGame())
 	{
 		GetWorld()->GetGameViewport()->RemoveAllViewportWidgets();
 	}

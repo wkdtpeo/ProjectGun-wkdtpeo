@@ -26,7 +26,7 @@ void APG_GameModeMainLobby::BeginPlay()
 	if (0 == pSavePlayerData->m_nLastPlayStageID)
 		pSavePlayerData->m_nLastPlayStageID = 1;
 
-	pGameInstance->PalyStageID = pSavePlayerData->m_nLastPlayStageID;
+	m_nPalyStageID = pSavePlayerData->m_nLastPlayStageID;
 
 	Super::BeginPlay();
 }

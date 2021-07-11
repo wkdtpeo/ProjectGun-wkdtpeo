@@ -53,7 +53,7 @@ void UPG_UserWidgetScreenStageFailed::UpdateLayout()
 	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
 	ABCHECK(nullptr != pGameModeStage);
 
-	int32 nSelectedStageID = pGameInstance->GetPlayStageID();
+	int32 nSelectedStageID = pGameModeStage->GetPlayStageID();
 	const FPGStageData* cpStageData = pGameInstance->GetTableStageData(nSelectedStageID);
 	ABCHECK(nullptr != cpStageData);
 
@@ -80,10 +80,10 @@ void UPG_UserWidgetScreenStageFailed::OnBtnHome()
 
 void UPG_UserWidgetScreenStageFailed::OnBtnRetry()
 {
-	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
+	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeStage);
 
-	pGameInstance->ResetStage();
+	pGameModeStage->ResetStage();
 }
 
 void UPG_UserWidgetScreenStageFailed::OnADPlayStageVideoSucessed()

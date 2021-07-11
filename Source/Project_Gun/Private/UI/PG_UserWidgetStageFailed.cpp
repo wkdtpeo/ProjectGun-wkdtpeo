@@ -51,10 +51,10 @@ void UPG_UserWidgetStageFailed::UpdateClearStageLayout()
 
 void UPG_UserWidgetStageFailed::OnBtnRetry()
 {
-	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
+	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeStage);
 
-	pGameInstance->ResetStage();
+	pGameModeStage->ResetStage();
 }
 
 void UPG_UserWidgetStageFailed::OnBtnGoToMainLobby()

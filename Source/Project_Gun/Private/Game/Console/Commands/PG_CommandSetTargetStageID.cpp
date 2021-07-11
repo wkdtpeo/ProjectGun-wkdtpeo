@@ -1,7 +1,6 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Game/Console/Commands/PG_CommandSetTargetStageID.h"
+#include "Game/GameMode/PG_GameModeBase.h"
 
 PG_CommandSetTargetStageID::PG_CommandSetTargetStageID()
 {
@@ -28,10 +27,7 @@ void PG_CommandSetTargetStageID::Excute()
 	auto pGameMdoe = Cast<APG_GameModeBase>(G_PGWorld->GetAuthGameMode());
 	ABCHECK(nullptr != pGameMdoe);
 
-	auto pGameInstance = Cast<UPG_GameInstance>(G_PGWorld->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
-
-	if (false == pGameInstance->SetPlayStageID(m_pConsoleVariable->GetInt()))
+	if (false == pGameMdoe->SetPlayStageID(m_pConsoleVariable->GetInt()))
 	{
 		ABLOG(Warning, TEXT("There is no corresponding stage information. (StageID ; %d)"), m_pConsoleVariable->GetInt());
 	}

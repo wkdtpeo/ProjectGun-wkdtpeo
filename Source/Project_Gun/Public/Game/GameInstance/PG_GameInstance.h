@@ -14,6 +14,7 @@
 /**
  * 
  */
+
 UCLASS()
 class PROJECT_GUN_API UPG_GameInstance : public UGameInstance
 {
@@ -30,19 +31,19 @@ public :
 
 
 public :
-	void NextStage();
-	void ResetStage();
+	//void NextStage();
+	//void ResetStage();
 
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	bool OnNextSelectStage();
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	bool OnPrevSelectStage();
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	bool SetPlayStageID(int32 nPlayStageID);
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	int32 GetPlayStageID()	{ return PalyStageID; }
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	bool StartGame();
+	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	//bool OnNextSelectStage();
+	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	//bool OnPrevSelectStage();
+	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	//bool SetPlayStageID(int32 nPlayStageID);
+	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	//int32 GetPlayStageID()	{ return PalyStageID; }
+	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	//bool StartGame();
 
 
 public :
@@ -77,7 +78,7 @@ private :
 public :
 	FStreamableManager StreamableManager;
 
-	int32 PalyStageID; // 첫번째 스테이지의 ID 값은 1부터 시작한다.
+	//int32 PalyStageID; // 첫번째 스테이지의 ID 값은 1부터 시작한다.
 	FString GetStageName(int32 StageID);
 
 private :

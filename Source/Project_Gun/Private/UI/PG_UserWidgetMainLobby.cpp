@@ -50,10 +50,13 @@ void UPG_UserWidgetMainLobby::NativeConstruct()
 
 FString UPG_UserWidgetMainLobby::GetSelectedStageName()
 {
+	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeMainLobby, TEXT("NONE"));
+
 	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
 	ABCHECK(nullptr != pGameInstance, TEXT("NONE"));
 
-	int32 nSelectedStageID = pGameInstance->GetPlayStageID();
+	int32 nSelectedStageID = pGameModeMainLobby->GetPlayStageID();
 	const FPGStageData* cpStageData = pGameInstance->GetTableStageData(nSelectedStageID);
 	if (cpStageData)
 		return cpStageData->StageName;
@@ -69,7 +72,7 @@ void UPG_UserWidgetMainLobby::UpdateClearStageLayout()
 	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
 	ABCHECK(nullptr != pGameInstance);
 
-	int32 nSelectedStageID = pGameInstance->GetPlayStageID();
+	int32 nSelectedStageID = pGameModeMainLobby->GetPlayStageID();
 	const FPGStageData* cpStageData = pGameInstance->GetTableStageData(nSelectedStageID);
 	ABCHECK(nullptr != cpStageData);
 
@@ -140,18 +143,18 @@ void UPG_UserWidgetMainLobby::SetEnableIconOpenSlot(int32 nSlotIndex, bool bEnab
 
 bool UPG_UserWidgetMainLobby::OnNextSelectStage()
 {
-	auto GameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != GameInstance, false);
+	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeMainLobby, false);
 
-	return GameInstance->OnNextSelectStage();
+	return pGameModeMainLobby->OnNextSelectStage();
 }
 
 bool UPG_UserWidgetMainLobby::OnPrevSelectStage()
 {
-	auto GameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != GameInstance, false);
+	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeMainLobby, false);
 
-	return GameInstance->OnPrevSelectStage();
+	return pGameModeMainLobby->OnPrevSelectStage();
 }
 
 void UPG_UserWidgetMainLobby::OnBtnClickedWeaponSlot(int32 nSlotIndex)

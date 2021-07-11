@@ -2,6 +2,7 @@
 
 
 #include "Game/Console/Commands/PG_CommandRestartStage.h"
+#include "Game/GameMode/PG_GameModeStage.h"
 
 PG_CommandRestartStage::PG_CommandRestartStage()
 {
@@ -38,10 +39,7 @@ void PG_CommandRestartStage::Excute()
 		return;
 	}
 
-	auto pGameInstance = Cast<UPG_GameInstance>(G_PGWorld->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
-
-	pGameInstance->ResetStage();
+	pGameMdoe->ResetStage();
 }
 
 void PG_CommandRestartStage::OnChangeCommand()

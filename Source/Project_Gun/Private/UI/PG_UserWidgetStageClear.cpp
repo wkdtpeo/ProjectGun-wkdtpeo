@@ -1,13 +1,16 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetStageClear.h"
-#include "Game/GameMode/PG_GameModeStage.h"
-#include "Game/GameInstance/PG_GameInstance.h"
-#include "Define/PG_GamePlayData.h"
-#include "Player/PlayerState/PG_MyPlayerState.h"
-#include "Game/GameState/PG_GameStateStage.h"
+
 #include <Components/Overlay.h>
 #include <Components/TextBlock.h>
+#include <Components/Button.h>
+
+#include "Game/GameMode/PG_GameModeStage.h"
+#include "Game/GameInstance/PG_GameInstance.h"
+#include "Game/GameState/PG_GameStateStage.h"
+
+#include "Player/PlayerState/PG_MyPlayerState.h"
 
 void UPG_UserWidgetStageClear::NativeConstruct()
 {
@@ -80,11 +83,7 @@ void UPG_UserWidgetStageClear::OnBtnRetry()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-
-	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
-
-	pGameInstance->ResetStage();
+	pGameModeStage->ResetStage();
 }
 
 void UPG_UserWidgetStageClear::OnBtnGoToMainLobby()
@@ -105,11 +104,7 @@ void UPG_UserWidgetStageClear::OnBtnNextStage()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-
-	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != pGameInstance);
-
-	pGameInstance->NextStage();
+	pGameModeStage->NextStage();
 }
 
 void UPG_UserWidgetStageClear::OnBtnViewAD()

@@ -2,6 +2,7 @@
 
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameMode/PG_GameModeBase.h"
+#include "Game/GameMode/PG_GameModeMainLobby.h"
 
 UPG_GameInstance::UPG_GameInstance()
 {
@@ -12,7 +13,7 @@ void UPG_GameInstance::Init()
 {
 	Super::Init();
 
-	PalyStageID = 0;
+	//PalyStageID = 0;
 
 	m_kADData.Init(this);
 	LoadConsoleCommand();
@@ -126,98 +127,104 @@ FString UPG_GameInstance::GetStageName(int32 StageID)
 	return FString::Printf(TEXT("/Game/PG/Maps/Stage/Stage%d"), StageID);
 }
 
-void UPG_GameInstance::NextStage()
-{
-	PalyStageID++;
-	StartGame();
-}
+//void UPG_GameInstance::NextStage()
+//{
+//	PalyStageID++;
+//	//StartGame();
+//
+//	auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
+//	if (pGameModeBase)
+//	{
+//		pGameModeBase->StartGame();
+//	}
+//}
+//
+//void UPG_GameInstance::ResetStage()
+//{
+//	FString RestartStageName = GetStageName(PalyStageID);
+//	//FString DebugMsg = FString::Printf(TEXT("Stage Restart : %s"), *RestartStageName);
+//	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, DebugMsg);
+//
+//	UGameplayStatics::OpenLevel(GetWorld(), *RestartStageName);
+//}
+//
+//bool UPG_GameInstance::OnNextSelectStage()
+//{
+//	int32 nNextStage = PalyStageID + 1;
+//
+//	if (GetTableStageData(nNextStage))
+//	{
+//		int32 nBackupPlayStageID = PalyStageID;
+//		PalyStageID = nNextStage;
+//
+//		auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
+//		ABCHECK(nullptr != pGameModeBase, false);
+//
+//		if (false == pGameModeBase->ChangeSelectStageData(PalyStageID))
+//		{
+//			PalyStageID = nBackupPlayStageID;
+//			return false;
+//		}
+//
+//		return true;
+//	}
+//
+//	return false;
+//}
+//
+//bool UPG_GameInstance::OnPrevSelectStage()
+//{
+//	int32 nPrevStage = PalyStageID - 1;
+//
+//	if (GetTableStageData(nPrevStage))
+//	{
+//		int32 nBackupPlayStageID = PalyStageID;
+//		PalyStageID = nPrevStage;
+//
+//		auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
+//		ABCHECK(nullptr != pGameModeBase, false);
+//
+//		if (false == pGameModeBase->ChangeSelectStageData(PalyStageID))
+//		{
+//			PalyStageID = nBackupPlayStageID;
+//			return false;
+//		}
+//
+//		return true;
+//	}
+//
+//	return false;
+//}
+//
+//bool UPG_GameInstance::SetPlayStageID(int32 nPlayStageID)
+//{
+//	ABCHECK(GetTableStageData(nPlayStageID), false);
+//
+//	PalyStageID = nPlayStageID;
+//	return true;
+//}
 
-void UPG_GameInstance::ResetStage()
-{
-	FString RestartStageName = GetStageName(PalyStageID);
-	//FString DebugMsg = FString::Printf(TEXT("Stage Restart : %s"), *RestartStageName);
-	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, DebugMsg);
-
-	UGameplayStatics::OpenLevel(GetWorld(), *RestartStageName);
-}
-
-bool UPG_GameInstance::OnNextSelectStage()
-{
-	int32 nNextStage = PalyStageID + 1;
-
-	if (GetTableStageData(nNextStage))
-	{
-		int32 nBackupPlayStageID = PalyStageID;
-		PalyStageID = nNextStage;
-
-		auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
-		ABCHECK(nullptr != pGameModeBase, false);
-
-		if (false == pGameModeBase->ChangeSelectStageData(PalyStageID))
-		{
-			PalyStageID = nBackupPlayStageID;
-			return false;
-		}
-
-		return true;
-	}
-
-	return false;
-}
-
-bool UPG_GameInstance::OnPrevSelectStage()
-{
-	int32 nPrevStage = PalyStageID - 1;
-
-	if (GetTableStageData(nPrevStage))
-	{
-		int32 nBackupPlayStageID = PalyStageID;
-		PalyStageID = nPrevStage;
-
-		auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
-		ABCHECK(nullptr != pGameModeBase, false);
-
-		if (false == pGameModeBase->ChangeSelectStageData(PalyStageID))
-		{
-			PalyStageID = nBackupPlayStageID;
-			return false;
-		}
-
-		return true;
-	}
-
-	return false;
-}
-
-bool UPG_GameInstance::SetPlayStageID(int32 nPlayStageID)
-{
-	ABCHECK(GetTableStageData(nPlayStageID), false);
-
-	PalyStageID = nPlayStageID;
-	return true;
-}
-
-bool UPG_GameInstance::StartGame()
-{
-	ABCHECK(GetTableStageData(PalyStageID), false);
-
-	auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
-	ABCHECK(nullptr != pGameModeBase, false);
-
-	auto pSavePlayerData = pGameModeBase->GetSavePlayerData();
-	ABCHECK(nullptr != pSavePlayerData, false);
-
-	pSavePlayerData->m_nLastPlayStageID = PalyStageID;
-	pGameModeBase->SavePlayerData();
-
-	FString NextStageName = GetStageName(PalyStageID);
-	//FString DebugMsg = FString::Printf(TEXT("Play Stage : %s"), *NextStageName);
-	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, DebugMsg);
-
-	UGameplayStatics::OpenLevel(GetWorld(), *NextStageName);
-
-	return true;
-}
+//bool UPG_GameInstance::StartGame()
+//{
+//	ABCHECK(GetTableStageData(PalyStageID), false);
+//
+//	auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
+//	ABCHECK(nullptr != pGameModeBase, false);
+//
+//	auto pSavePlayerData = pGameModeBase->GetSavePlayerData();
+//	ABCHECK(nullptr != pSavePlayerData, false);
+//
+//	pSavePlayerData->m_nLastPlayStageID = PalyStageID;
+//	pGameModeBase->SavePlayerData();
+//
+//	FString NextStageName = GetStageName(PalyStageID);
+//	//FString DebugMsg = FString::Printf(TEXT("Play Stage : %s"), *NextStageName);
+//	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, DebugMsg);
+//
+//	UGameplayStatics::OpenLevel(GetWorld(), *NextStageName);
+//
+//	return true;
+//}
 
 void UPG_GameInstance::FromGameModeTick(float DeltaTime)
 {
