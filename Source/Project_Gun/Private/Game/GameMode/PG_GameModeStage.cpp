@@ -83,11 +83,6 @@ bool APG_GameModeStage::IsStageClear()
 	return IsClearMission(EStageClearType::eSCT_AmountKill);
 }
 
-int32 APG_GameModeStage::GetPlayStageID()
-{
-	return m_pSelectSaveStageData->m_nStageID;
-}
-
 int32 APG_GameModeStage::GetClearTotalPoint()
 {
 	int nTotalReward = 0;

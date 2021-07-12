@@ -23,6 +23,10 @@ public:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 	virtual void BeginPlay() override;
 
+public :
+	//===================================================
+	// Mission
+	//===================================================
 	// 현재 각 타입의 미션 클리어 여부
 	virtual bool IsClearMission(EStageClearType a_ekStageClearType) override;	
 	// 이전에 각 타입의 미션 클리어 여부
@@ -30,8 +34,6 @@ public:
 	// 스테이지 클리어 여부
 	bool IsStageClear();
 
-	// 플레이중인 스테이지 ID
-	int32 GetPlayStageID();
 	// 획득한 포인트 (총합 : 스테이지 클리어 + 미션 클리어 + 몬스터 처치 + 광고)
 	int32 GetClearTotalPoint();
 	// 스테이지 클리어 포인트

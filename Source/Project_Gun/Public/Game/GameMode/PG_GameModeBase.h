@@ -26,19 +26,20 @@ public :
 	virtual void Tick(float DeltaTime) override;
 	
 public :
-	// 각각의 GameMode에 따라 IsClearMission 검사 조건이 틀림
-	virtual bool IsClearMission(EStageClearType a_ekStageClearType) { return false; }
-
 	//===================================================
 	// Game
 	//===================================================
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	UFUNCTION(BlueprintCallable, Category = "PG Game")
 	bool StartGame();
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	UFUNCTION(BlueprintCallable, Category = "PG Game")
 	void StartGame_NextStage();
-	UFUNCTION(BlueprintCallable, Category = "PG Stage")
+	UFUNCTION(BlueprintCallable, Category = "PG Game")
 	void RestartGame();
 
+	//===================================================
+	// Stage
+	//===================================================
+	// StageID 관련
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	bool SetNextStageID();
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
@@ -46,17 +47,21 @@ public :
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	bool SetPlayStageID(int32 nPlayStageID);
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	int32 GetPlayStageID()	{ return m_nPalyStageID; }
+	int32 GetPlayStageID() { return m_nPalyStageID; }
 
-	//===================================================
-	// Stage
-	//===================================================
+	// SaveStageData
+	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	bool SetSelectSaveStageData(int32 a_nStageID);		// m_pSelectSaveStageData 데이터를 설정한다.
+	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	bool IsFirstPlayStage(int32 a_nStageID);			// 해당 스테이지를 처음 플레이하는지 검사한다.
-	
 
 	//===================================================
-	// Weapon
+	// Mission
+	//===================================================
+	virtual bool IsClearMission(EStageClearType a_ekStageClearType) { return false; }	// 각각의 GameMode에 따라 IsClearMission 검사 조건이 틀림
+
+	//===================================================
+	// WeaponShop
 	//===================================================
 	// 무기 언락
 	bool IsUnlockWeapon(int32 a_nWeaponIndex);
@@ -64,12 +69,14 @@ public :
 	bool IsMaxLevelAmmo(int32 a_nWeaponIndex);
 	bool IsAbleBuyRewardPointPower(int32 a_nWeaponIndex);
 	bool IsAbleBuyRewardPointAmmo(int32 a_nWeaponIndex);
+
 	// 무기 구매
 	bool BuyWeapon(int32 a_nWeaponIndex);
 	bool BuyPowerUp(int32 a_nWeaponIndex);
 	bool BuyAmmoUp(int32 a_nWeaponIndex);
 	FString GetLastBuyErrorMsg();
-	// 무기 속성
+
+	// 무기 정보
 	int32 GetMaxPower(int32 a_nWeaponIndex);
 	int32 GetMaxAmmo(int32 a_nWeaponIndex);
 
