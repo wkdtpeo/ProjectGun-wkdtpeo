@@ -54,7 +54,7 @@ void UPG_UserWidgetStageFailed::OnBtnRetry()
 	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
 	ABCHECK(nullptr != pGameModeStage);
 
-	pGameModeStage->ResetStage();
+	pGameModeStage->RestartGame();
 }
 
 void UPG_UserWidgetStageFailed::OnBtnGoToMainLobby()

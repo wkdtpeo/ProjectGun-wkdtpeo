@@ -127,7 +127,7 @@ FString UPG_GameInstance::GetStageName(int32 StageID)
 	return FString::Printf(TEXT("/Game/PG/Maps/Stage/Stage%d"), StageID);
 }
 
-//void UPG_GameInstance::NextStage()
+//void UPG_GameInstance::StartGame_NextStage()
 //{
 //	PalyStageID++;
 //	//StartGame();
@@ -139,7 +139,7 @@ FString UPG_GameInstance::GetStageName(int32 StageID)
 //	}
 //}
 //
-//void UPG_GameInstance::ResetStage()
+//void UPG_GameInstance::RestartGame()
 //{
 //	FString RestartStageName = GetStageName(PalyStageID);
 //	//FString DebugMsg = FString::Printf(TEXT("Stage Restart : %s"), *RestartStageName);

@@ -31,8 +31,8 @@ public :
 
 
 public :
-	//void NextStage();
-	//void ResetStage();
+	//void StartGame_NextStage();
+	//void RestartGame();
 
 	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	//bool OnNextSelectStage();

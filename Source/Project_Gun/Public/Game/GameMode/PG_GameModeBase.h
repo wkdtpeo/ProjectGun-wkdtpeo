@@ -33,10 +33,9 @@ public :
 	// Game
 	//===================================================
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	bool	StartGame();
-
-	void NextStage();
-	void ResetStage();
+	bool StartGame();
+	void StartGame_NextStage();
+	void RestartGame();
 
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	bool OnNextSelectStage();

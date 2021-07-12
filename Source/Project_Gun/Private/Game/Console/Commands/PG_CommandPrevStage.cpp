@@ -38,7 +38,7 @@ void PG_CommandPrevStage::Excute()
 		return;
 	}
 
-	pGameMdoe->NextStage();
+	pGameMdoe->StartGame_NextStage();
 }
 
 void PG_CommandPrevStage::OnChangeCommand()

@@ -37,7 +37,7 @@ void PG_CommandRestartStage::Excute()
 		return;
 	}
 
-	pGameMdoe->ResetStage();
+	pGameMdoe->RestartGame();
 }
 
 void PG_CommandRestartStage::OnChangeCommand()

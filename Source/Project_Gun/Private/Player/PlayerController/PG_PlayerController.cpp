@@ -155,7 +155,7 @@ void APG_PlayerController::OnStateFailed()
 	auto GameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
 	ABCHECK(nullptr != GameInstance);
 
-	//GameInstance->ResetStage();
+	//GameInstance->RestartGame();
 	ABCHECK(nullptr != UserWidgetScreenStageFailed);
 	UserWidgetScreenStageFailed->AddToViewport();
 	UserWidgetScreenStageFailed->SetVisibility(ESlateVisibility::Visible);

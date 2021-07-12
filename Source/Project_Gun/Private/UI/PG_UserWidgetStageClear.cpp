@@ -81,7 +81,7 @@ void UPG_UserWidgetStageClear::OnBtnRetry()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-	pGameModeStage->ResetStage();
+	pGameModeStage->StartGame_NextStage();
 }
 
 void UPG_UserWidgetStageClear::OnBtnGoToMainLobby()
@@ -102,7 +102,7 @@ void UPG_UserWidgetStageClear::OnBtnNextStage()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-	pGameModeStage->NextStage();
+	pGameModeStage->StartGame_NextStage();
 }
 
 void UPG_UserWidgetStageClear::OnBtnViewAD()

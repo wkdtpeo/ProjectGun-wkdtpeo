@@ -39,7 +39,7 @@ void PG_CommandNextStage::Excute()
 		return;
 	}
 
-	pGameMdoe->NextStage();
+	pGameMdoe->StartGame_NextStage();
 }
 
 void PG_CommandNextStage::OnChangeCommand()

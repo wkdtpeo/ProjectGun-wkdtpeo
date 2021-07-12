@@ -93,13 +93,13 @@ bool APG_GameModeBase::StartGame()
 	return true;
 }
 
-void APG_GameModeBase::NextStage()
+void APG_GameModeBase::StartGame_NextStage()
 {
 	m_nPalyStageID++;
 	StartGame();
 }
 
-void APG_GameModeBase::ResetStage()
+void APG_GameModeBase::RestartGame()
 {
 	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
 	ABCHECK(nullptr != pGameInstance);

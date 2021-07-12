@@ -306,7 +306,7 @@ void UPG_UserWidgetScreenStageClear::OnBtnRetry()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-	pGameModeStage->ResetStage();
+	pGameModeStage->RestartGame();
 }
 
 void UPG_UserWidgetScreenStageClear::OnBtnNext()
@@ -316,7 +316,7 @@ void UPG_UserWidgetScreenStageClear::OnBtnNext()
 
 	pGameModeStage->SavePlayerData();
 	pGameModeStage->SaveStageData();
-	pGameModeStage->NextStage();
+	pGameModeStage->StartGame_NextStage();
 }
 
 void UPG_UserWidgetScreenStageClear::OnADRewardVideoSucessed()
