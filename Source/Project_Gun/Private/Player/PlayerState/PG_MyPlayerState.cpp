@@ -17,12 +17,12 @@ APG_MyPlayerState::APG_MyPlayerState()
 void APG_MyPlayerState::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
+	ABCHECK(InitPlayerData());
 }
 
 void APG_MyPlayerState::BeginPlay()
 {
 	Super::BeginPlay();
-	ABCHECK(InitPlayerData());
 }
 
 bool APG_MyPlayerState::InitPlayerData()
