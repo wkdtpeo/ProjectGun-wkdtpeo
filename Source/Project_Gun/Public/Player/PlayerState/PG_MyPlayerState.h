@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
-#include "Define/PG_GamePlayData.h"
+
 #include <GameFramework/PlayerState.h>
 #include "PG_MyPlayerState.generated.h"
 

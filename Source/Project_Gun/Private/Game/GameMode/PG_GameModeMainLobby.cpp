@@ -1,9 +1,8 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Game/GameMode/PG_GameModeMainLobby.h"
-#include "SaveData/PG_SaveStageData.h"
 #include "Game/GameInstance/PG_GameInstance.h"
-#include "Define/PG_GamePlayData.h"
+#include "SaveData/PG_SaveStageData.h"
 #include "SaveData/PG_SavePlayerData.h"
 #include "Player/PlayerState/PG_MyPlayerState.h"
 
@@ -17,20 +16,8 @@ APG_GameModeMainLobby::APG_GameModeMainLobby()
 
 void APG_GameModeMainLobby::BeginPlay()
 {
-	auto pSavePlayerData = GetSavePlayerData();
-	ABCHECK(nullptr != pSavePlayerData);
-
-	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-	ABCHECK(nullptr != pSavePlayerData);
-
-	if (0 == pSavePlayerData->m_nLastPlayStageID)
-		pSavePlayerData->m_nLastPlayStageID = 1;
-
-	m_nPalyStageID = pSavePlayerData->m_nLastPlayStageID;
-
 	Super::BeginPlay();
 }
-
 
 bool APG_GameModeMainLobby::IsClearMission(enum EStageClearType a_ekStageClearType)
 {

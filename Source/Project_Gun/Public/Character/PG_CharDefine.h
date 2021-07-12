@@ -2,8 +2,6 @@
 
 #pragma once
 
-#include <CoreMinimal.h>
-
 UENUM(BlueprintType)
 enum class ECharacterState : uint8
 {

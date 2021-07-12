@@ -3,8 +3,9 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
-#include <GameFramework/Character.h>
 #include "Character/PG_CharDefine.h"
+
+#include <GameFramework/Character.h>
 #include "PG_Char.generated.h"
 
 UCLASS()

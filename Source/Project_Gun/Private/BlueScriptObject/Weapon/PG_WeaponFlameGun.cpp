@@ -1,8 +1,8 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Weapon/PG_WeaponFlameGun.h"
-#include "Character/PG_MonChar.h"
 #include "BlueScriptObject/Projectile/PG_ProjectileFlame.h"
+#include "Character/PG_MonChar.h"
 
 APG_WeaponFlameGun::APG_WeaponFlameGun()
 {

@@ -1,15 +1,14 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetShop.h"
-
-#include <Components/Button.h>
-#include <Components/TextBlock.h>
 #include "UI/PG_UserWidgetShopWeaponBox.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameMode/PG_GameModeMainLobby.h"
 #include "Player/PlayerState/PG_MyPlayerState.h"
 #include "SaveData/PG_SavePlayerData.h"
 
+#include <Components/Button.h>
+#include <Components/TextBlock.h>
 
 void UPG_UserWidgetShop::NativeConstruct()
 {

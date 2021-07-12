@@ -2,8 +2,8 @@
 
 #include "UI/PG_UserWidgetWeaponBox.h"
 #include "Game/GameInstance/PG_GameInstance.h"
-#include "Define/PG_TableData.h"
 #include "Game/GameMode/PG_GameModeBase.h"
+
 #include <Components/Button.h>
 #include <Components/Image.h>
 #include <Components/TextBlock.h>

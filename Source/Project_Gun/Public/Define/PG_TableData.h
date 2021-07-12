@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "Project_Gun/Project_Gun.h"
+
 #include <Engine/DataTable.h>
 #include "PG_TableData.generated.h"
 

@@ -2,15 +2,10 @@
 
 #include "Game/GameMode/PG_GameModeBase.h"
 #include "Game/GameInstance/PG_GameInstance.h"
-
 #include "SaveData/PG_SaveStageData.h"
 #include "SaveData/PG_SavePlayerData.h"
-
-#include "Define/PG_GamePlayData.h"
-
-#include "BlueScriptObject/Weapon/PG_Weapon.h"
-
 #include "Player/PlayerState/PG_MyPlayerState.h"
+#include "BlueScriptObject/Weapon/PG_Weapon.h"
 
 APG_GameModeBase::APG_GameModeBase()
 {
@@ -21,23 +16,32 @@ APG_GameModeBase::APG_GameModeBase()
 	PrimaryActorTick.bCanEverTick = true;
 }
 
+void APG_GameModeBase::PostLoad()
+{
+	Super::PostLoad();
+
+
+}
+
 void APG_GameModeBase::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
+
+	G_PGWorld = GetWorld();
 
 	// 플레이어 세이브 데이터 로드
 	{
 		m_pSavePlayerData = LoadSavePlayerData();
 		ABCHECK(nullptr != m_pSavePlayerData);
-
 	}
+
+	m_nPalyStageID = m_pSavePlayerData->m_nLastPlayStageID;
+	if (0 == m_pSavePlayerData->m_nLastPlayStageID)
+		m_nPalyStageID = 1;
 
 	// 기본 스테이지 선택하기
 	{
-		auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
-		ABCHECK(nullptr != pGameInstance);
-
-		m_pSelectSaveStageData = LoadSaveStageData(GetPlayStageID());
+		m_pSelectSaveStageData = LoadSaveStageData(m_nPalyStageID);
 		ABCHECK(nullptr != m_pSelectSaveStageData);
 	}
 }
@@ -49,8 +53,6 @@ void APG_GameModeBase::PostLogin(APlayerController* NewPlayer)
 
 void APG_GameModeBase::BeginPlay()
 {
-	G_PGWorld = GetWorld();
-
 	Super::BeginPlay();
 }
 

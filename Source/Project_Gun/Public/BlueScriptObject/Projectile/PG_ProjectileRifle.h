@@ -4,6 +4,7 @@
 
 #include "Project_Gun/Project_Gun.h"
 #include "BlueScriptObject/Projectile/PG_Projectile.h"
+
 #include <GameFramework/Actor.h>
 #include "PG_ProjectileRifle.generated.h"
 

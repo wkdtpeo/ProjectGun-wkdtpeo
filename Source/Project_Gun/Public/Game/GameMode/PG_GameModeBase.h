@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
-#include "Define/PG_GamePlayData.h"
+
 #include <GameFramework/GameModeBase.h>
 #include "PG_GameModeBase.generated.h"
 
@@ -18,7 +18,7 @@ class PROJECT_GUN_API APG_GameModeBase : public AGameModeBase
 	
 public :
 	APG_GameModeBase();
-
+	virtual void PostLoad() override;
 	virtual void PostInitializeComponents() override;
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 	virtual void BeginPlay() override;

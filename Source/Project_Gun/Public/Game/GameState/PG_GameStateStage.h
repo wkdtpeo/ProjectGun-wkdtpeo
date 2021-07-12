@@ -3,8 +3,8 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
+
 #include <GameFramework/GameStateBase.h>
-#include "Define/PG_GamePlayData.h"
 #include "PG_GameStateStage.generated.h"
 
 DECLARE_MULTICAST_DELEGATE(FOnStageTimer);

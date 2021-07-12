@@ -2,14 +2,13 @@
 
 #include "Player/PlayerState/PG_MyPlayerState.h"
 #include "Game/GameInstance/PG_GameInstance.h"
-#include "Define/PG_GamePlayData.h"
-#include "BlueScriptObject/LethalAttack/PG_LethalAttack.h"
-#include "SaveData/PG_SavePlayerData.h"
 #include "Game/GameMode/PG_GameModeBase.h"
 #include "Game/GameMode/PG_GameModeStage.h"
+#include "SaveData/PG_SavePlayerData.h"
 #include "Character/PG_MyChar.h"
 #include "Character/PG_MonChar.h"
 #include "BlueScriptObject/Weapon/PG_Weapon.h"
+#include "BlueScriptObject/LethalAttack/PG_LethalAttack.h"
 
 APG_MyPlayerState::APG_MyPlayerState()
 {
@@ -18,12 +17,12 @@ APG_MyPlayerState::APG_MyPlayerState()
 void APG_MyPlayerState::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-	ABCHECK(InitPlayerData());
 }
 
 void APG_MyPlayerState::BeginPlay()
 {
 	Super::BeginPlay();
+	ABCHECK(InitPlayerData());
 }
 
 bool APG_MyPlayerState::InitPlayerData()

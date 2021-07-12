@@ -1,9 +1,10 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Projectile/PG_ProjectileRifle.h"
+#include "BlueScriptObject/Weapon/PG_Weapon.h"
 #include "Character/PG_MonChar.h"
 #include "Character/PG_MyChar.h"
-#include "Define/PG_TableData.h"
+#include "Character/PG_MyChar.h"
 
 // Sets default values
 APG_ProjectileRifle::APG_ProjectileRifle()

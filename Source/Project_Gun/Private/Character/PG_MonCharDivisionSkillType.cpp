@@ -2,9 +2,9 @@
 
 #include "Character/PG_MonCharDivisionSkillType.h"
 #include "Character/PG_MonChar.h"
+#include "Character/Component/PG_ComponentDivisionSpawn.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "AI/PG_AICon_Mon.h"
-#include "Character/Component/PG_ComponentDivisionSpawn.h"
 
 APG_MonCharDivisionSkillType::APG_MonCharDivisionSkillType()
 {

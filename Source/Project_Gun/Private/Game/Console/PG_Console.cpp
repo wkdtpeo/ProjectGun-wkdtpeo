@@ -1,7 +1,5 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-#include <Core\Public\HAL\IConsoleManager.h>
-
 #include "Game/Console/PG_Console.h"
 #include "Game/Console/Commands/PG_Command.h"
 #include "Game/Console/Commands/PG_CommandAllStageUnlock.h"
@@ -11,6 +9,8 @@
 #include "Game/Console/Commands/PG_CommandSetTargetStageID.h"
 #include "Game/Console/Commands/PG_CommandShowMeTheMoney.h"
 #include "Game/Console/Commands/PG_CommandStartStage.h"
+
+#include <Core\Public\HAL\IConsoleManager.h>
 
 PG_Console::PG_Console()
 {

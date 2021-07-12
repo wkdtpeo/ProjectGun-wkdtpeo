@@ -3,7 +3,7 @@
 #include "UI/PG_UserWidgetStageFailed.h"
 #include "Game/GameMode/PG_GameModeStage.h"
 #include "Game/GameInstance/PG_GameInstance.h"
-#include "Define/PG_GamePlayData.h"
+
 #include <Components/Overlay.h>
 
 void UPG_UserWidgetStageFailed::NativeConstruct()

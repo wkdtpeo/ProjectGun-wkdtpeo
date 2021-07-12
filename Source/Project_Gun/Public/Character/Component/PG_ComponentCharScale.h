@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
+
 #include <Components/ActorComponent.h>
 #include "PG_ComponentCharScale.generated.h"
 

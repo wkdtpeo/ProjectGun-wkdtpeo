@@ -3,13 +3,9 @@
 
 #include "UI/PG_UserWidgetScreenStageClear.h"
 #include "UI/PG_UserWidgetMessagePopup.h"
-
 #include "Game/GameMode/PG_GameModeStage.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameState/PG_GameStateStage.h"
-
-#include "Define/PG_GamePlayData.h"
-
 #include "Player/PlayerState/PG_MyPlayerState.h"
 
 #include <Components/Button.h>

@@ -1,16 +1,14 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetStageClear.h"
+#include "Game/GameMode/PG_GameModeStage.h"
+#include "Game/GameInstance/PG_GameInstance.h"
+#include "Game/GameState/PG_GameStateStage.h"
+#include "Player/PlayerState/PG_MyPlayerState.h"
 
 #include <Components/Overlay.h>
 #include <Components/TextBlock.h>
 #include <Components/Button.h>
-
-#include "Game/GameMode/PG_GameModeStage.h"
-#include "Game/GameInstance/PG_GameInstance.h"
-#include "Game/GameState/PG_GameStateStage.h"
-
-#include "Player/PlayerState/PG_MyPlayerState.h"
 
 void UPG_UserWidgetStageClear::NativeConstruct()
 {

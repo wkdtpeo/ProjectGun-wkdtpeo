@@ -5,12 +5,8 @@
 #include "UI/PG_UserWidgetWeaponBox.h"
 #include "UI/PG_UserWidgetWeaponInventory.h"
 #include "UI/PG_UserWidgetScreenShop.h"
-
 #include "Game/GameMode/PG_GameModeMainLobby.h"
 #include "Game/GameInstance/PG_GameInstance.h"
-
-#include "Define/PG_GamePlayData.h"
-
 #include "SaveData/PG_SavePlayerData.h"
 
 #include <Components/Button.h>
@@ -21,7 +17,6 @@
 
 void UPG_UserWidgetMainLobby_Renewal::NativeConstruct()
 {
-	Super::NativeConstruct();
 
 	//===========================================
 	// Canvas TopMenu
@@ -80,6 +75,9 @@ void UPG_UserWidgetMainLobby_Renewal::NativeConstruct()
 	PG_WIDGET_LINK(UScaleBox, ScaleWeaponInventory);
 	PG_WIDGET_LINK(UPG_UserWidgetWeaponInventory, WB_WeaponInventory);
 	m_pkWB_WeaponInventory->OnBtnClickedClose.AddUObject(this, &UPG_UserWidgetMainLobby_Renewal::OnCloseWeaponInventory);
+
+	Super::NativeConstruct();
+
 }
 
 void UPG_UserWidgetMainLobby_Renewal::UpdateLayoutStage()

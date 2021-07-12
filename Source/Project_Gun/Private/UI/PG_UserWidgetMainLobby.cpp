@@ -1,12 +1,12 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetMainLobby.h"
-#include "Game/GameMode/PG_GameModeMainLobby.h"
-#include "Game/GameInstance/PG_GameInstance.h"
-#include "Define/PG_GamePlayData.h"
-#include "SaveData/PG_SavePlayerData.h"
 #include "UI/PG_UserWidgetWeaponBox.h"
 #include "UI/PG_UserWidgetWeaponInventory.h"
+#include "Game/GameMode/PG_GameModeMainLobby.h"
+#include "Game/GameInstance/PG_GameInstance.h"
+#include "SaveData/PG_SavePlayerData.h"
+
 #include <Components/Overlay.h>
 #include <Components/Button.h>
 #include <Components/TextBlock.h>

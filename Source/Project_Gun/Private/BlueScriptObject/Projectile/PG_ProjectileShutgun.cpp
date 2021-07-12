@@ -1,10 +1,9 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Projectile/PG_ProjectileShutgun.h"
+#include "BlueScriptObject/Weapon/PG_Weapon.h"
 #include "Character/PG_MonChar.h"
 #include "Character/PG_MyChar.h"
-#include "Define/PG_TableData.h"
-
 
 APG_ProjectileShutgun::APG_ProjectileShutgun()
 {

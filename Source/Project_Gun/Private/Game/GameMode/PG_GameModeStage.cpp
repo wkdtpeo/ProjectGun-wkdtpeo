@@ -1,13 +1,13 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Game/GameMode/PG_GameModeStage.h"
-#include "Player/PlayerController/PG_PlayerController.h"
-#include "Character/PG_MyChar.h"
 #include "Game/GameState/PG_GameStateStage.h"
-#include "Player/PlayerState/PG_MyPlayerState.h"
-#include "SaveData/PG_SaveStageData.h"
-#include "Define/PG_GamePlayData.h"
 #include "Game/GameInstance/PG_GameInstance.h"
+#include "Player/PlayerController/PG_PlayerController.h"
+#include "Player/PlayerState/PG_MyPlayerState.h"
+#include "Character/PG_MyChar.h"
+#include "SaveData/PG_SaveStageData.h"
+#include "SaveData/PG_SavePlayerData.h"
 
 APG_GameModeStage::APG_GameModeStage()
 {

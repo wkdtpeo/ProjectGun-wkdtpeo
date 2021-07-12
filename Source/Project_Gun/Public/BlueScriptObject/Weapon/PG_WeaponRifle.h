@@ -4,6 +4,7 @@
 
 #include "Project_Gun/Project_Gun.h"
 #include "BlueScriptObject/Weapon/PG_Weapon.h"
+
 #include "PG_WeaponRifle.generated.h"
 
 /**

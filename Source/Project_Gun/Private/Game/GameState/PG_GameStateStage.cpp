@@ -1,14 +1,14 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Game/GameState/PG_GameStateStage.h"
+#include "Game/GameMode/PG_GameModeStage.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Character/PG_MonChar.h"
 #include "Character/PG_MonCharDivision.h"
 #include "Player/PlayerState/PG_MyPlayerState.h"
 #include "Player/PlayerController/PG_PlayerController.h"
-#include "Game/GameMode/PG_GameModeStage.h"
-#include <EngineUtils.h>
 
+#include <EngineUtils.h>
 
 APG_GameStateStage::APG_GameStateStage()
 {
@@ -18,16 +18,16 @@ APG_GameStateStage::APG_GameStateStage()
 void APG_GameStateStage::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-	
-	if (false == InitStageData())
-	{
-		ABLOG(Error, TEXT("Init Stage Data Failed!!"));
-	}
 }
 
 void APG_GameStateStage::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (false == InitStageData())
+	{
+		ABLOG(Error, TEXT("Init Stage Data Failed!!"));
+	}
 
 	auto pPlayerState = Cast<APG_MyPlayerState>(GetWorld()->GetFirstPlayerController()->PlayerState);
 	ABCHECK(nullptr != pPlayerState);

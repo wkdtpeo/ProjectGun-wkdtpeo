@@ -3,12 +3,8 @@
 
 #include "UI/PG_UserWidgetPlayStageWeaponBag.h"
 #include "UI/PG_UserWidgetWeaponBox.h"
-
 #include "Player/PlayerState/PG_MyPlayerState.h"
-
 #include "Game/GameMode/PG_GameModeBase.h"
-
-#include "Define/PG_GamePlayData.h"
 
 void UPG_UserWidgetPlayStageWeaponBag::NativeConstruct()
 {

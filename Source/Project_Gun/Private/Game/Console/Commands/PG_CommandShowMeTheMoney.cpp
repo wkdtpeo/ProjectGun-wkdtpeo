@@ -2,7 +2,7 @@
 #include "Game/Console/Commands/PG_CommandShowMeTheMoney.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameMode/PG_GameModeBase.h"
-
+#include "Player/PlayerState/PG_MyPlayerState.h"
 #include "SaveData/PG_SavePlayerData.h"
 
 PG_CommandShowMeTheMoney::PG_CommandShowMeTheMoney()

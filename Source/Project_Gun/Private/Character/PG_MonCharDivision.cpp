@@ -2,9 +2,9 @@
 
 #include "Character/PG_MonCharDivision.h"
 #include "Character/PG_MonChar.h"
+#include "Character/Component/PG_ComponentDivisionSpawn.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "AI/PG_AICon_Mon.h"
-#include "Character/Component/PG_ComponentDivisionSpawn.h"
 
 APG_MonCharDivision::APG_MonCharDivision()
 {

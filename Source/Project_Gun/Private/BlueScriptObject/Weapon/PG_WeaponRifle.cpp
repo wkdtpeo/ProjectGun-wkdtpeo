@@ -3,7 +3,9 @@
 #include "BlueScriptObject/Weapon/PG_WeaponRifle.h"
 #include "BlueScriptObject/Projectile/PG_Projectile.h"
 #include "Character/PG_MonChar.h"
+
 #include <Engine/StaticMeshSocket.h>
+
 
 APG_WeaponRifle::APG_WeaponRifle()
 {

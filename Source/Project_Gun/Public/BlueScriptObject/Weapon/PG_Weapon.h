@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
-#include "Define/PG_TableData.h"
+
 #include <GameFramework/Actor.h>
 #include "PG_Weapon.generated.h"
 

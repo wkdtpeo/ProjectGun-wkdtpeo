@@ -4,15 +4,10 @@
 #include "UI/PG_UserWidgetShopWeaponSlot.h"
 #include "UI/PG_UserWidgetBuyPopup.h"
 #include "UI/PG_UserWidgetMessagePopup.h"
-
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameMode/PG_GameModeBase.h"
-
 #include "Player/PlayerState/PG_MyPlayerState.h"
-
 #include "SaveData/PG_SavePlayerData.h"
-
-#include "Define/PG_TableData.h"
 
 #include <Components/Button.h>
 #include <Components/Image.h>

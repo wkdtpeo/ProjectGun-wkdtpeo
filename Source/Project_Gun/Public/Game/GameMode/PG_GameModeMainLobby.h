@@ -3,8 +3,9 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
-#include <GameFramework/GameModeBase.h>
 #include "Game/GameMode/PG_GameModeBase.h"
+
+#include <GameFramework/GameModeBase.h>
 #include "PG_GameModeMainLobby.generated.h"
 
 /**

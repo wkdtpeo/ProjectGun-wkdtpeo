@@ -1,9 +1,10 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetWeaponInventory.h"
-#include "Game/GameInstance/PG_GameInstance.h"
-#include "Define/PG_TableData.h"
 #include "UI/PG_UserWidgetWeaponBox.h"
+#include "Game/GameInstance/PG_GameInstance.h"
+#include "Game/GameMode/PG_GameModeBase.h"
+
 #include <Components/Button.h>
 
 void UPG_UserWidgetWeaponInventory::NativeConstruct()

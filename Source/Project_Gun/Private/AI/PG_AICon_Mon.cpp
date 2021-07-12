@@ -1,10 +1,11 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "AI/PG_AICon_Mon.h"
+#include "Character/PG_MonChar.h"
+
 #include <BehaviorTree/BehaviorTree.h>
 #include <BehaviorTree/BlackboardData.h>
 #include <BehaviorTree/BlackboardComponent.h>
-#include "Character/PG_MonChar.h"
 
 const FName APG_AICon_Mon::HomePosKey(TEXT("HomePos"));
 const FName APG_AICon_Mon::TargetKey(TEXT("Target"));

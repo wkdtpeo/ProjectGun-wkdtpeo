@@ -3,10 +3,9 @@
 #include "UI/PG_HUDBattleStage.h"
 #include "Game/GameState/PG_GameStateStage.h"
 #include "Player/PlayerState/PG_MyPlayerState.h"
+
 #include <Components/TextBlock.h>
 #include <Components/Button.h>
-
-
 
 void UPG_HUDBattleStage::NativeConstruct()
 {

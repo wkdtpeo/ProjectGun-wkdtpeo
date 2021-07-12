@@ -1,12 +1,12 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Character/PG_MonChar.h"
-#include "Define/PG_TableData.h"
+#include "Character/PG_MyChar.h"
+#include "Character/Component/PG_ComponentCharScale.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameState/PG_GameStateStage.h"
-#include "Character/PG_MyChar.h"
 #include "AI/PG_AICon_Mon.h"
-#include "Character/Component/PG_ComponentCharScale.h"
+
 #include <Components/WidgetComponent.h>
 #include <Components/ProgressBar.h>
 #include <GameFramework/DamageType.h>

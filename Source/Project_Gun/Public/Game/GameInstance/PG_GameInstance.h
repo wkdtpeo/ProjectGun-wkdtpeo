@@ -3,12 +3,12 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
+#include "Game/Console/PG_Console.h"
+#include "Game/AD/PG_ADData.h"
+
 #include <Engine/DataTable.h>
 #include <Engine/GameInstance.h>
 #include <Engine/StreamableManager.h>
-#include "Define/PG_TableData.h"
-#include "Game/Console/PG_Console.h"
-#include "Game/AD/PG_ADData.h"
 #include "PG_GameInstance.generated.h"
 
 /**
@@ -82,7 +82,6 @@ public :
 	FString GetStageName(int32 StageID);
 
 private :
-
 	// 테이블 클래스 정리 필요..
 	UPROPERTY()
 	class UDataTable* m_pCharacterMovementTable = nullptr;
@@ -107,4 +106,6 @@ private :
 
 	// 광고
 	class PG_ADData m_kADData;
+
+
 };

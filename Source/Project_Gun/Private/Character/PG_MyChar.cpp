@@ -1,12 +1,6 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Character/PG_MyChar.h"
-#include "Player/PlayerController/PG_PlayerController.h"
-#include "Player/PlayerState/PG_MyPlayerState.h"
-#include "Game/GameState/PG_GameStateStage.h"
-#include "Game/GameInstance/PG_GameInstance.h"
-#include "Anim/PG_AnimIns_MyChar.h"
-#include "BlueScriptObject/Projectile/PG_Projectile.h"
 #include "Character/PG_MonChar.h"
 #include "BlueScriptObject/Weapon/PG_Weapon.h"
 #include "BlueScriptObject/Weapon/PG_WeaponRifle.h"
@@ -14,11 +8,17 @@
 #include "BlueScriptObject/Weapon/PG_WeaponLaserBemGun.h"
 #include "BlueScriptObject/Weapon/PG_WeaponFlameGun.h"
 #include "BlueScriptObject/LethalAttack/PG_LethalAttack.h"
+#include "BlueScriptObject/Projectile/PG_Projectile.h"
+#include "Player/PlayerController/PG_PlayerController.h"
+#include "Player/PlayerState/PG_MyPlayerState.h"
+#include "Game/GameState/PG_GameStateStage.h"
+#include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameMode/PG_GameModeStage.h"
 #include "SaveData/PG_SavePlayerData.h"
+#include "Anim/PG_AnimIns_MyChar.h"
+
 #include <Engine/SkeletalMeshSocket.h>
 #include <DrawDebugHelpers.h>
-
 
 // Sets default values
 APG_MyChar::APG_MyChar()

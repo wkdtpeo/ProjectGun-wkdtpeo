@@ -1,9 +1,9 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Weapon/PG_Weapon.h"
+#include "BlueScriptObject/Projectile/PG_Projectile.h"
 #include "Character/PG_MonChar.h"
 #include "Character/PG_MyChar.h"
-#include "BlueScriptObject/Projectile/PG_Projectile.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameMode/PG_GameModeBase.h"
 

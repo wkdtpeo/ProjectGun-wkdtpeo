@@ -3,8 +3,8 @@
 #pragma once
 
 #include "Project_Gun/Project_Gun.h"
+
 #include <GameFramework/SaveGame.h>
-#include "Define/PG_GamePlayData.h"
 #include "PG_SaveStageData.generated.h"
 
 /**
