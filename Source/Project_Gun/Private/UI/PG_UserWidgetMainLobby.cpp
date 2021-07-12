@@ -146,7 +146,7 @@ bool UPG_UserWidgetMainLobby::OnNextSelectStage()
 	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
 	ABCHECK(nullptr != pGameModeMainLobby, false);
 
-	return pGameModeMainLobby->OnNextSelectStage();
+	return pGameModeMainLobby->SetNextStageID();
 }
 
 bool UPG_UserWidgetMainLobby::OnPrevSelectStage()
@@ -154,7 +154,7 @@ bool UPG_UserWidgetMainLobby::OnPrevSelectStage()
 	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
 	ABCHECK(nullptr != pGameModeMainLobby, false);
 
-	return pGameModeMainLobby->OnPrevSelectStage();
+	return pGameModeMainLobby->SetPrevStageID();
 }
 
 void UPG_UserWidgetMainLobby::OnBtnClickedWeaponSlot(int32 nSlotIndex)

@@ -49,7 +49,7 @@ void PG_CommandAllStageUnlock::Excute()
 	{
 		if (pGameModeBase->IsFirstPlayStage(nStageID))
 		{
-			if (false == pGameModeBase->ChangeSelectStageData(nStageID))
+			if (false == pGameModeBase->SetSelectSaveStageData(nStageID))
 			{
 				ABLOG(Error, TEXT("ChangeSelectStageData Error : %d"), nStageID++);
 				continue;

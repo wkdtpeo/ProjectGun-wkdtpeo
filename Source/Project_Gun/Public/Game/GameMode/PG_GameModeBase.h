@@ -34,13 +34,15 @@ public :
 	//===================================================
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	bool StartGame();
+	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	void StartGame_NextStage();
+	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	void RestartGame();
 
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	bool OnNextSelectStage();
+	bool SetNextStageID();
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	bool OnPrevSelectStage();
+	bool SetPrevStageID();
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
 	bool SetPlayStageID(int32 nPlayStageID);
 	UFUNCTION(BlueprintCallable, Category = "PG Stage")
@@ -49,12 +51,8 @@ public :
 	//===================================================
 	// Stage
 	//===================================================
-	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	//void	SetPlayStageID(int32 a_PlayStageID) { m_nPalyStageID = a_PlayStageID; }
-	//UFUNCTION(BlueprintCallable, Category = "PG Stage")
-	//int32	GetPlayStageID() { return m_nPalyStageID; }
-	bool	ChangeSelectStageData(int32 a_nStageID);		// 스테이지 데이터를 교체한다.
-	bool	IsFirstPlayStage(int32 a_nStageID);
+	bool SetSelectSaveStageData(int32 a_nStageID);		// m_pSelectSaveStageData 데이터를 설정한다.
+	bool IsFirstPlayStage(int32 a_nStageID);			// 해당 스테이지를 처음 플레이하는지 검사한다.
 	
 
 	//===================================================

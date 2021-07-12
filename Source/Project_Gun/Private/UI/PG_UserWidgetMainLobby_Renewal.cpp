@@ -189,7 +189,7 @@ void UPG_UserWidgetMainLobby_Renewal::OnBtnSelectStageNext()
 	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
 	ABCHECK(nullptr != pGameModeMainLobby);
 
-	ABCHECK(pGameModeMainLobby->OnNextSelectStage());
+	ABCHECK(pGameModeMainLobby->SetNextStageID());
 	UpdateLayoutStage();
 	UpdateLayoutMission();
 }
@@ -198,7 +198,7 @@ void UPG_UserWidgetMainLobby_Renewal::OnBtnSelectStagePrev()
 {
 	auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
 	ABCHECK(nullptr != pGameModeMainLobby);
-	ABCHECK(pGameModeMainLobby->OnPrevSelectStage());
+	ABCHECK(pGameModeMainLobby->SetPrevStageID());
 	UpdateLayoutStage();
 	UpdateLayoutMission();
 }
