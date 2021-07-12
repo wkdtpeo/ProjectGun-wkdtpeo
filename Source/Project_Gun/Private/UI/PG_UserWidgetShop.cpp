@@ -1,18 +1,22 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UI/PG_UserWidgetShop.h"
+
+#include <Components/Button.h>
+#include <Components/TextBlock.h>
+#include "UI/PG_UserWidgetShopWeaponBox.h"
 #include "Game/GameInstance/PG_GameInstance.h"
 #include "Game/GameMode/PG_GameModeMainLobby.h"
+#include "Player/PlayerState/PG_MyPlayerState.h"
 #include "SaveData/PG_SavePlayerData.h"
-#include "UI/PG_UserWidgetShopWeaponBox.h"
-#include <Components/Button.h>
+
 
 void UPG_UserWidgetShop::NativeConstruct()
 {
 	Super::NativeConstruct();
 
 	//ABCHECK(nullptr != Text_ADRemainTime);
-	PG_CONNECT_WIDGET(UTextBlock, Text_ADRemainTime);
+	PG_WIDGET_LINK(UTextBlock, Text_ADRemainTime);
 	
 	m_pBtn_ADView = Cast<UButton>(GetWidgetFromName(TEXT("Btn_ADView")));
 	ABCHECK(nullptr != m_pBtn_ADView);

@@ -24,22 +24,22 @@ void UPG_UserWidgetShopWeaponSlot::NativeConstruct()
 	Super::NativeConstruct();
 
 	// Weapon
-	PG_CONNECT_WIDGET(UButton, BtnWeapon);
-	PG_CONNECT_WIDGET(UImage, ImgWeaponLock);
-	PG_CONNECT_WIDGET(UTextBlock, TextWeaponPrice);
-	PG_CONNECT_WIDGET(UCanvasPanel, CanvasWeaponPrice);
+	PG_WIDGET_LINK(UButton, BtnWeapon);
+	PG_WIDGET_LINK(UImage, ImgWeaponLock);
+	PG_WIDGET_LINK(UTextBlock, TextWeaponPrice);
+	PG_WIDGET_LINK(UCanvasPanel, CanvasWeaponPrice);
 
 	// Power
-	PG_CONNECT_WIDGET(UButton, BtnPower);
-	PG_CONNECT_WIDGET(UTextBlock, TextPowerLevel);
-	PG_CONNECT_WIDGET(UTextBlock, TextPowerPrice);
-	PG_CONNECT_WIDGET(UCanvasPanel, CanvasPowerPrice);
+	PG_WIDGET_LINK(UButton, BtnPower);
+	PG_WIDGET_LINK(UTextBlock, TextPowerLevel);
+	PG_WIDGET_LINK(UTextBlock, TextPowerPrice);
+	PG_WIDGET_LINK(UCanvasPanel, CanvasPowerPrice);
 
 	// Ammo
-	PG_CONNECT_WIDGET(UButton, BtnAmmo);
-	PG_CONNECT_WIDGET(UTextBlock, TextAmmoLevel);
-	PG_CONNECT_WIDGET(UTextBlock, TextAmmoPrice);
-	PG_CONNECT_WIDGET(UCanvasPanel, CanvasAmmoPrice);
+	PG_WIDGET_LINK(UButton, BtnAmmo);
+	PG_WIDGET_LINK(UTextBlock, TextAmmoLevel);
+	PG_WIDGET_LINK(UTextBlock, TextAmmoPrice);
+	PG_WIDGET_LINK(UCanvasPanel, CanvasAmmoPrice);
 
 
 	{

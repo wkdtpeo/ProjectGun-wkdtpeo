@@ -20,44 +20,44 @@ void UPG_UserWidgetScreenStageClear::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	PG_CONNECT_WIDGET(UTextBlock, TextTitle);
+	PG_WIDGET_LINK(UTextBlock, TextTitle);
 	//===================================================
 	// Canvas MissionState
 	//===================================================
-	PG_CONNECT_WIDGET(UButton, BtnFlag);
-	PG_CONNECT_WIDGET(UImage, ImgIconFlagPrice);
-	PG_CONNECT_WIDGET(UTextBlock, TextFlagPoint);
-	PG_CONNECT_WIDGET(UButton, BtnLethal);
-	PG_CONNECT_WIDGET(UImage, ImgIconLethalPrice);
-	PG_CONNECT_WIDGET(UTextBlock, TextLethalPoint);
-	PG_CONNECT_WIDGET(UButton, BtnTime);
-	PG_CONNECT_WIDGET(UImage, ImgIconTimePrice);
-	PG_CONNECT_WIDGET(UTextBlock, TextTimePoint);
+	PG_WIDGET_LINK(UButton, BtnFlag);
+	PG_WIDGET_LINK(UImage, ImgIconFlagPrice);
+	PG_WIDGET_LINK(UTextBlock, TextFlagPoint);
+	PG_WIDGET_LINK(UButton, BtnLethal);
+	PG_WIDGET_LINK(UImage, ImgIconLethalPrice);
+	PG_WIDGET_LINK(UTextBlock, TextLethalPoint);
+	PG_WIDGET_LINK(UButton, BtnTime);
+	PG_WIDGET_LINK(UImage, ImgIconTimePrice);
+	PG_WIDGET_LINK(UTextBlock, TextTimePoint);
 
 	//===================================================
 	// CanvasClearPointList
 	//===================================================
-	PG_CONNECT_WIDGET(UTextBlock, TextStageClearPoint);		
-	PG_CONNECT_WIDGET(UTextBlock, TextMonsterKillPoint);		
-	PG_CONNECT_WIDGET(UTextBlock, TextMissionPoint);			
+	PG_WIDGET_LINK(UTextBlock, TextStageClearPoint);		
+	PG_WIDGET_LINK(UTextBlock, TextMonsterKillPoint);		
+	PG_WIDGET_LINK(UTextBlock, TextMissionPoint);			
 
 	//===================================================
 	// CanvasViewAD
 	//===================================================
-	PG_CONNECT_WIDGET(UButton, BtnADView);
-	PG_CONNECT_WIDGET(UTextBlock, TextClearADTimer);
+	PG_WIDGET_LINK(UButton, BtnADView);
+	PG_WIDGET_LINK(UTextBlock, TextClearADTimer);
 
 	//===================================================
 	// CanvasTotalPoint
 	//===================================================
-	PG_CONNECT_WIDGET(UTextBlock, TextTotalPoint);
+	PG_WIDGET_LINK(UTextBlock, TextTotalPoint);
 
 	//===================================================
 	// CanvasBottomMenu
 	//===================================================
-	PG_CONNECT_WIDGET(UButton, BtnGoHome);
-	PG_CONNECT_WIDGET(UButton, BtnRetry);
-	PG_CONNECT_WIDGET(UButton, BtnNext);
+	PG_WIDGET_LINK(UButton, BtnGoHome);
+	PG_WIDGET_LINK(UButton, BtnRetry);
+	PG_WIDGET_LINK(UButton, BtnNext);
 
 	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	ABCHECK(nullptr != pGameStateStage);

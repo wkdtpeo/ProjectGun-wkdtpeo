@@ -31,16 +31,16 @@ public :
 
 protected:
 	// Popup Title
-	PG_DECLAR_WIDGET(UTextBlock, TextTitle);
+	PG_WIDGET_DECLAR(UTextBlock, TextTitle);
 
 	// Mission State
-	PG_DECLAR_WIDGET(UButton, BtnFlag);
-	PG_DECLAR_WIDGET(UButton, BtnLethal);
-	PG_DECLAR_WIDGET(UButton, BtnTime);
+	PG_WIDGET_DECLAR(UButton, BtnFlag);
+	PG_WIDGET_DECLAR(UButton, BtnLethal);
+	PG_WIDGET_DECLAR(UButton, BtnTime);
 
 	// Menu Button
-	PG_DECLAR_WIDGET(UButton, BtnHome);
-	PG_DECLAR_WIDGET(UButton, BtnRetry);
+	PG_WIDGET_DECLAR(UButton, BtnHome);
+	PG_WIDGET_DECLAR(UButton, BtnRetry);
 
 	UPROPERTY(EditAnywhere, Category = "PG Sound")
 	class USoundBase* PopupPlaySound = nullptr;

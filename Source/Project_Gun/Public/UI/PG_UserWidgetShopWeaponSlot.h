@@ -60,23 +60,23 @@ public:
 
 protected :
 	// Weapon
-	PG_DECLAR_WIDGET(UButton, BtnWeapon);
-	PG_DECLAR_WIDGET(UImage, ImgWeaponLock);
-	PG_DECLAR_WIDGET(UTextBlock, TextWeaponPrice);
-	PG_DECLAR_WIDGET(UCanvasPanel, CanvasWeaponPrice);
+	PG_WIDGET_DECLAR(UButton, BtnWeapon);
+	PG_WIDGET_DECLAR(UImage, ImgWeaponLock);
+	PG_WIDGET_DECLAR(UTextBlock, TextWeaponPrice);
+	PG_WIDGET_DECLAR(UCanvasPanel, CanvasWeaponPrice);
 	
 
 	// Power
-	PG_DECLAR_WIDGET(UButton, BtnPower);
-	PG_DECLAR_WIDGET(UTextBlock, TextPowerLevel);
-	PG_DECLAR_WIDGET(UTextBlock, TextPowerPrice);
-	PG_DECLAR_WIDGET(UCanvasPanel, CanvasPowerPrice);
+	PG_WIDGET_DECLAR(UButton, BtnPower);
+	PG_WIDGET_DECLAR(UTextBlock, TextPowerLevel);
+	PG_WIDGET_DECLAR(UTextBlock, TextPowerPrice);
+	PG_WIDGET_DECLAR(UCanvasPanel, CanvasPowerPrice);
 
 	// Ammo
-	PG_DECLAR_WIDGET(UButton, BtnAmmo);
-	PG_DECLAR_WIDGET(UTextBlock, TextAmmoLevel);
-	PG_DECLAR_WIDGET(UTextBlock, TextAmmoPrice);
-	PG_DECLAR_WIDGET(UCanvasPanel, CanvasAmmoPrice);
+	PG_WIDGET_DECLAR(UButton, BtnAmmo);
+	PG_WIDGET_DECLAR(UTextBlock, TextAmmoLevel);
+	PG_WIDGET_DECLAR(UTextBlock, TextAmmoPrice);
+	PG_WIDGET_DECLAR(UCanvasPanel, CanvasAmmoPrice);
 
 private :
 	int32 m_nSlotIndex = PG_INVALID_INDEX;

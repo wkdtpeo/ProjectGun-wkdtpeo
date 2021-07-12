@@ -17,8 +17,8 @@ void UPG_UserWidgetScreenPlayStage::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	PG_CONNECT_WIDGET(UPG_UserWidgetPlayMissionState, WB_MissionState);
-	PG_CONNECT_WIDGET(UPG_UserWidgetPlayStageWeaponBag, WB_PlayStageWeaponBag);
+	PG_WIDGET_LINK(UPG_UserWidgetPlayMissionState, WB_MissionState);
+	PG_WIDGET_LINK(UPG_UserWidgetPlayStageWeaponBag, WB_PlayStageWeaponBag);
 
 	auto MyPlayerState = Cast<APG_MyPlayerState>(GetOwningPlayerState());
 	if (MyPlayerState)

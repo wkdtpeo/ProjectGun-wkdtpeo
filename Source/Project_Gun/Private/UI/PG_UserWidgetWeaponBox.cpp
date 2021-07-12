@@ -13,10 +13,10 @@ void UPG_UserWidgetWeaponBox::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	PG_CONNECT_WIDGET(UButton, Btn_Weapon);
-	PG_CONNECT_WIDGET(UImage, Img_IconAmmo);
-	PG_CONNECT_WIDGET(UTextBlock, Text_Ammo);
-	PG_CONNECT_WIDGET(UOverlay, OverlayLightBox);
+	PG_WIDGET_LINK(UButton, Btn_Weapon);
+	PG_WIDGET_LINK(UImage, Img_IconAmmo);
+	PG_WIDGET_LINK(UTextBlock, Text_Ammo);
+	PG_WIDGET_LINK(UOverlay, OverlayLightBox);
 
 	m_pkBtn_Weapon->OnClicked.AddDynamic(this, &UPG_UserWidgetWeaponBox::OnBtnWeaponClicked);
 }

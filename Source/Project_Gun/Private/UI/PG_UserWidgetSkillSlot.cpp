@@ -4,13 +4,14 @@
 #include "UI/PG_UserWidgetSkillSlot.h"
 
 #include <Components/Overlay.h>
+#include <Components/Button.h>
 
 void UPG_UserWidgetSkillSlot::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	PG_CONNECT_WIDGET(UButton, BtnSkill);
-	PG_CONNECT_WIDGET(UOverlay, OverlayLightBox);
+	PG_WIDGET_LINK(UButton, BtnSkill);
+	PG_WIDGET_LINK(UOverlay, OverlayLightBox);
 }
 
 void UPG_UserWidgetSkillSlot::SetEnable(bool bEnable)

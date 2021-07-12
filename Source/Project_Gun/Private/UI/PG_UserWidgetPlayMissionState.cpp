@@ -14,16 +14,16 @@ void UPG_UserWidgetPlayMissionState::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	PG_CONNECT_WIDGET(UButton, BtnFlag);
-	PG_CONNECT_WIDGET(UButton, BtnLethal);
-	PG_CONNECT_WIDGET(UButton, BtnTime);
+	PG_WIDGET_LINK(UButton, BtnFlag);
+	PG_WIDGET_LINK(UButton, BtnLethal);
+	PG_WIDGET_LINK(UButton, BtnTime);
 
-	PG_CONNECT_WIDGET(UTextBlock, TextCurrFlag);
-	PG_CONNECT_WIDGET(UTextBlock, TextCurrLethal);
-	PG_CONNECT_WIDGET(UTextBlock, TextCurrTime);
+	PG_WIDGET_LINK(UTextBlock, TextCurrFlag);
+	PG_WIDGET_LINK(UTextBlock, TextCurrLethal);
+	PG_WIDGET_LINK(UTextBlock, TextCurrTime);
 
-	PG_CONNECT_WIDGET(UTextBlock, TextMaxFlag);
-	PG_CONNECT_WIDGET(UTextBlock, TextMaxLethal);
+	PG_WIDGET_LINK(UTextBlock, TextMaxFlag);
+	PG_WIDGET_LINK(UTextBlock, TextMaxLethal);
 
 	auto GameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	if (GameStateStage)

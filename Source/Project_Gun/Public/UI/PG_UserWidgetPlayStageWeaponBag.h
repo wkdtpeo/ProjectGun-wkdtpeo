@@ -32,5 +32,5 @@ protected:
 	void OnBtnWeaponSlotClicked(int32 nSlotIndex);
 
 protected:
-	PG_DECLAR_WIDGET_TArray(UPG_UserWidgetWeaponBox, WB_WeaponSlot);
+	PG_WIDGET_DECLAR_TArray(UPG_UserWidgetWeaponBox, WB_WeaponSlot);
 };

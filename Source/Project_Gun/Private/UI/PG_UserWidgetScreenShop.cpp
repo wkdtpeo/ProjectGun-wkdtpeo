@@ -21,11 +21,11 @@ void UPG_UserWidgetScreenShop::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	PG_CONNECT_WIDGET(UButton, BtnGotoLobby);
-	PG_CONNECT_WIDGET(UButton, BtnADView);
-	PG_CONNECT_WIDGET(UTextBlock, TextADRemainTime);
-	PG_CONNECT_WIDGET_TArray(UPG_UserWidgetSkillSlot, WB_SkillSlot, eMaxLethalShopItemSlot);
-	PG_CONNECT_WIDGET_TArray(UPG_UserWidgetShopWeaponSlot, WB_ShopWeaponSlot, eMaxWeaponShopItemSlot);
+	PG_WIDGET_LINK(UButton, BtnGotoLobby);
+	PG_WIDGET_LINK(UButton, BtnADView);
+	PG_WIDGET_LINK(UTextBlock, TextADRemainTime);
+	PG_WIDGET_LINK_TArray(UPG_UserWidgetSkillSlot, WB_SkillSlot, eMaxLethalShopItemSlot);
+	PG_WIDGET_LINK_TArray(UPG_UserWidgetShopWeaponSlot, WB_ShopWeaponSlot, eMaxWeaponShopItemSlot);
 
 	for (auto ShopWeaponSlot : m_pkWB_ShopWeaponSlot)
 	{

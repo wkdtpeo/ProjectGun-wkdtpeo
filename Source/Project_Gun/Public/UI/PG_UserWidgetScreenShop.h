@@ -60,12 +60,12 @@ protected:
 	void OnMessagePopupBoxClose();
 
 protected:
-	PG_DECLAR_WIDGET(UButton, BtnGotoLobby);
-	PG_DECLAR_WIDGET(UButton, BtnADView);
-	PG_DECLAR_WIDGET(UTextBlock, TextADRemainTime);
+	PG_WIDGET_DECLAR(UButton, BtnGotoLobby);
+	PG_WIDGET_DECLAR(UButton, BtnADView);
+	PG_WIDGET_DECLAR(UTextBlock, TextADRemainTime);
 	
-	PG_DECLAR_WIDGET_TArray(UPG_UserWidgetSkillSlot, WB_SkillSlot);
-	PG_DECLAR_WIDGET_TArray(UPG_UserWidgetShopWeaponSlot, WB_ShopWeaponSlot);
+	PG_WIDGET_DECLAR_TArray(UPG_UserWidgetSkillSlot, WB_SkillSlot);
+	PG_WIDGET_DECLAR_TArray(UPG_UserWidgetShopWeaponSlot, WB_ShopWeaponSlot);
 
 public:
 	// 메인로비

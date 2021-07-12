@@ -51,5 +51,5 @@ public :
 
 	//UPROPERTY()
 	//class UTextBlock* Text_ADRemainTime;
-	PG_DECLAR_WIDGET(UTextBlock, Text_ADRemainTime);
+	PG_WIDGET_DECLAR(UTextBlock, Text_ADRemainTime);
 };

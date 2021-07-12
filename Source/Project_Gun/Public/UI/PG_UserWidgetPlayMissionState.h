@@ -38,14 +38,14 @@ protected:
 	void OnUpdateTime();
 
 protected:
-	PG_DECLAR_WIDGET(UButton, BtnFlag);
-	PG_DECLAR_WIDGET(UButton, BtnLethal);
-	PG_DECLAR_WIDGET(UButton, BtnTime);
+	PG_WIDGET_DECLAR(UButton, BtnFlag);
+	PG_WIDGET_DECLAR(UButton, BtnLethal);
+	PG_WIDGET_DECLAR(UButton, BtnTime);
 
-	PG_DECLAR_WIDGET(UTextBlock, TextCurrFlag);
-	PG_DECLAR_WIDGET(UTextBlock, TextCurrLethal);
-	PG_DECLAR_WIDGET(UTextBlock, TextCurrTime);
+	PG_WIDGET_DECLAR(UTextBlock, TextCurrFlag);
+	PG_WIDGET_DECLAR(UTextBlock, TextCurrLethal);
+	PG_WIDGET_DECLAR(UTextBlock, TextCurrTime);
 
-	PG_DECLAR_WIDGET(UTextBlock, TextMaxFlag);
-	PG_DECLAR_WIDGET(UTextBlock, TextMaxLethal);
+	PG_WIDGET_DECLAR(UTextBlock, TextMaxFlag);
+	PG_WIDGET_DECLAR(UTextBlock, TextMaxLethal);
 };

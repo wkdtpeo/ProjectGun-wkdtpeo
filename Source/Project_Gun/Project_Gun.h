@@ -30,17 +30,17 @@ DECLARE_LOG_CATEGORY_EXTERN(Project_Gun, Log, All);
 //==============================================================================================================================
 // Widget Macros
 //==============================================================================================================================
-// 위젯 선언
-#define PG_DECLAR_WIDGET(WIDGET_TYPE, WIDGET_NAME, ...)			UPROPERTY(##__VA_ARGS__) class WIDGET_TYPE* m_pk##WIDGET_NAME = nullptr
-#define PG_DECLAR_WIDGET_TArray(WIDGET_TYPE, WIDGET_NAME, ...)	UPROPERTY(##__VA_ARGS__) TArray<class WIDGET_TYPE*> m_pk##WIDGET_NAME
+// 위젯 선언 (Widget 관련 class 내 위젯 선언시 사용합니다.)
+#define PG_WIDGET_DECLAR(WIDGET_TYPE, WIDGET_NAME, ...)			UPROPERTY(##__VA_ARGS__) class WIDGET_TYPE* m_pk##WIDGET_NAME = nullptr
+#define PG_WIDGET_DECLAR_TArray(WIDGET_TYPE, WIDGET_NAME, ...)	UPROPERTY(##__VA_ARGS__) TArray<class WIDGET_TYPE*> m_pk##WIDGET_NAME
 
-// 위젯 연결
-#define PG_CONNECT_WIDGET(WIDGET_TYPE, WIDGET_NAME) \
+// 위젯 연결 (PG_WIDGET_DECLAR으로 선언한 Widget과 연결하기 위해 NativeConstruct 함수에서 사용합니다.)
+#define PG_WIDGET_LINK(WIDGET_TYPE, WIDGET_NAME) \
 	m_pk##WIDGET_NAME = Cast<WIDGET_TYPE>(GetWidgetFromName(TEXT(#WIDGET_NAME))); \
 	if (nullptr == m_pk##WIDGET_NAME) { ABLOG(Error, TEXT("\"<"#WIDGET_TYPE"> "#WIDGET_NAME "\" Unable to connect to the widget.")); }	\
 
-// TArray 타입으로 선언된 변수에 위젯 연결
-#define PG_CONNECT_WIDGET_TArray(WIDGET_TYPE, WIDGET_NAME, MAX_SIZE) \
+// TArray 타입으로 선언된 변수에 Widget에 연결합니다.
+#define PG_WIDGET_LINK_TArray(WIDGET_TYPE, WIDGET_NAME, MAX_SIZE) \
 	m_pk##WIDGET_NAME.Init(nullptr, MAX_SIZE);	\
 	for (int32 nIndex = 0; nIndex < MAX_SIZE; ++nIndex) { \
 		FString GetWidgetName = FString::Printf(TEXT(#WIDGET_NAME"_%d"), nIndex); \

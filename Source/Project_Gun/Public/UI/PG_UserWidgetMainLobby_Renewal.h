@@ -66,40 +66,40 @@ public:
 	//===========================================
 	// Canvas TopMenu
 	//===========================================
-	//PG_DECLAR_WIDGET(UUserWidget, WB_RewardPoint);
-	PG_DECLAR_WIDGET(UButton, BtnOption);
+	//PG_WIDGET_DECLAR(UUserWidget, WB_RewardPoint);
+	PG_WIDGET_DECLAR(UButton, BtnOption);
 	
 	//===========================================
 	// Canvas StageSelect
 	//===========================================
-	PG_DECLAR_WIDGET(UButton, BtnSelectStagePrev);
-	PG_DECLAR_WIDGET(UButton, BtnSelectStageNext);
-	PG_DECLAR_WIDGET(UTextBlock, TextSelectedStage);
-	PG_DECLAR_WIDGET(UCanvasPanel, CanvasSelectStageLock);
+	PG_WIDGET_DECLAR(UButton, BtnSelectStagePrev);
+	PG_WIDGET_DECLAR(UButton, BtnSelectStageNext);
+	PG_WIDGET_DECLAR(UTextBlock, TextSelectedStage);
+	PG_WIDGET_DECLAR(UCanvasPanel, CanvasSelectStageLock);
 	
 
 	//===========================================
 	// Canvas Mission
 	//===========================================
-	PG_DECLAR_WIDGET(UButton, BtnFlag);
-	PG_DECLAR_WIDGET(UButton, BtnLethal);
-	PG_DECLAR_WIDGET(UButton, BtnTime);
-	PG_DECLAR_WIDGET(UTextBlock, TextMainLobbyFlag);
-	PG_DECLAR_WIDGET(UTextBlock, TextMainLobbyLethal);
-	PG_DECLAR_WIDGET(UTextBlock, TextMainLobbyTime);
+	PG_WIDGET_DECLAR(UButton, BtnFlag);
+	PG_WIDGET_DECLAR(UButton, BtnLethal);
+	PG_WIDGET_DECLAR(UButton, BtnTime);
+	PG_WIDGET_DECLAR(UTextBlock, TextMainLobbyFlag);
+	PG_WIDGET_DECLAR(UTextBlock, TextMainLobbyLethal);
+	PG_WIDGET_DECLAR(UTextBlock, TextMainLobbyTime);
 
 	//===========================================
 	// Canvas MenuButtons
 	//===========================================
-	PG_DECLAR_WIDGET(UButton, BtnGameStart);
-	PG_DECLAR_WIDGET(UButton, BtnShop);
-	PG_DECLAR_WIDGET(UCanvasPanel, CanvasGameStart);
+	PG_WIDGET_DECLAR(UButton, BtnGameStart);
+	PG_WIDGET_DECLAR(UButton, BtnShop);
+	PG_WIDGET_DECLAR(UCanvasPanel, CanvasGameStart);
 	
 
 	//===========================================
 	// Canvas WeaponBox
 	//===========================================
-	PG_DECLAR_WIDGET_TArray(UPG_UserWidgetWeaponBox, WB_WeaponBox);
+	PG_WIDGET_DECLAR_TArray(UPG_UserWidgetWeaponBox, WB_WeaponBox);
 
 	//===========================================
 	// Canvas ADBanner
@@ -108,8 +108,8 @@ public:
 	//===========================================
 	// Canvas WB_WeaponInventory 
 	//===========================================
-	PG_DECLAR_WIDGET(UScaleBox, ScaleWeaponInventory);
-	PG_DECLAR_WIDGET(UPG_UserWidgetWeaponInventory, WB_WeaponInventory);
+	PG_WIDGET_DECLAR(UScaleBox, ScaleWeaponInventory);
+	PG_WIDGET_DECLAR(UPG_UserWidgetWeaponInventory, WB_WeaponInventory);
 
 public :
 	// 무기고

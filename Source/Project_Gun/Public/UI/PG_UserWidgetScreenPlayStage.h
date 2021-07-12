@@ -35,6 +35,6 @@ private :
 	void UpdateWeaponSlotLightBox();
 
 private :
-	PG_DECLAR_WIDGET(UPG_UserWidgetPlayMissionState, WB_MissionState);
-	PG_DECLAR_WIDGET(UPG_UserWidgetPlayStageWeaponBag, WB_PlayStageWeaponBag);
+	PG_WIDGET_DECLAR(UPG_UserWidgetPlayMissionState, WB_MissionState);
+	PG_WIDGET_DECLAR(UPG_UserWidgetPlayStageWeaponBag, WB_PlayStageWeaponBag);
 };

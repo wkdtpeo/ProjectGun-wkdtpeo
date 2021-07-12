@@ -26,38 +26,38 @@ void UPG_UserWidgetMainLobby_Renewal::NativeConstruct()
 	//===========================================
 	// Canvas TopMenu
 	//===========================================
-	//PG_CONNECT_WIDGET(UUserWidget, WB_RewardPoint);
-	PG_CONNECT_WIDGET(UButton, BtnOption);
+	//PG_WIDGET_LINK(UUserWidget, WB_RewardPoint);
+	PG_WIDGET_LINK(UButton, BtnOption);
 
 	//===========================================
 	// Canvas StageSelect
 	//===========================================
-	PG_CONNECT_WIDGET(UButton, BtnSelectStagePrev);
-	PG_CONNECT_WIDGET(UButton, BtnSelectStageNext);
-	PG_CONNECT_WIDGET(UTextBlock, TextSelectedStage);
-	PG_CONNECT_WIDGET(UCanvasPanel, CanvasSelectStageLock);
+	PG_WIDGET_LINK(UButton, BtnSelectStagePrev);
+	PG_WIDGET_LINK(UButton, BtnSelectStageNext);
+	PG_WIDGET_LINK(UTextBlock, TextSelectedStage);
+	PG_WIDGET_LINK(UCanvasPanel, CanvasSelectStageLock);
 
 	//===========================================
 	// Canvas Mission
 	//===========================================
-	PG_CONNECT_WIDGET(UButton, BtnFlag);
-	PG_CONNECT_WIDGET(UButton, BtnLethal);
-	PG_CONNECT_WIDGET(UButton, BtnTime);
-	PG_CONNECT_WIDGET(UTextBlock, TextMainLobbyFlag);
-	PG_CONNECT_WIDGET(UTextBlock, TextMainLobbyLethal);
-	PG_CONNECT_WIDGET(UTextBlock, TextMainLobbyTime);
+	PG_WIDGET_LINK(UButton, BtnFlag);
+	PG_WIDGET_LINK(UButton, BtnLethal);
+	PG_WIDGET_LINK(UButton, BtnTime);
+	PG_WIDGET_LINK(UTextBlock, TextMainLobbyFlag);
+	PG_WIDGET_LINK(UTextBlock, TextMainLobbyLethal);
+	PG_WIDGET_LINK(UTextBlock, TextMainLobbyTime);
 
 	//===========================================
 	// Canvas MenuButtons
 	//===========================================
-	PG_CONNECT_WIDGET(UButton, BtnGameStart);
-	PG_CONNECT_WIDGET(UButton, BtnShop);
-	PG_CONNECT_WIDGET(UCanvasPanel, CanvasGameStart);
+	PG_WIDGET_LINK(UButton, BtnGameStart);
+	PG_WIDGET_LINK(UButton, BtnShop);
+	PG_WIDGET_LINK(UCanvasPanel, CanvasGameStart);
 
 	//===========================================
 	// Canvas WeaponBox (무기 슬롯)
 	//===========================================
-	PG_CONNECT_WIDGET_TArray(UPG_UserWidgetWeaponBox, WB_WeaponBox, eMaxWeaponSlot);
+	PG_WIDGET_LINK_TArray(UPG_UserWidgetWeaponBox, WB_WeaponBox, eMaxWeaponSlot);
 
 	int nIndex = 0;
 	for (auto Box : m_pkWB_WeaponBox)
@@ -77,8 +77,8 @@ void UPG_UserWidgetMainLobby_Renewal::NativeConstruct()
 	//===========================================
 	// Canvas WeaponInventory (무기 인벤토리)
 	//===========================================
-	PG_CONNECT_WIDGET(UScaleBox, ScaleWeaponInventory);
-	PG_CONNECT_WIDGET(UPG_UserWidgetWeaponInventory, WB_WeaponInventory);
+	PG_WIDGET_LINK(UScaleBox, ScaleWeaponInventory);
+	PG_WIDGET_LINK(UPG_UserWidgetWeaponInventory, WB_WeaponInventory);
 	m_pkWB_WeaponInventory->OnBtnClickedClose.AddUObject(this, &UPG_UserWidgetMainLobby_Renewal::OnCloseWeaponInventory);
 }
 

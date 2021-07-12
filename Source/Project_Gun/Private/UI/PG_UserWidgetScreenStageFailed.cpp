@@ -14,16 +14,16 @@ void UPG_UserWidgetScreenStageFailed::NativeConstruct()
 	Super::NativeConstruct();
 
 	// Popup Title
-	PG_CONNECT_WIDGET(UTextBlock, TextTitle);
+	PG_WIDGET_LINK(UTextBlock, TextTitle);
 
 	// Mission State
-	PG_CONNECT_WIDGET(UButton, BtnFlag);
-	PG_CONNECT_WIDGET(UButton, BtnLethal);
-	PG_CONNECT_WIDGET(UButton, BtnTime);
+	PG_WIDGET_LINK(UButton, BtnFlag);
+	PG_WIDGET_LINK(UButton, BtnLethal);
+	PG_WIDGET_LINK(UButton, BtnTime);
 
 	// Menu Button
-	PG_CONNECT_WIDGET(UButton, BtnHome);
-	PG_CONNECT_WIDGET(UButton, BtnRetry);
+	PG_WIDGET_LINK(UButton, BtnHome);
+	PG_WIDGET_LINK(UButton, BtnRetry);
 }
 
 void UPG_UserWidgetScreenStageFailed::SetVisibility(ESlateVisibility InVisibility)

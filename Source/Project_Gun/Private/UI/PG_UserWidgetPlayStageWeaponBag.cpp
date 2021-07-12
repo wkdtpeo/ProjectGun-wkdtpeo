@@ -6,13 +6,15 @@
 
 #include "Player/PlayerState/PG_MyPlayerState.h"
 
+#include "Game/GameMode/PG_GameModeBase.h"
+
 #include "Define/PG_GamePlayData.h"
 
 void UPG_UserWidgetPlayStageWeaponBag::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	PG_CONNECT_WIDGET_TArray(UPG_UserWidgetWeaponBox, WB_WeaponSlot, eMaxWeaponSlot);
+	PG_WIDGET_LINK_TArray(UPG_UserWidgetWeaponBox, WB_WeaponSlot, eMaxWeaponSlot);
 
 	for (auto WeaponSlot : m_pkWB_WeaponSlot)
 	{

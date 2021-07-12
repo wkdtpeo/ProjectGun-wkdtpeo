@@ -21,6 +21,6 @@ public :
 	void SetEnable(bool bEnalbe);
 
 protected :
-	PG_DECLAR_WIDGET(UButton, BtnSkill);
-	PG_DECLAR_WIDGET(UOverlay, OverlayLightBox);
+	PG_WIDGET_DECLAR(UButton, BtnSkill);
+	PG_WIDGET_DECLAR(UOverlay, OverlayLightBox);
 };

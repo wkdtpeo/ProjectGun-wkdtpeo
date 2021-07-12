@@ -47,10 +47,10 @@ private :
 	void OnBtnWeaponClicked();
 
 protected :
-	PG_DECLAR_WIDGET(UButton, Btn_Weapon);
-	PG_DECLAR_WIDGET(UImage, Img_IconAmmo);
-	PG_DECLAR_WIDGET(UTextBlock, Text_Ammo);
-	PG_DECLAR_WIDGET(UOverlay, OverlayLightBox);
+	PG_WIDGET_DECLAR(UButton, Btn_Weapon);
+	PG_WIDGET_DECLAR(UImage, Img_IconAmmo);
+	PG_WIDGET_DECLAR(UTextBlock, Text_Ammo);
+	PG_WIDGET_DECLAR(UOverlay, OverlayLightBox);
 
 	UPROPERTY(BlueprintReadWrite)
 	int32 WeaponIndex = PG_INVALID_INDEX;

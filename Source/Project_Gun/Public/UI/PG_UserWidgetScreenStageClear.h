@@ -72,48 +72,48 @@ protected:
 	void OnMessagePopupBoxClose();
 
 protected:
-	PG_DECLAR_WIDGET(UTextBlock, TextTitle);
+	PG_WIDGET_DECLAR(UTextBlock, TextTitle);
 
 	//===================================================
 	// Canvas MissionState
 	//===================================================
 	// Flag
-	PG_DECLAR_WIDGET(UButton, BtnFlag);
-	PG_DECLAR_WIDGET(UImage, ImgIconFlagPrice);
-	PG_DECLAR_WIDGET(UTextBlock, TextFlagPoint);
+	PG_WIDGET_DECLAR(UButton, BtnFlag);
+	PG_WIDGET_DECLAR(UImage, ImgIconFlagPrice);
+	PG_WIDGET_DECLAR(UTextBlock, TextFlagPoint);
 	// Lethal
-	PG_DECLAR_WIDGET(UButton, BtnLethal);
-	PG_DECLAR_WIDGET(UImage, ImgIconLethalPrice);
-	PG_DECLAR_WIDGET(UTextBlock, TextLethalPoint);
+	PG_WIDGET_DECLAR(UButton, BtnLethal);
+	PG_WIDGET_DECLAR(UImage, ImgIconLethalPrice);
+	PG_WIDGET_DECLAR(UTextBlock, TextLethalPoint);
 	// Time
-	PG_DECLAR_WIDGET(UButton, BtnTime);
-	PG_DECLAR_WIDGET(UImage, ImgIconTimePrice);
-	PG_DECLAR_WIDGET(UTextBlock, TextTimePoint);
+	PG_WIDGET_DECLAR(UButton, BtnTime);
+	PG_WIDGET_DECLAR(UImage, ImgIconTimePrice);
+	PG_WIDGET_DECLAR(UTextBlock, TextTimePoint);
 	
 	//===================================================
 	// CanvasClearPointList
 	//===================================================
-	PG_DECLAR_WIDGET(UTextBlock, TextStageClearPoint);		// 기본 스테이지 클리어 포인트 보상
-	PG_DECLAR_WIDGET(UTextBlock, TextMonsterKillPoint);		// 몬스터 킬 획득 포인트
-	PG_DECLAR_WIDGET(UTextBlock, TextMissionPoint);			// 미션 성공 포인트
+	PG_WIDGET_DECLAR(UTextBlock, TextStageClearPoint);		// 기본 스테이지 클리어 포인트 보상
+	PG_WIDGET_DECLAR(UTextBlock, TextMonsterKillPoint);		// 몬스터 킬 획득 포인트
+	PG_WIDGET_DECLAR(UTextBlock, TextMissionPoint);			// 미션 성공 포인트
 
 	//===================================================
 	// CanvasViewAD
 	//===================================================
-	PG_DECLAR_WIDGET(UButton, BtnADView);
-	PG_DECLAR_WIDGET(UTextBlock, TextClearADTimer);
+	PG_WIDGET_DECLAR(UButton, BtnADView);
+	PG_WIDGET_DECLAR(UTextBlock, TextClearADTimer);
 
 	//===================================================
 	// CanvasTotalPoint
 	//===================================================
-	PG_DECLAR_WIDGET(UTextBlock, TextTotalPoint);
+	PG_WIDGET_DECLAR(UTextBlock, TextTotalPoint);
 
 	//===================================================
 	// CanvasBottomMenu
 	//===================================================
-	PG_DECLAR_WIDGET(UButton, BtnGoHome);
-	PG_DECLAR_WIDGET(UButton, BtnRetry);
-	PG_DECLAR_WIDGET(UButton, BtnNext);
+	PG_WIDGET_DECLAR(UButton, BtnGoHome);
+	PG_WIDGET_DECLAR(UButton, BtnRetry);
+	PG_WIDGET_DECLAR(UButton, BtnNext);
 
 
 	bool m_bWasViewStageClear3X = false;
