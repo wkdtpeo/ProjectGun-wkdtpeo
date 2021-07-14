@@ -16,6 +16,8 @@ class PROJECT_GUN_API APG_LethalAttack : public AActor
 public:	
 	// Sets default values for this actor's properties
 	APG_LethalAttack();
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
 protected:
 	virtual void PostInitializeComponents() override;
@@ -24,9 +26,6 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 	void BindPlayerState(class APG_MyPlayerState* APlayerState);
 	void UnBindPlayerState(class APG_MyPlayerState* APlayerState);
 

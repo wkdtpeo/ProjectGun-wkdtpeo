@@ -14,8 +14,4 @@ UCLASS()
 class PROJECT_GUN_API APG_ProjectileLaserBem : public APG_Projectile
 {
 	GENERATED_BODY()
-	
-	
-	
-	
 };

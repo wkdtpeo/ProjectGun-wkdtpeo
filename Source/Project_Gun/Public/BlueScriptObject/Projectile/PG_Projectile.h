@@ -15,14 +15,13 @@ class PROJECT_GUN_API APG_Projectile : public AActor
 	
 public:	
 	APG_Projectile();
+	virtual void Tick(float DeltaTime) override;	// Called every frame
 
 protected:
 	virtual void PostInitializeComponents() override;
 	virtual void BeginPlay() override;	// Called when the game starts or when spawned
 
 public:	
-	virtual void Tick(float DeltaTime) override;	// Called every frame
-
 	// 발사체의 속도를 발사 방향으로 초기화시킵니다.
 	virtual void FireInDirection(const struct FPGWeaponData* pWeaponData, const FVector& ShootDirection, bool bMonsterWeapon = false);
 

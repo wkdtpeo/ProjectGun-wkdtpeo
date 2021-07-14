@@ -30,32 +30,37 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	void UpdateRotation(float DeltaTime);
-
 public :
+	//==========================================================
+	// AI
+	//==========================================================
 	bool RunAI();
 	void StopAI();
 
+	//==========================================================
+	// Monster Info
+	//==========================================================
+	const FPGMonsterData* GetMonsterData();
 	void SetHP(int32 nHP);
 	void SetDie(bool IsUseLetharAttack);
-
-	const FPGMonsterData* GetMonsterData();
 	int32 GetDetectRange() const;		// 몬스터 시야
 	int32 GetChaseRange() const;		// 몬스터가 쫓아오는 최대 거리
 	float GetHPRatio() const;			// 현재 체력 비율
 	float GetMaxHP() const;				// 최대 체력
 	float GetDropRate() const;			// 재화 드랍확율
 
-	class APG_MyChar* FindTargetToMyChar();
+
+protected :
+	virtual bool SetDefaultMonsterData();
+	class APG_MyChar* FindTargetToMyChar();	// 몬스터 기준에서 타겟팅할 플레이어를 찾는다.
+
+	void UpdateRotation(float DeltaTime);
 
 public :
 	virtual bool OnDamage(int32 nDamage, bool IsUseLetharAttack = false);
 
 protected :
-	virtual bool SetDefaultMonsterData();
-
 	virtual void OnAssetLoadCharacterCompleted() override;
-
 	UFUNCTION()
 	virtual void OnCharacterHit(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromWeep, const FHitResult& SweepResult);
 	UFUNCTION()
