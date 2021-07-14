@@ -89,7 +89,7 @@ public :
 	virtual bool SavePlayerData();		// m_pSavePlayerData에 쓰여진 플레이어 데이터를 저장한다
 	virtual bool SaveStageData();		// m_pSelectSaveStageData에 쓰여진 스테이지 플레이 데이터를 저장한다
 
-protected:
+private:
 	//==========================================================
 	// SavePlayerData (플레이어 저장 데이터)
 	//==========================================================

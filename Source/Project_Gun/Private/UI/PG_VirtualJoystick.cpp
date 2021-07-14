@@ -1,6 +1,6 @@
 ﻿#include "UI/PG_VirtualJoystick.h"
 #include "Player/PlayerController/PG_PlayerController.h"
-
+#include "Player/PlayerState/PG_MyPlayerState.h"
 
 void SPG_VirtualJoystick::Construct(const FArguments& InArgs)
 {
@@ -33,8 +33,9 @@ FReply SPG_VirtualJoystick::OnTouchMoved(const FGeometry& MyGeometry, const FPoi
 
 FReply SPG_VirtualJoystick::OnTouchEnded(const FGeometry& MyGeometry, const FPointerEvent& Event)
 {
-	if (MyPlayerController) 
-		MyPlayerController->OnTryLethalAttack();
+	auto pMyPlayerState = MyPlayerController->GetPlayerState<APG_MyPlayerState>();
+	if (pMyPlayerState)
+		pMyPlayerState->TryUseTheSkill();
 
 	return SVirtualJoystick::OnTouchEnded(MyGeometry, Event);
 }

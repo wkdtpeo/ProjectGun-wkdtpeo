@@ -96,10 +96,13 @@ void APG_GameStateStage::MonsterDie(APG_MonChar* KillMon, bool IsLethalAttack)
 	auto pMyPlayerController = Cast<APG_PlayerController>(GetWorld()->GetFirstPlayerController());
 	ABCHECK(nullptr != pMyPlayerController);
 
+	auto pMyPlayerState = pMyPlayerController->GetPlayerState<APG_MyPlayerState>();
+	ABCHECK(nullptr != pMyPlayerState);
+
 	if (IsLethalAttack)
-		pMyPlayerController->MonsterLethalAttackKill(KillMon);
+		pMyPlayerState->MonsterLethalAttackKill(KillMon);
 	else
-		pMyPlayerController->MonsterKill(KillMon);
+		pMyPlayerState->MonsterKill(KillMon);
 
 	UdpateWidgetPlayStage.Broadcast();
 

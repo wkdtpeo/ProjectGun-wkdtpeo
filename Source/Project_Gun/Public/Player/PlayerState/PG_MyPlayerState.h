@@ -39,7 +39,7 @@ public :
 	void MonsterKill(class APG_MonChar* KillMon);
 	void MonsterLethalAttackKill(class APG_MonChar* KillMon);
 
-	bool UseAmmo();
+	bool UseAmmo();	 // 현재 장찬된 무기의 탄약 소비
 	void ChangeDefaultWeapon();	// 기본 무기로 변경
 	bool ChangeWeapon(int32 nSlotIndex, int32 nWeaponTableIndex);
 	
