@@ -1,9 +1,9 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BlueScriptObject/Projectile/PG_ProjectileFlame.h"
+#include "BlueScriptObject/Weapon/PG_Weapon.h"
 #include "Character/PG_MonChar.h"
 #include "Character/PG_MyChar.h"
-#include "Define/PG_TableData.h"
 
 APG_ProjectileFlame::APG_ProjectileFlame()
 {
@@ -78,19 +78,20 @@ void APG_ProjectileFlame::SetScaleTime(float fScaleTime)
 
 void APG_ProjectileFlame::OnTargetBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromWeep, const FHitResult& SweepResult)
 {
-	auto OwnerWeapon = Cast<APG_Weapon>(GetOwner());
-	ABCHECK(nullptr != OwnerWeapon);
+	auto pOwnerWeapon = Cast<APG_Weapon>(GetOwner());
+	ABCHECK(nullptr != pOwnerWeapon);
 
 	// 몬스터 충돌시
-	auto AMonCharacter = Cast<APG_MonChar>(OtherActor);
-	if (AMonCharacter && IsOwnerMyPlayer())
+	auto pMonCharacter = Cast<APG_MonChar>(OtherActor);
+	if (pMonCharacter && IsOwnerMyPlayer())
 	{
-		if (false == IsAttackNullity(AMonCharacter->GetActorLocation()))
+		// 공격 무효화 검사 (콜리전 Preset을 이용하여 벽 또는 방패 충돌 검사)
+		if (false == IsAttackNullity(pMonCharacter->GetActorLocation()))
 		{
-			FCollisionQueryParams Params(NAME_None, false, AMonCharacter);
+			FCollisionQueryParams Params(NAME_None, false, pMonCharacter);
 			if (GetWorld()->LineTraceTestByProfile(
 				GetActorLocation(),
-				AMonCharacter->GetActorLocation(),
+				pMonCharacter->GetActorLocation(),
 				TEXT("Monster"),
 				Params)
 				)
@@ -99,19 +100,19 @@ void APG_ProjectileFlame::OnTargetBeginOverlap(UPrimitiveComponent* OverlappedCo
 				return;
 			}
 
-			AMonCharacter->OnDamage(OwnerWeapon->GetWeaponAttackDamage());
+			pMonCharacter->OnDamage(pOwnerWeapon->GetWeaponAttackDamage());
 		}
 		
 		return;
 	}
 	
 	// 플레이어 충돌시
-	auto AMyCharacter = Cast<APG_MyChar>(OtherActor);
-	if (AMyCharacter && IsOwnerMonster())
+	auto pMyCharacter = Cast<APG_MyChar>(OtherActor);
+	if (pMyCharacter && IsOwnerMonster())
 	{
-		if (false == IsAttackNullity(AMyCharacter->GetActorLocation()))
+		if (false == IsAttackNullity(pMyCharacter->GetActorLocation()))
 		{
-			AMyCharacter->OnAttackedByMonster();
+			pMyCharacter->OnAttackedByMonster();
 		}
 		return;
 	}

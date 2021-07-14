@@ -83,18 +83,18 @@ void APG_ProjectileRifle::FireInDirection(const FPGWeaponData* pWeaponData, cons
 
 void APG_ProjectileRifle::OnTargetBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromWeep, const FHitResult& SweepResult)
 {
-	auto OwnerWeapon = Cast<APG_Weapon>(GetOwner());
-	ABCHECK(nullptr != OwnerWeapon);
+	auto pOwnerWeapon = Cast<APG_Weapon>(GetOwner());
+	ABCHECK(nullptr != pOwnerWeapon);
 
 	// 몬스터 충돌시
-	auto AMonCharacter = Cast<APG_MonChar>(OtherActor);
-	if (AMonCharacter && IsOwnerMyPlayer())
-		AMonCharacter->OnDamage(OwnerWeapon->GetWeaponAttackDamage());
+	auto pMonCharacter = Cast<APG_MonChar>(OtherActor);
+	if (pMonCharacter && IsOwnerMyPlayer())
+		pMonCharacter->OnDamage(pOwnerWeapon->GetWeaponAttackDamage());
 
 	// 플레이어 충돌시
-	auto AMyCharacter = Cast<APG_MyChar>(OtherActor);
-	if (AMyCharacter&& IsOwnerMonster())
-		AMyCharacter->OnAttackedByMonster();
+	auto pMyCharacter = Cast<APG_MyChar>(OtherActor);
+	if (pMyCharacter && IsOwnerMonster())
+		pMyCharacter->OnAttackedByMonster();
 
 	if (BurstingEffect && false == BurstingEffect->IsActive())
 		BurstingEffect->SetActive(true, true);
