@@ -8,7 +8,6 @@
 
 APG_MonCharDivisionSkillType::APG_MonCharDivisionSkillType()
 {
-	MonsterType = EMonsterType::eMT_DivisionSkillType;
 	AIControllerClass = APG_AICon_Mon::StaticClass();
 }
 

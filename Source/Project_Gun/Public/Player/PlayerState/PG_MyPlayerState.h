@@ -76,7 +76,7 @@ public :
 	//==========================================================
 	// Monster
 	//==========================================================
-	FOnMonsterKill			OnBasicAttackMonsterKill;		// 일반공격으로 인한 몬스터 처치
+	FOnMonsterKill			OnDefaultAttackMonsterKill;		// 일반공격으로 인한 몬스터 처치
 
 	//==========================================================
 	// LethalAttack

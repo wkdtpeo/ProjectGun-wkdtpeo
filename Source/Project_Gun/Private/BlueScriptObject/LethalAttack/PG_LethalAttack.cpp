@@ -88,7 +88,7 @@ void APG_LethalAttack::BindPlayerState(class APG_MyPlayerState* APlayerState)
 {
 	ABCHECK(nullptr != APlayerState);
 
-	HandleOnBasicAttackMonsterKill = APlayerState->OnBasicAttackMonsterKill.AddUObject(this, &APG_LethalAttack::OnAddLethalPoint);
+	HandleOnBasicAttackMonsterKill = APlayerState->OnDefaultAttackMonsterKill.AddUObject(this, &APG_LethalAttack::OnAddLethalPoint);
 	HandleOnReadyToUseTheLethalAttack = APlayerState->OnReadyToUseTheLethalAttack.AddUObject(this, &APG_LethalAttack::OnReadyToUseTheLethalAttack);
 	HandleOnUseTheLethalAttackSuccess = APlayerState->OnTryUseTheLethalAttack.AddUObject(this, &APG_LethalAttack::OnTryUseTheLethalAttack);
 	HandleOnUseTheLethalAttackFail = APlayerState->OnUseTheLethalAttackFail.AddUObject(this, &APG_LethalAttack::OnUseTheLethalAttackFail);
@@ -98,7 +98,7 @@ void APG_LethalAttack::UnBindPlayerState(class APG_MyPlayerState* APlayerState)
 {
 	ABCHECK(nullptr != APlayerState);
 
-	APlayerState->OnBasicAttackMonsterKill.Remove(HandleOnBasicAttackMonsterKill);
+	APlayerState->OnDefaultAttackMonsterKill.Remove(HandleOnBasicAttackMonsterKill);
 	APlayerState->OnReadyToUseTheLethalAttack.Remove(HandleOnReadyToUseTheLethalAttack);
 	APlayerState->OnTryUseTheLethalAttack.Remove(HandleOnUseTheLethalAttackSuccess);
 	APlayerState->OnUseTheLethalAttackFail.Remove(HandleOnUseTheLethalAttackFail);

@@ -39,7 +39,6 @@ public :
 	void SetHP(int32 nHP);
 	void SetDie(bool IsUseLetharAttack);
 
-	EMonsterType GetMonsterType();
 	const FPGMonsterData* GetMonsterData();
 	int32 GetDetectRange() const;		// 몬스터 시야
 	int32 GetChaseRange() const;		// 몬스터가 쫓아오는 최대 거리
@@ -63,9 +62,6 @@ protected :
 	virtual void OnHitCallback(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 	
 protected:
-	UPROPERTY(VisibleInstanceOnly, Category = MonsterInfo, Meta = (AllowPrivateAccess = true))
-	EMonsterType MonsterType = EMonsterType::eMT_Max;
-
 	UPROPERTY(VisibleInstanceOnly, Category = MonsterComponent)
 	class UPG_ComponentCharScale* CharScaleComponent;
 

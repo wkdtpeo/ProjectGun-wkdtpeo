@@ -16,7 +16,6 @@ APG_MonCharSkillType::APG_MonCharSkillType()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	MonsterType = EMonsterType::eMT_SkillType;
 	AIControllerClass = APG_AICon_Mon::StaticClass();
 
 	WeaponComponent = CreateDefaultSubobject<UPG_ComponentWeapon>(TEXT("PROJECTILEFIRECOMPONENT"));

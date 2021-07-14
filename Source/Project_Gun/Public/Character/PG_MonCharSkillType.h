@@ -24,9 +24,7 @@ protected :
 	virtual void BeginPlay() override;
 	virtual void PostInitializeComponents() override;
 	virtual void Destroyed() override;
-
 	virtual void OnHitCallback(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) override;
-
 
 public :
 	//=============================================
@@ -54,6 +52,7 @@ protected :
 	bool FindTargetToMyCharForWeapon();
 	bool FindTargetToMyCharForDash(OUT FVector& vGetTargetPos);
 
+protected:
 	virtual bool OnDamage(int32 nDamage, bool IsUseLetharAttack = false) override;
 	void OnEndWeaponFireCoolTime();	// 무기 발사 쿨타임 종료
 	void OnStartDash();				// 대쉬 시작

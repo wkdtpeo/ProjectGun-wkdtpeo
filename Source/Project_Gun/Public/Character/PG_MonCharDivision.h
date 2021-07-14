@@ -26,9 +26,9 @@ public:
 	bool	IsDivisionChild();					// 자식 여부 확인
 
 	int32	GetDivisionCountToHPRatio();		// 현재 몬스터의 남은 체력 기준, 분할 할 수 있는 횟수를 반환한다.
-	const FPGMonsterData_Division* GetMonsterDataDivision() { return &MonsterDivisionData; }
-
+	
 	void	SetMonsterDataDivision(FPGMonsterData_Division& MonsterData_Division);
+	const FPGMonsterData_Division* GetMonsterDataDivision() { return &MonsterDivisionData; }
 
 public:
 	virtual bool OnDamage(int32 nDamage, bool IsUseLetharAttack = false) override;
@@ -44,5 +44,5 @@ protected :
 	struct FPGMonsterData_Division MonsterDivisionData;
 	
 	UPROPERTY()
-	bool bIsDivisionChild;	// 분화형 몬스터의 자식 여부
+	bool m_bIsDivisionChild;	// 분화형 몬스터의 자식 여부
 };

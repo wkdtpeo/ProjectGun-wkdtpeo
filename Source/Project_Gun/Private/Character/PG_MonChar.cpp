@@ -181,10 +181,6 @@ void APG_MonChar::SetDie(bool IsUseLetharAttack)
 		ABLOG_S(Warning);
 	}
 }
-EMonsterType APG_MonChar::GetMonsterType()
-{
-	return MonsterType;
-}
 
 const FPGMonsterData* APG_MonChar::GetMonsterData()
 {

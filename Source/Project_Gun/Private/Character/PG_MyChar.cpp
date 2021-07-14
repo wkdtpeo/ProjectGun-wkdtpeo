@@ -93,7 +93,7 @@ void APG_MyChar::BeginPlay()
 	{
 		auto AMyPlayerState = Cast<APG_MyPlayerState>(GetPlayerState());
 		ABCHECK(nullptr != AMyPlayerState);
-		AMyPlayerState->OnBasicAttackMonsterKill.AddUObject(this, &APG_MyChar::OnBasicAttackMonsterKill);
+		AMyPlayerState->OnDefaultAttackMonsterKill.AddUObject(this, &APG_MyChar::OnDefaultAttackMonsterKill);
 		AMyPlayerState->OnChangeWeapon.AddUObject(this, &APG_MyChar::OnChangeWeapon);
 	}
 }
@@ -297,7 +297,7 @@ void APG_MyChar::OnPlayerWorldOut()
 	}
 }
 
-void APG_MyChar::OnBasicAttackMonsterKill(APG_MonChar* AMon)
+void APG_MyChar::OnDefaultAttackMonsterKill(APG_MonChar* AMon)
 {
 	if (false == CurrentLethalAttack.IsValid())
 	{
@@ -515,21 +515,6 @@ bool APG_MyChar::EquipWeapon(int32 nWeaponTalbeIndex)
 
 	return true;
 }
-
-// PlayerState 로 옮기는 작업 필요
-//bool APG_MyChar::EquipWeapon(const TSubclassOf<class APG_Weapon>& EquipWeaponClass)
-//{
-//	APG_Weapon* NewWeapon = GetWorld()->SpawnActor<APG_Weapon>(EquipWeaponClass, FVector::ZeroVector, FRotator::ZeroRotator);
-//	ABCHECK(nullptr != NewWeapon, false);
-//
-//	if (false == SetWeapon(NewWeapon))
-//	{
-//		NewWeapon->Destroy();
-//		return false;
-//	}
-//
-//	return true;
-//}
 
 // PlayerState 로 옮기는 작업 필요
 bool APG_MyChar::SetWeapon(APG_Weapon* NewWeapon)

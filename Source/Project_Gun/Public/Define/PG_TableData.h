@@ -71,18 +71,6 @@ public:
 //=========================================================================================
 // 몬스터
 //=========================================================================================
-UENUM(BlueprintType)
-enum class EMonsterType : uint8
-{
-	eMT_Normal = 0,				// 일반 몬스터
-	eMT_SkillType,				// 스킬 사용하는 몬스터
-	eMT_Division,				// 분열하는 몬스터
-	eMT_DivisionSkillType,		// 스킬사용 및 분열하는 몬스터
-	eMT_Boss,					// 보스
-
-	eMT_Max
-}; 
-
 USTRUCT(BlueprintType)
 struct FPGMonsterData
 {
@@ -240,17 +228,6 @@ public:
 //=========================================================================================
 // 무기 데이터
 //=========================================================================================
-UENUM(BlueprintType)
-enum class EWeaponType : uint8
-{
-	eWT_Rifle = 0,
-	eWT_GrenadeLauncher,
-	eWT_LaserBemGun,
-	eWT_FlameGun,
-
-	eWT_Max
-};
-
 USTRUCT(BlueprintType)
 struct FPGWeaponData
 {

@@ -7,7 +7,6 @@
 
 APG_MonCharBoss::APG_MonCharBoss()
 {
-	MonsterType = EMonsterType::eMT_Boss;
 	AIControllerClass = APG_AICon_Mon::StaticClass();
 }
 

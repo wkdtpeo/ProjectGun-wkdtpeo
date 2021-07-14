@@ -27,26 +27,29 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+protected:
 	void UpdateRotation(float DeltaTime);
 	void UpdateCamera(float DeltaTime);
 	void UpdateMovement(float DeltaTime);
 
 public :
-	float GetMaxSpeed();
-
 	UFUNCTION(BlueprintCallable, Category = "PG TargetMonster")
-	bool IsTargetMonster();
+	bool IsTargetMonster();		// 몬스터 타겟팅 여부
+
+	//==========================================================
+	// Character Stat
+	//==========================================================
+	float GetMaxSpeed();		// 이동속도
+	float GetAttackRange();		// 공격범위
 
 	//==========================================================
 	// Weapon
 	//==========================================================
-	bool EquipWeapon(int32 nWeaponTalbeIndex);		// 장비 장착
-	void Fire() override;							// 무기 발사
-	float GetAttackRange();							// 공격 범위
+	bool EquipWeapon(int32 nWeaponTalbeIndex);		// 장비장착
+	void Fire() override;							// 무기발사
 
 	//==========================================================
 	// LethalAttack
@@ -54,14 +57,12 @@ public :
 	bool EquipLethalAttack(int32 LethalAttackID);	// 스킬 장착
 	bool UnEquipLethalAttack();
 
-
 public :
 	UFUNCTION()
 	virtual void OnGenerateOverlabEvent(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromWeep, const FHitResult& SweepResult);
-
-	void OnAttackedByMonster();						// 몬스터에게 피격당함
-	void OnPlayerWorldOut();						// 맵에서 떨어짐. (Kill Z)
-	void OnBasicAttackMonsterKill(class APG_MonChar* AMon);	// 몬스터 사망
+	void OnAttackedByMonster();		// 몬스터에게 피격당함
+	void OnPlayerWorldOut();		// 맵에서 떨어짐. (Kill Z)
+	void OnDefaultAttackMonsterKill(class APG_MonChar* AMon);	// 몬스터 사망
 	void OnChangeWeapon(int32 nWeaponTableIndex);
 
 private :
@@ -106,14 +107,6 @@ private :
 
 	class APG_MonChar* FindTargetToMonster();
 
-public :
-	UPROPERTY(VisibleAnywhere, Category = "PG CameraInfo")
-	USpringArmComponent* SpringArm;
-
-	UPROPERTY(VisibleAnywhere, Category = "PG CameraInfo")
-	UCameraComponent* Camera;
-
-
 private :
 	//==========================================================
 	// Animation (애니메이션)
@@ -122,8 +115,14 @@ private :
 	class UPG_AnimIns_MyChar* ABAnimInstance;
 
 	//==========================================================
-	// CharacterCameraTable (캐릭터 카메라 정보)
+	// Camera
 	//==========================================================
+	UPROPERTY(VisibleAnywhere, Category = "PG CameraInfo")
+	USpringArmComponent* SpringArm;
+	UPROPERTY(VisibleAnywhere, Category = "PG CameraInfo")
+	UCameraComponent* Camera;
+
+	// CharacterCameraTable (캐릭터 카메라 정보)
 	float		ArmLengthTo = 0.0f;
 	FRotator	ArmRotationTo = FRotator::ZeroRotator;
 	float		ArmLengthSpeed = 0.0f;

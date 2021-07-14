@@ -7,7 +7,6 @@
 
 APG_MonCharNormal::APG_MonCharNormal()
 {
-	MonsterType = EMonsterType::eMT_Normal;
 	AIControllerClass = APG_AICon_Mon::StaticClass();
 }
 

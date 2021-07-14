@@ -65,7 +65,7 @@ void APG_MyPlayerState::MonsterKill(APG_MonChar* KillMon)
 		ABLOG(Warning, TEXT("Get Reward Point : %d"), GetRewardPoint);
 	}
 	
-	OnBasicAttackMonsterKill.Broadcast(KillMon);
+	OnDefaultAttackMonsterKill.Broadcast(KillMon);
 }
 
 void APG_MyPlayerState::MonsterLethalAttackKill(APG_MonChar* KillMon)

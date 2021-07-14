@@ -8,10 +8,9 @@
 
 APG_MonCharDivision::APG_MonCharDivision()
 {
-	MonsterType = EMonsterType::eMT_Division;
 	AIControllerClass = APG_AICon_Mon::StaticClass();
 	DivisionSpawnComponent = CreateDefaultSubobject<UPG_ComponentDivisionSpawn>(TEXT("COMPONENTDIVISIONSPAWN"));
-	bIsDivisionChild = false;
+	m_bIsDivisionChild = false;
 }
 
 void APG_MonCharDivision::BeginPlay()
@@ -48,7 +47,7 @@ bool APG_MonCharDivision::IsPossibleToDivision()
 
 bool APG_MonCharDivision::IsDivisionChild()
 {
-	return bIsDivisionChild;
+	return m_bIsDivisionChild;
 }
 
 void APG_MonCharDivision::SetMonsterDataDivision(FPGMonsterData_Division& MonsterData_Division)
@@ -81,7 +80,7 @@ void APG_MonCharDivision::OnSpawnActor(APG_MonCharDivision* ASpawnActor)
 
 	FPGMonsterData_Division MakeMonsterData_Division = MonsterDivisionData;
 	MakeMonsterData_Division.MRemainDivisionCount = GetDivisionCountToHPRatio();
-	ASpawnActor->bIsDivisionChild = true;
+	ASpawnActor->m_bIsDivisionChild = true;
 	ASpawnActor->SetMonsterDataDivision(MakeMonsterData_Division);
 	ASpawnActor->SetHP(MakeMonsterData_Division.MHP);
 }
