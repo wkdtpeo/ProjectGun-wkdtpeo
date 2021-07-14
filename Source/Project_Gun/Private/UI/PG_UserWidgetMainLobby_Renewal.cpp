@@ -258,7 +258,7 @@ void UPG_UserWidgetMainLobby_Renewal::OnCloseWeaponInventory(int32 nSlotIndex, i
 	{
 		auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
 		ABCHECK(nullptr != pGameModeMainLobby);
-		pGameModeMainLobby->SetEquipWeapon(nSlotIndex, nWeaponIndex);
+		pGameModeMainLobby->SaveWeaponEquipSlot(nSlotIndex, nWeaponIndex);
 
 		UpdateLayoutWeaponSlot();
 	}

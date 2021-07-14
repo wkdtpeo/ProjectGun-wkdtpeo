@@ -17,6 +17,7 @@ DECLARE_MULTICAST_DELEGATE_OneParam(FOnChangeWeapon, int32);
 
 /**
  * PlayerState : 플레이어의 상태를 정의한다. 플레이어의 캐릭터가 무슨 직업인지, 이름은 무엇인지 등을 포함한다.
+ * -. 남들이 알아야하는 내 정보 (멀티플레이 환경에 의미가 더 도드라진다)
  */
 UCLASS()
 class PROJECT_GUN_API APG_MyPlayerState : public APlayerState

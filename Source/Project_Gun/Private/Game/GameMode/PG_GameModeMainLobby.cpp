@@ -8,9 +8,6 @@
 
 APG_GameModeMainLobby::APG_GameModeMainLobby()
 {
-	//DefaultPawnClass = APG_MyChar::StaticClass();
-	//PlayerControllerClass = APG_PlayerController::StaticClass();
-	//GameStateClass = APG_GameStateStage::StaticClass();
 	PlayerStateClass = APG_MyPlayerState::StaticClass();
 }
 
@@ -37,19 +34,12 @@ bool APG_GameModeMainLobby::IsClearMission(enum EStageClearType a_ekStageClearTy
 		return m_pSelectSaveStageData->m_bWasClearTime;
 	case EStageClearType::eSCT_Lethal:
 		return m_pSelectSaveStageData->m_bWasClearLethal;
-
-	//case EStageClearType::eSCT_AmountKill:
-	//	return (m_pSelectSaveStageData->m_kStagePlayData.NumberOfMonstersKilled >= cpStageData->M_Amount);
-	//case EStageClearType::eSCT_ClearTime:
-	//	return (IsClearMission(EStageClearType::eSCT_AmountKill) && (m_pSelectSaveStageData->m_kStagePlayData.PlayTime <= cpStageData->Time));
-	//case EStageClearType::eSCT_Lethal:
-	//	return (IsClearMission(EStageClearType::eSCT_AmountKill) && (m_pSelectSaveStageData->m_kStagePlayData.NumberOfMonstersMuiltiKilled >= cpStageData->Multi_Kill));
 	}
 
 	return false;
 }
 
-void APG_GameModeMainLobby::SetEquipWeapon(int32 nSlotIndex, int32 nWeaponIndex)
+void APG_GameModeMainLobby::SaveWeaponEquipSlot(int32 nSlotIndex, int32 nWeaponIndex)
 {
 	ABCHECK(nullptr != m_pSavePlayerData);
 	m_pSavePlayerData->m_kEquipWeaponTableIndex[nSlotIndex] = nWeaponIndex;

@@ -181,7 +181,7 @@ void UPG_UserWidgetMainLobby::OnCloseWeaponInventory(int32 nSlotIndex, int32 nWe
 	{
 		auto pGameModeMainLobby = Cast<APG_GameModeMainLobby>(GetWorld()->GetAuthGameMode());
 		ABCHECK(nullptr != pGameModeMainLobby);
-		pGameModeMainLobby->SetEquipWeapon(nSlotIndex, nWeaponIndex);
+		pGameModeMainLobby->SaveWeaponEquipSlot(nSlotIndex, nWeaponIndex);
 
 		UpdateWeaponSlotLayout();
 	}
