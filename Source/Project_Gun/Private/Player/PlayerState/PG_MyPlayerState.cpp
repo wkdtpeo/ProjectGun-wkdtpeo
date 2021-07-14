@@ -36,17 +36,17 @@ bool APG_MyPlayerState::InitPlayerData()
 	auto pPlayerSaveData = pGameMode->GetSavePlayerData();
 	ABCHECK(nullptr != pPlayerSaveData, false);
 
-	OrignalPlayerData.RewardPoint = pPlayerSaveData->m_nRewardPoint;
-	OrignalPlayerData.EquipWeaponInventoryIndex = 0;// pPlayerSaveData->m_nEquipWeaponSlotIndex;
-	OrignalPlayerData.PlayerWeaponInventory = pPlayerSaveData->m_kEquipWeaponTableIndex;
-	OrignalPlayerData.bExtendWeaponSlot = pPlayerSaveData->m_bExtendWeaponSlot;
+	m_kOrignalPlayerData.RewardPoint = pPlayerSaveData->m_nRewardPoint;
+	m_kOrignalPlayerData.EquipWeaponInventoryIndex = 0;// pPlayerSaveData->m_nEquipWeaponSlotIndex;
+	m_kOrignalPlayerData.PlayerWeaponInventory = pPlayerSaveData->m_kEquipWeaponTableIndex;
+	m_kOrignalPlayerData.bExtendWeaponSlot = pPlayerSaveData->m_bExtendWeaponSlot;
 
 	for (int32 nIndex = 0; nIndex < PG_MAX_WEAPON_SLOT; ++nIndex)
 	{
-		OrignalPlayerData.PlayerWeaponAmmo[nIndex] = pGameMode->GetMaxAmmo(pPlayerSaveData->m_kEquipWeaponTableIndex[nIndex]);
+		m_kOrignalPlayerData.PlayerWeaponAmmo[nIndex] = pGameMode->GetMaxAmmo(pPlayerSaveData->m_kEquipWeaponTableIndex[nIndex]);
 	}
 
-	PlayingPlayerData = OrignalPlayerData;
+	m_kPlayingPlayerData = m_kOrignalPlayerData;
 
 	return true;
 }
@@ -88,45 +88,43 @@ void APG_MyPlayerState::AddRewardPoint(int32 a_nAddPoint)
 	if (0 == a_nAddPoint)
 		return;
 
-	PlayingPlayerData.RewardPoint += a_nAddPoint;
+	m_kPlayingPlayerData.RewardPoint += a_nAddPoint;
 	OnUpdateRewardPoint.Broadcast();
 }
 
 void APG_MyPlayerState::SetRewardPoint(int32 a_nSetPoint)
 {
-	PlayingPlayerData.RewardPoint = a_nSetPoint;
+	m_kPlayingPlayerData.RewardPoint = a_nSetPoint;
 	OnUpdateRewardPoint.Broadcast();
 }
 
 bool APG_MyPlayerState::UseAmmo()
 {
-	int32 nEquipTableIndex = PlayingPlayerData.EquipWeaponInventoryIndex;
+	int32 nEquipTableIndex = m_kPlayingPlayerData.EquipWeaponInventoryIndex;
 
-	if (PG_INFINITY_AMMO == PlayingPlayerData.PlayerWeaponAmmo[nEquipTableIndex])
-		return true;
+	if (PG_INFINITY_AMMO == m_kPlayingPlayerData.PlayerWeaponAmmo[nEquipTableIndex])
+		return true;		// 무한으로 총알을 사용할 수 있는 무기여서 탄약 소모가 필요 없으므로 return
 
-	if (PlayingPlayerData.PlayerWeaponAmmo[nEquipTableIndex] <= 0)
+	if (m_kPlayingPlayerData.PlayerWeaponAmmo[nEquipTableIndex] <= 0)
 		return false;
 
-	PlayingPlayerData.PlayerWeaponAmmo[nEquipTableIndex] -= 1;
+	m_kPlayingPlayerData.PlayerWeaponAmmo[nEquipTableIndex] -= 1;
 
 	return true;
 }
 
 void APG_MyPlayerState::ChangeDefaultWeapon()
 {
-	PlayingPlayerData.EquipWeaponInventoryIndex = 0;
-	ChangeWeapon(PlayingPlayerData.EquipWeaponInventoryIndex, 0);
+	m_kPlayingPlayerData.EquipWeaponInventoryIndex = 0;
+	ChangeWeapon(m_kPlayingPlayerData.EquipWeaponInventoryIndex, 0);
 }
 
 bool APG_MyPlayerState::ChangeWeapon(int32 nSlotIndex, int32 nWeaponTableIndex)
 {
-	if (PG_INFINITY_AMMO != PlayingPlayerData.PlayerWeaponAmmo[nSlotIndex] && 0 >= PlayingPlayerData.PlayerWeaponAmmo[nSlotIndex])
-	{
+	if (PG_INFINITY_AMMO != m_kPlayingPlayerData.PlayerWeaponAmmo[nSlotIndex] && 0 >= m_kPlayingPlayerData.PlayerWeaponAmmo[nSlotIndex])
 		return false;
-	}
 
-	PlayingPlayerData.EquipWeaponInventoryIndex = nSlotIndex;
+	m_kPlayingPlayerData.EquipWeaponInventoryIndex = nSlotIndex;
 	OnChangeWeapon.Broadcast(nWeaponTableIndex);
 
 	return true;

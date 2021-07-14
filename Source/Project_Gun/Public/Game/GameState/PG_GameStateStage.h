@@ -32,10 +32,11 @@ protected:
 public:
 	bool	InitStageData();
 
-	bool	IsStageClear();
-
 	void	MonsterDie(class APG_MonChar* KillMon, bool IsLethalAttack);
 
+	//===================================================
+	// Stage Info.
+	//===================================================
 	int32	GetLevelInstallMonsterCount();
 	int32	GetRemainStageTimer();
 	int32	GetMaxLethalKill();

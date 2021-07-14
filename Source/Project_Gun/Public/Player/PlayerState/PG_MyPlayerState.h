@@ -30,24 +30,35 @@ public :
 	virtual void PostInitializeComponents() override;
 	virtual void BeginPlay() override;
 
-	bool InitPlayerData();
-	//bool SavePlayerData();
+public :
+	bool InitPlayerData();		// 스테이지 시작전 플레이어 데이터를 초기화한다.
 
+	//==========================================================
+	// Reward Point
+	//==========================================================
 	void AddRewardPoint(int32 a_nAddPoint);
 	void SetRewardPoint(int32 a_nSetPoint);
+	UFUNCTION(BlueprintCallable, Category = "PG RewardPoint")
+	int32 GetRewardPoint() { return m_kPlayingPlayerData.RewardPoint; }
 
+	//==========================================================
+	// PlayerData
+	//==========================================================
+	const FPGPlayerData* GetOriginalPlayerData() { return &m_kOrignalPlayerData; }		// 스테이지 플레이하기전 오리지널 플레이어 데이터
+	const FPGPlayerData* GetPlayingPlayerData() { return &m_kPlayingPlayerData; }		// 스테이지 플레이 시작 후 변경되는 플레이어 데이터
+
+	//==========================================================
+	// Monster
+	//==========================================================
 	void MonsterKill(class APG_MonChar* KillMon);
 	void MonsterLethalAttackKill(class APG_MonChar* KillMon);
 
-	bool UseAmmo();	 // 현재 장찬된 무기의 탄약 소비
-	void ChangeDefaultWeapon();	// 기본 무기로 변경
-	bool ChangeWeapon(int32 nSlotIndex, int32 nWeaponTableIndex);
-	
-	const FPGPlayerData* GetPlayingPlayerData()		{ return &PlayingPlayerData;	}
-	const FPGPlayerData* GetOriginalPlayerData()	{ return &OrignalPlayerData;	}
-
-	UFUNCTION(BlueprintCallable, Category = "PG RewardPoint")
-	int32 GetRewardPoint()	{ return PlayingPlayerData.RewardPoint; }
+	//==========================================================
+	// Weapon
+	//==========================================================
+	bool UseAmmo();					// 현재 장찬된 무기의 탄약 소비
+	void ChangeDefaultWeapon();		// 기본 무기로 변경
+	bool ChangeWeapon(int32 nSlotIndex, int32 nWeaponTableIndex);	// 무기 변경
 
 	//==========================================================
 	// Lethal Attack
@@ -59,31 +70,32 @@ public :
 	//==========================================================
 	// Point
 	//==========================================================
-	FOnUpdateRewardPoint	OnUpdateRewardPoint;		// 포인트 획득 (몬스터 킬 + 스테이지 클리어 획득 재화 포함)
-	FOnAddRewardPoint		OnKillAddRewardPoint;		// 몬스터 처치로 인한 포인트 획득 (스테이지 클리어 획득 재화 미포함)
+	FOnUpdateRewardPoint	OnUpdateRewardPoint;			// 포인트 획득 (몬스터 킬 + 스테이지 클리어 획득 재화 포함)
+	FOnAddRewardPoint		OnKillAddRewardPoint;			// 몬스터 처치로 인한 포인트 획득 (스테이지 클리어 획득 재화 미포함)
 
 	//==========================================================
 	// Monster
 	//==========================================================
-	FOnMonsterKill	OnBasicAttackMonsterKill;		// 일반공격으로 인한 몬스터 처치
-	//FOnMonsterKill	OnLethalAttackMonsterKill;	// 필살기 공격으로 인한 몬스터 처치
+	FOnMonsterKill			OnBasicAttackMonsterKill;		// 일반공격으로 인한 몬스터 처치
 
 	//==========================================================
 	// LethalAttack
 	//==========================================================
-	FOnReadyToUseTheLethalAttack		OnReadyToUseTheLethalAttack;	// 스킬 사용 준비
-	FOnTryUseTheLethalAttack			OnTryUseTheLethalAttack;		// 스킬 사용 시도
-	FOnUseTheLethalAttackFail			OnUseTheLethalAttackFail;		// 스킬 사용 실패
+	FOnReadyToUseTheLethalAttack	OnReadyToUseTheLethalAttack;	// 스킬 사용 준비
+	FOnTryUseTheLethalAttack		OnTryUseTheLethalAttack;		// 스킬 사용 시도
+	FOnUseTheLethalAttackFail		OnUseTheLethalAttackFail;		// 스킬 사용 실패
 
-	// 무기 교체 알림
-	FOnChangeWeapon OnChangeWeapon;
+	//==========================================================
+	// Weapon
+	//==========================================================
+	FOnChangeWeapon OnChangeWeapon;		// 무기 교체 알림
 
 protected :
 	// 스테이지 플레이중 변경되는 플레이어 데이터
 	UPROPERTY(Transient, VisibleAnywhere)
-	struct FPGPlayerData PlayingPlayerData;
+	struct FPGPlayerData m_kPlayingPlayerData;
 
 	// 스테이지 시작시 변하지 않는 원본 플레이어 데이터
 	UPROPERTY(Transient, VisibleAnywhere)
-	struct FPGPlayerData OrignalPlayerData;
+	struct FPGPlayerData m_kOrignalPlayerData;
 };

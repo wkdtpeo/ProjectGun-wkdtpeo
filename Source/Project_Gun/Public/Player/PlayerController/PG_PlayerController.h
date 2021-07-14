@@ -42,7 +42,7 @@ public :
 	// Player 행동 처리
 	//==========================================================
 	void OnFire();			// 무기 발사
-	void OnStateClear();	// 스테이지 클리어
+	void OnStateClear();	// 스테이지 클리어 성공
 	void OnStateFailed();	// 스테이지 클리어 실패
 
 protected:

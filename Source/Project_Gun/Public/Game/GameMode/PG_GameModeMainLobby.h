@@ -27,6 +27,8 @@ public :
 	//===================================================
 	virtual bool IsClearMission(enum EStageClearType a_ekStageClearType) override;	// MainLobby에서 사용하는 미션 클리어 검사
 
-	// 무기를 장착한다.
-	void SaveWeaponEquipSlot(int32 nSlotIndex, int32 nWeaponIndex);
+	//===================================================
+	// WeaponSlot
+	//===================================================
+	void SaveWeaponEquipSlot(int32 nSlotIndex, int32 nWeaponIndex);		// 무기를 장착 정보를 저장한다.
 };

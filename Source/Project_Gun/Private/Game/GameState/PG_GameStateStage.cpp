@@ -73,14 +73,6 @@ bool APG_GameStateStage::InitStageData()
 	return CheckStageData();
 }
 
-bool APG_GameStateStage::IsStageClear()
-{
-	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
-	ABCHECK(nullptr != pGameModeStage, false);
-
-	return pGameModeStage->IsStageClear();
-}
-
 void APG_GameStateStage::MonsterDie(APG_MonChar* KillMon, bool IsLethalAttack)
 {
 	auto pDivisionMonster = Cast<APG_MonCharDivision>(KillMon);
@@ -100,13 +92,15 @@ void APG_GameStateStage::MonsterDie(APG_MonChar* KillMon, bool IsLethalAttack)
 	ABCHECK(nullptr != pMyPlayerState);
 
 	if (IsLethalAttack)
-		pMyPlayerState->MonsterLethalAttackKill(KillMon);
+		pMyPlayerState->MonsterLethalAttackKill(KillMon);		// 필살기로 죽인 몬스터
 	else
-		pMyPlayerState->MonsterKill(KillMon);
+		pMyPlayerState->MonsterKill(KillMon);					// 일반 공격으로 죽인 몬스터
 
 	UdpateWidgetPlayStage.Broadcast();
 
-	if (IsStageClear())
+	// 스테이지 클리어 조건을 만족하면 다음 스테이지 이동 게이트를 오픈한다.
+	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
+	if (pGameModeStage->IsStageClear())
 		GateOpenDelegate.Broadcast();
 }
 
@@ -179,7 +173,8 @@ bool APG_GameStateStage::RequestViewAD()
 
 void APG_GameStateStage::OnCheckStageClear()
 {
-	if (IsStageClear())
+	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
+	if (pGameModeStage->IsStageClear())
 	{
 		GetWorldTimerManager().ClearTimer(StageTimerHandle);
 		ABLOG(Warning, TEXT("Stage Clear Succees!"));
