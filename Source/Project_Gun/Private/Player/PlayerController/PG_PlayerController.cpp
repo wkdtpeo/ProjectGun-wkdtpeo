@@ -112,15 +112,15 @@ void APG_PlayerController::OnStateClear()
 	SetLockJoystickInput(true);
 	//SetPause(true);
 
-	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
-	ABCHECK(nullptr != pGameModeStage);
+	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
+	ABCHECK(nullptr != pGameStateStage);
 
 	auto pPlayerState = GetPlayerState<APG_MyPlayerState>();
 	ABCHECK(nullptr != pPlayerState);
 
 	// 스테이지 클리어 보상 획득
 	int32 nRewardPoint = pPlayerState->GetOriginalPlayerData()->RewardPoint;
-	pPlayerState->SetRewardPoint(nRewardPoint + pGameModeStage->GetClearTotalPoint());
+	pPlayerState->SetRewardPoint(nRewardPoint + pGameStateStage->GetClearTotalPoint());
 
 	ABCHECK(nullptr != m_pWidgetStageClear);
 	m_pWidgetStageClear->AddToViewport();

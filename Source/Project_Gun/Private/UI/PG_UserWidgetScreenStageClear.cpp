@@ -111,11 +111,11 @@ bool UPG_UserWidgetScreenStageClear::IsAbleViewStagePlayAD()
 
 void UPG_UserWidgetScreenStageClear::UpdateClearStageLayout()
 {
-	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
-	ABCHECK(nullptr != pGameModeStage);
-
 	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
 	ABCHECK(nullptr != pGameInstance);
+
+	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeStage);
 
 	auto pTableStageData = pGameInstance->GetTableStageData(pGameModeStage->GetPlayStageID());
 	ABCHECK(nullptr != pTableStageData);
@@ -164,11 +164,10 @@ void UPG_UserWidgetScreenStageClear::UpdateClearStageLayout()
 	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	ABCHECK(nullptr != pGameStateStage);
 
-	SetBonusStageClear(pGameModeStage->GetClearStagePoint());
-	SetBonusMonsterKill(pGameModeStage->GetClearMonsterKillPoint());
-	SetBonusMissionPoint(pGameModeStage->GetClearMissionPoint());
-	//SetBonusAD(pGameStateStage->IsViewAD());
-	SetTotalReward(pGameModeStage->GetClearTotalPoint());
+	SetBonusStageClear(pGameStateStage->GetClearStagePoint());
+	SetBonusMonsterKill(pGameStateStage->GetClearMonsterKillPoint());
+	SetBonusMissionPoint(pGameStateStage->GetClearMissionPoint());
+	SetTotalReward(pGameStateStage->GetClearTotalPoint());
 }
 
 void UPG_UserWidgetScreenStageClear::ShowMessageBox(FString kTitle, FString kDescription)

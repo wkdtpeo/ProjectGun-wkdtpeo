@@ -212,11 +212,11 @@ void UPG_UserWidgetStageClear::UpdateClearStageLayout()
 	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	ABCHECK(nullptr != pGameStateStage);
 	
-	SetBonusStageClear(pGameModeStage->GetClearStagePoint());
-	SetBonusMonsterKill(pGameModeStage->GetClearMonsterKillPoint());
-	SetBonusStar(pGameModeStage->GetClearMissionPoint());
+	SetBonusStageClear(pGameStateStage->GetClearStagePoint());
+	SetBonusMonsterKill(pGameStateStage->GetClearMonsterKillPoint());
+	SetBonusStar(pGameStateStage->GetClearMissionPoint());
 	SetBonusAD(pGameStateStage->IsViewAD());
-	SetTotalReward(pGameModeStage->GetClearTotalPoint());
+	SetTotalReward(pGameStateStage->GetClearTotalPoint());
 }
 
 void UPG_UserWidgetStageClear::SetBonusStageClear(int32 nStageClearBonus)

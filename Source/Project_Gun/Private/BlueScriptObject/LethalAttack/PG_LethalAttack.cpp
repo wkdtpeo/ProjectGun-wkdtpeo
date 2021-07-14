@@ -232,7 +232,7 @@ void APG_LethalAttack::OnTryUseTheLethalAttack()
 
 	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	if (pGameStateStage)
-		pGameStateStage->UpdateMaxLethalKill(MaxLethalKill);
+		pGameStateStage->SetMaxLethalKill(MaxLethalKill);
 
 	if (LethalSoundComponent)
 		LethalSoundComponent->Play();

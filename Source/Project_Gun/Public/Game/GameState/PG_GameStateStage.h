@@ -37,20 +37,24 @@ public:
 	//===================================================
 	// Stage Info.
 	//===================================================
-	int32	GetLevelInstallMonsterCount();
-	int32	GetRemainStageTimer();
-	int32	GetMaxLethalKill();
+	const struct FPGStagePlayData*	GetStagePlayData()	{ return &StagePlayData; }
+	int32	GetLevelInstallMonsterCount();	// 현재 레벨에 설치된 몬스터의 수
+	int32	GetRemainStageTimer();			// 현재 남은 시간
+	void	SetMaxLethalKill(int32 a_nMaxLethalKill);	// 필살기로 죽인 몬스터 수 갱신
+	int32	GetMaxLethalKill();							// 필살기로 죽은 최대 몬스터의 수
+	// Stage Clear Info.
+	int32	GetClearTotalPoint();			// 획득한 포인트 (총합 : 스테이지 클리어 + 미션 클리어 + 몬스터 처치 + 광고)
+	int32	GetClearStagePoint();			// 스테이지 클리어 포인트
+	int32	GetClearMissionPoint();			// 미션 클리어 포인트
+	int32	GetClearMonsterKillPoint();		// 몬스터 처치 포인트
 
-	void	UpdateMaxLethalKill(int32 a_nMaxLethalKill);		// 필살기로 죽인 몬스터 수 갱신
-
-	const struct FPGStagePlayData* GetStagePlayData() { return &StagePlayData; }
 
 	//===================================================
 	// AD (광고)
 	//===================================================
-	bool IsViewAD();		// 광고를 보았는지 확인
-	void SetViewAD(bool bEnable);
-	bool RequestViewAD();	// 광고 요청
+	bool	IsViewAD();					// 광고를 보았는지 확인
+	void	SetViewAD(bool bEnable);
+	bool	RequestViewAD();			// 광고 요청
 
 public:
 	//==========================================================

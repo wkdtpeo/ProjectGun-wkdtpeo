@@ -31,15 +31,6 @@ public :
 	bool IsWasClearMisiion(EStageClearType a_ekStageClearType);						// 이전에 각 타입의 미션 클리어 여부
 	bool IsStageClear();															// 스테이지 클리어 여부
 
-	// 획득한 포인트 (총합 : 스테이지 클리어 + 미션 클리어 + 몬스터 처치 + 광고)
-	int32 GetClearTotalPoint();
-	// 스테이지 클리어 포인트
-	int32 GetClearStagePoint();
-	// 미션 클리어 포인트
-	int32 GetClearMissionPoint();
-	// 몬스터 처치 포인트
-	int32 GetClearMonsterKillPoint();
-
 	//===================================================
 	// Save Data
 	//===================================================

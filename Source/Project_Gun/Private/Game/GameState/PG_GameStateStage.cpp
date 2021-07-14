@@ -123,7 +123,78 @@ int32 APG_GameStateStage::GetMaxLethalKill()
 	return StagePlayData.NumberOfMonstersMuiltiKilled;
 }
 
-void APG_GameStateStage::UpdateMaxLethalKill(int32 a_nMaxLethalKill)
+
+int32 APG_GameStateStage::GetClearTotalPoint()
+{
+	int nTotalReward = 0;
+
+	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
+	ABCHECK(nullptr != pGameStateStage, 0);
+
+	// 스테이지 클리어 포인트
+	nTotalReward += GetClearStagePoint();
+
+	// 스테이지 미션 포인트
+	nTotalReward += GetClearMissionPoint();
+
+	// 몬스터 처치 포인트
+	nTotalReward += GetClearMonsterKillPoint();
+
+	// 광고 보상 포인트
+	if (pGameStateStage->IsViewAD())
+		nTotalReward = nTotalReward * PG_ADVIEW_REWARD;
+
+	return nTotalReward;
+}
+
+int32 APG_GameStateStage::GetClearStagePoint()
+{
+	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
+	ABCHECK(nullptr != pGameInstance, 0);
+
+	auto pGameModeBase = Cast<APG_GameModeBase>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeBase, 0);
+
+	auto pTableStageData = pGameInstance->GetTableStageData(pGameModeBase->GetPlayStageID());
+	ABCHECK(nullptr != pTableStageData, 0);
+
+	return pTableStageData->StageClearReward;
+}
+
+int32 APG_GameStateStage::GetClearMissionPoint()
+{
+	auto pGameInstance = Cast<UPG_GameInstance>(GetWorld()->GetGameInstance());
+	ABCHECK(nullptr != pGameInstance, 0);
+
+	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeStage, 0);
+
+	auto pTableStageData = pGameInstance->GetTableStageData(pGameModeStage->GetPlayStageID());
+	ABCHECK(nullptr != pTableStageData, 0);
+
+	bool bIsClearAmount = pGameModeStage->IsClearMission(EStageClearType::eSCT_AmountKill);
+	bool bIsWasClearAmount = pGameModeStage->IsWasClearMisiion(EStageClearType::eSCT_AmountKill);
+	bool bIsClearLethal = pGameModeStage->IsClearMission(EStageClearType::eSCT_Lethal);
+	bool bIsWasClearLethal = pGameModeStage->IsWasClearMisiion(EStageClearType::eSCT_Lethal);
+	bool bIsClearTime = pGameModeStage->IsClearMission(EStageClearType::eSCT_ClearTime);
+	bool bIsWasClearTime = pGameModeStage->IsWasClearMisiion(EStageClearType::eSCT_ClearTime);
+
+	int32 nClearPoint = 0;
+	nClearPoint += (bIsClearAmount && !bIsWasClearAmount) ? pTableStageData->StarReward : 0;
+	nClearPoint += (bIsClearLethal && !bIsWasClearLethal) ? pTableStageData->StarReward : 0;
+	nClearPoint += (bIsClearTime && !bIsWasClearTime) ? pTableStageData->StarReward : 0;
+
+	return nClearPoint;
+}
+int32 APG_GameStateStage::GetClearMonsterKillPoint()
+{
+	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
+	ABCHECK(nullptr != pGameStateStage, 0);
+
+	return pGameStateStage->GetStagePlayData()->KillRewardPoint;
+}
+
+void APG_GameStateStage::SetMaxLethalKill(int32 a_nMaxLethalKill)
 {
 	if (a_nMaxLethalKill <= StagePlayData.NumberOfMonstersMuiltiKilled)
 		return;
@@ -154,17 +225,17 @@ bool APG_GameStateStage::RequestViewAD()
 	auto pPlayerState = Cast<APG_MyPlayerState>(pMyPlayerController->PlayerState);
 	ABCHECK(nullptr != pPlayerState, false);
 
-	auto pGameMode = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
-	ABCHECK(nullptr != pGameMode, false);
+	auto pGameModeStage = Cast<APG_GameModeStage>(GetWorld()->GetAuthGameMode());
+	ABCHECK(nullptr != pGameModeStage, false);
 
 	SetViewAD(true);
 
 	// 광고 보상 적용
 	int32 nRewardPoint = pPlayerState->GetOriginalPlayerData()->RewardPoint;
-	pPlayerState->SetRewardPoint(nRewardPoint + pGameMode->GetClearTotalPoint());
+	pPlayerState->SetRewardPoint(nRewardPoint + GetClearTotalPoint());
 
 	// 플레이어 데이터 저장
-	pGameMode->SetSavePlayerData(*pPlayerState->GetPlayingPlayerData());
+	pGameModeStage->SetSavePlayerData(*pPlayerState->GetPlayingPlayerData());
 
 	OnViewAD.Broadcast(m_bViewAD);
 
