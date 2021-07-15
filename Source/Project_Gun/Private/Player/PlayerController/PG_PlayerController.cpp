@@ -46,7 +46,7 @@ void APG_PlayerController::CreateTouchInterface()
 
 		if (CurrentTouchInterface)
 		{
-			// create the joystick 
+			// 재정의한 SPG_VirtualJoystick 조이스틱 사용
 			TSharedPtr<SPG_VirtualJoystick> CustomJoystick = SNew(SPG_VirtualJoystick);
 			CustomJoystick->BindPlayerController(this);
 

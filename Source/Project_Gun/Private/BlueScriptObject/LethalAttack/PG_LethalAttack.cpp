@@ -197,11 +197,13 @@ void APG_LethalAttack::OnTryUseTheLethalAttack()
 	if (LethalPoint < LethalAttackData.LMinPoint)
 		return;
 
+	// 필살기 충전 이펙트 숨김
 	if (LShowingEffect && LShowingEffect->IsVisible())
 	{
 		LShowingEffect->SetVisibility(false);
 	}
 
+	// 필살기 사용 이펙트를 충전 범위만큼 스케일하여 출력
 	if (LEffectVisual && false == LEffectVisual->IsVisible())
 	{
 		float fScale = GetAttackRange() / 100.0f;
@@ -210,8 +212,10 @@ void APG_LethalAttack::OnTryUseTheLethalAttack()
 		LEffectVisual->SetVisibility(true);
 	}
 
+	// 캐릭터에서 오브젝트를 분리시키고 월드상에 위치를 고정시킨다.
 	DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
+	// 필살기 범위 내 몬스터에게 데미지를 주고 이때 죽은 몬스터를 찾는다.
 	TArray<class APG_MonChar*> DamagedMonsters;
 	FindingDamagedMonsters(DamagedMonsters);
 	for (auto AMonster : DamagedMonsters)
@@ -226,14 +230,17 @@ void APG_LethalAttack::OnTryUseTheLethalAttack()
 		}
 	}
 
+	// 캐릭터의 필살기 장착 해제
 	auto AMyChar = Cast<APG_MyChar>(GetOwner());
 	if (AMyChar)
 		AMyChar->UnEquipLethalAttack();
 
+	// 죽인 몬스터를 정산하여 GameStateStage에게 전달한다.
 	auto pGameStateStage = Cast<APG_GameStateStage>(GetWorld()->GetGameState());
 	if (pGameStateStage)
 		pGameStateStage->SetMaxLethalKill(MaxLethalKill);
 
+	// 필살기 사운드 재생
 	if (LethalSoundComponent)
 		LethalSoundComponent->Play();
 }
