@@ -7,7 +7,7 @@ Unreal Ver. 4.25.4
 
 Source(Git) : https://github.com/wkdtpeo/ProjectGun-wkdtpeo.git
 
-Resouce(SVN) : http://wkdtpeo.iptime.org:1001/svn/Portfolio/ProjectGun/
+Resouce(SVN-폐쇄) : http://wkdtpeo.iptime.org:1001/svn/Portfolio/ProjectGun/
 
 제작인원 : 3명
 
